@@ -1,0 +1,93 @@
+{
+    "name": "react-loading-spinners",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "keywords": [
+        "react",
+        "react-component"
+    ],
+    "scripts": {
+        "start": "parcel examples/index.html",
+        "build": "npm run clean && webpack --mode=production",
+        "clean": "rimraf build/*",
+        "prettier": "prettier --config .prettierrc.json --write src/**/*.js",
+        "test:watch": "jest --watch",
+        "test": "jest",
+        "lint": "./node_modules/.bin/eslint --ext .js --ext .jsx ./src"
+    },
+    "pre-commit": [
+        "lint"
+    ],
+    "jest": {
+        "setupFiles": [
+            "./jestsetup.js"
+        ],
+        "snapshotSerializers": [
+            "<rootDir>/node_modules/enzyme-to-json/serializer"
+        ]
+    },
+    "author": "Morozov Dmitry  <dimemorozovy@yandex.ru>",
+    "license": "MIT",
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-jest": "^23.6.0",
+        "babel-loader": "^7.1.5",
+        "babel-plugin-styled-components": "^1.7.1",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "enzyme": "^3.6.0",
+        "enzyme-adapter-react-16": "^1.5.0",
+        "enzyme-to-json": "^3.3.4",
+        "eslint": "^5.6.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.1",
+        "eslint-plugin-react": "^7.11.1",
+        "jest": "^23.6.0",
+        "parcel-bundler": "^1.9.7",
+        "path": "^0.12.7",
+        "prettier": "^1.14.2",
+        "react-addons-test-utils": "^15.6.2",
+        "rimraf": "^2.6.2",
+        "webpack": "^4.19.0",
+        "webpack-cli": "^3.1.0",
+        "webpack-node-externals": "^1.7.2"
+    },
+    "dependencies": {
+        "polished": "^1.9.3",
+        "prop-types": "^15.6.2",
+        "react": "^16.5.1",
+        "react-dom": "^16.5.1",
+        "styled-components": "^3.4.6"
+    },
+    "babel": {
+        "plugins": [
+            "babel-plugin-styled-components",
+            "babel-plugin-transform-object-rest-spread"
+        ],
+        "env": {
+            "test": {
+                "presets": [
+                    [
+                        "env",
+                        {
+                            "modules": "commonjs",
+                            "useBuiltIns": "usage",
+                            "debug": false
+                        }
+                    ],
+                    "stage-0",
+                    "react",
+                    "jest"
+                ]
+            }
+        }
+    }
+}
