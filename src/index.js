@@ -1,1 +1,1 @@
-import { Spinner } from "./components/spinner";
+import { CircleSpinner } from "./components/circle";

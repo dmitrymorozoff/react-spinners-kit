@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Spinner } from "../src/components/spinner";
+import { CircleSpinner } from "../src/components/circle";
 
 class App extends React.Component {
     render() {
-        return <Spinner />;
+        return <CircleSpinner />;
     }
 }
 
