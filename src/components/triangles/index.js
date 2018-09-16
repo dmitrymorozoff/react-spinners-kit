@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-export const CircleSpinner = ({ size, color }) => {
+export const TrianglesSpinner = ({ size, color }) => {
     const center = size / 2;
     return (
         <StyledSpinnerWrapper
@@ -12,20 +12,15 @@ export const CircleSpinner = ({ size, color }) => {
             color={color}
             viewBox={`0 0 ${size} ${size}`}
         >
-            <circle
-                className="circle"
-                cx={center}
-                cy={center}
-                r={size / 2 - size / 10}
-                fill="none"
-                strokeWidth={size / 8}
-            />
+            <g>
+                <polygon points="0 50,50 50,25 0" />
+            </g>
         </StyledSpinnerWrapper>
     );
 };
 
 const StyledSpinnerWrapper = styled.svg`
-    animation: rotate 2s linear infinite;
+    /* animation: rotate 2s linear infinite; */
     width: ${props => props.size}px;
     height: ${props => props.size}px;
     & .circle {
@@ -55,12 +50,12 @@ const StyledSpinnerWrapper = styled.svg`
     }
 `;
 
-CircleSpinner.defaultProps = {
+TrianglesSpinner.defaultProps = {
     size: 50,
     color: "#ada1fb",
 };
 
-CircleSpinner.propTypes = {
+TrianglesSpinner.propTypes = {
     size: PropTypes.number,
     color: PropTypes.string,
 };
