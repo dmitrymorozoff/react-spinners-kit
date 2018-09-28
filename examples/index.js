@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { GridSpinner } from "../src/components/grid";
 import { BallSpinner } from "../src/components/ball";
 
 class App extends React.Component {
@@ -9,7 +10,9 @@ class App extends React.Component {
                 <div className="loader-item">
                     <BallSpinner />
                 </div>
-                <div className="loader-item">{/* <BallSpinner /> */}</div>
+                <div className="loader-item">
+                    <GridSpinner />
+                </div>
                 <div className="loader-item">{/* <BallSpinner /> */}</div>
                 <div className="loader-item">{/* <BallSpinner /> */}</div>
                 <div className="loader-item">{/* <BallSpinner /> */}</div>
