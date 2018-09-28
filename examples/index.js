@@ -1,10 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { TrianglesSpinner } from "../src/components/triangles";
+import { BallSpinner } from "../src/components/ball";
 
 class App extends React.Component {
     render() {
-        return <TrianglesSpinner />;
+        return (
+            <div className="container">
+                <div className="loader-item">
+                    <BallSpinner />
+                </div>
+                <div className="loader-item">{/* <BallSpinner /> */}</div>
+                <div className="loader-item">{/* <BallSpinner /> */}</div>
+                <div className="loader-item">{/* <BallSpinner /> */}</div>
+                <div className="loader-item">{/* <BallSpinner /> */}</div>
+                <div className="loader-item">{/* <BallSpinner /> */}</div>
+                <div className="loader-item">{/* <BallSpinner /> */}</div>
+                <div className="loader-item">{/* <BallSpinner /> */}</div>
+                <div className="loader-item">{/* <BallSpinner /> */}</div>
+            </div>
+        );
     }
 }
 
