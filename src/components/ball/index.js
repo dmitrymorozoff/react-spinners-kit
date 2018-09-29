@@ -47,8 +47,8 @@ const Ball = styled.div`
 `;
 
 BallSpinner.defaultProps = {
-    size: 60,
-    color: "#6B55FF",
+    size: 40,
+    color: "#1AE264",
 };
 
 BallSpinner.propTypes = {
