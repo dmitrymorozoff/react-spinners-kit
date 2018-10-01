@@ -3,15 +3,16 @@ import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
-    0% {
-        width: ${props.size / 20}px
-    }
+  25% {
+    transform: skewY(25deg);;
+  }
     50%{
-        width: ${props.size / 6}px
+        height: 100%;
+        margin-top: 0;
     }
-    100% {
-        width: ${props.size / 20}px
-    }
+    75% {
+    transform: skewY(-25deg);;
+  }
 `;
 
 const getBars = (countBars, color, size) => {
@@ -21,7 +22,8 @@ const getBars = (countBars, color, size) => {
             <Bar
                 color={color}
                 size={size}
-                x={i * (size / 5 + size / 25) - size / 12}
+                x={i * (size / 5 + (size / 15 - size / 100))}
+                y={0}
                 key={i.toString()}
                 index={i}
             />,
@@ -30,37 +32,41 @@ const getBars = (countBars, color, size) => {
     return bars;
 };
 
-export const BarsSpinner = ({ size, color }) => {
-    const countBars = 5;
+export const WaveSpinner = ({ size, color }) => {
+    const countBars = 10;
     return <Wrapper size={size}>{getBars(countBars, color, size)}</Wrapper>;
 };
 
 const Wrapper = styled.div`
+    /* border: 1px solid red; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
+    width: ${props => props.size * 2.5}px;
     height: ${props => props.size}px;
+    overflow: hidden;
 `;
 
 const Bar = styled.div`
     position: absolute;
-    top: ${props => props.y}px;
+    top: ${props => props.y + props.size / 10}px;
     left: ${props => props.x}px;
-    width: ${props => props.size / 20}px;
-    height: ${props => props.size}px;
+    width: ${props => props.size / 5}px;
+    height: ${props => props.size / 10}px;
+    margin-top: ${props => props.size - props.size / 10}px;
+    transform: skewY(0deg);
     background-color: ${props => props.color};
-    animation: ${motion} 1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    animation: ${motion} 1.25s ease-in-out infinite;
     animation-delay: ${props => props.index * 0.15}s;
 `;
 
-BarsSpinner.defaultProps = {
+WaveSpinner.defaultProps = {
     size: 40,
     color: "#fff",
 };
 
-BarsSpinner.propTypes = {
+WaveSpinner.propTypes = {
     size: PropTypes.number,
     color: PropTypes.string,
 };

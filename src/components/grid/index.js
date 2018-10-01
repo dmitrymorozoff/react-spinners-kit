@@ -66,7 +66,7 @@ const Ball = styled.div`
 
 GridSpinner.defaultProps = {
     size: 40,
-    color: "#1AE264",
+    color: "#fff",
 };
 
 GridSpinner.propTypes = {
