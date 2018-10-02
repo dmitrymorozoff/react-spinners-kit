@@ -2,59 +2,48 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
-const animationLeftPostions = props => {
-    switch (props.index) {
-        case 0:
-            return {
-                x: props.size - props.size / 4,
-                y: props.y,
-            };
-        case 1:
-            return {
-                x: props.x,
-                y: props.y - props.size / 2 + props.size / 8,
-            };
-        case 2:
-            return {
-                x: 0,
-                y: props.y,
-            };
-    }
-};
-
 const motion = props => keyframes`
     0% {
-        top: ${props.y}px;
+        top: ${props.y}px;     
         left: ${props.x}px;
     }
-    50%{
-        top: ${animationLeftPostions(props).y}px;
-        left: ${animationLeftPostions(props).x}px;
+    25% {
+        top: ${props.y}px;
+        left: ${props.x}px;
+        opacity: 0;
+    }
+    50% {
+        top: ${props.y + props.size / 2}px;
+        left: ${props.x}px;  
+        opacity: 0;
     }
     100% {
         top: ${props.y}px;
         left: ${props.x}px;
+        opacity: 1;
     }
 `;
 
 const getBalls = (countBalls, color, size) => {
     const balls = [];
+    let keyValue = 0;
     for (let i = 0; i < countBalls; i++) {
         balls.push(
             <Ball
                 color={color}
                 size={size}
-                x={i * (size / 4 + size / 8)}
-                y={size / 2 - size / 8}
-                key={i.toString()}
                 index={i}
+                x={i * (size / 2.5)}
+                y={size / 2 - size / 10}
+                key={keyValue.toString()}
             />,
         );
+        keyValue++;
     }
     return balls;
 };
 
-export const SwapSpinner = ({ size, color }) => {
+export const StageSpinner = ({ size, color }) => {
     const countBalls = 3;
     return <Wrapper size={size}>{getBalls(countBalls, color, size)}</Wrapper>;
 };
@@ -72,23 +61,20 @@ const Ball = styled.div`
     position: absolute;
     top: ${props => props.y}px;
     left: ${props => props.x}px;
-    width: ${props => props.size / 4}px;
-    height: ${props => props.size / 4}px;
+    width: ${props => props.size / 5}px;
+    height: ${props => props.size / 5}px;
     border-radius: 50%;
     background-color: ${props => props.color};
-    animation: ${motion} 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-    &:nth-child(2) {
-        animation-timing-function: cubic-bezier(1, 0, 0, 1);
-        animation-duration: 1.5s;
-    }
+    animation: ${motion} 1s ease-in-out infinite;
+    animation-delay: ${props => props.index * 0.2}s;
 `;
 
-SwapSpinner.defaultProps = {
+StageSpinner.defaultProps = {
     size: 40,
     color: "#fff",
 };
 
-SwapSpinner.propTypes = {
+StageSpinner.propTypes = {
     size: PropTypes.number,
     color: PropTypes.string,
 };

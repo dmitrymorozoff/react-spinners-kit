@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
-    25% {
-        transform: skewY(25deg);;
+
+    15% {
+        transform: scaleY(1) translateX(10px);
     }
-    50% {
-        height: 100%;
-        margin-top: 0;
+    90% {
+        transform: scaleY(0.05) translateX(-5px);
     }
-    75% {
-        transform: skewY(-25deg);
+    100%{
+        transform: scaleY(0.05) translateX(-5px);
     }
 `;
 
@@ -32,13 +32,12 @@ const getBars = (countBars, color, size) => {
     return bars;
 };
 
-export const WaveSpinner = ({ size, color }) => {
+export const PushSpinner = ({ size, color }) => {
     const countBars = 10;
     return <Wrapper size={size}>{getBars(countBars, color, size)}</Wrapper>;
 };
 
 const Wrapper = styled.div`
-    /* border: 1px solid red; */
     position: relative;
     display: flex;
     justify-content: center;
@@ -50,23 +49,22 @@ const Wrapper = styled.div`
 
 const Bar = styled.div`
     position: absolute;
-    top: ${props => props.y + props.size / 10}px;
+    top: 0;
     left: ${props => props.x}px;
     width: ${props => props.size / 5}px;
-    height: ${props => props.size / 10}px;
-    margin-top: ${props => props.size - props.size / 10}px;
-    transform: skewY(0deg);
+    height: 100%;
+    transform: scaleY(0.05) translateX(-5px);
     background-color: ${props => props.color};
     animation: ${motion} 1.25s ease-in-out infinite;
     animation-delay: ${props => props.index * 0.15}s;
 `;
 
-WaveSpinner.defaultProps = {
+PushSpinner.defaultProps = {
     size: 40,
     color: "#fff",
 };
 
-WaveSpinner.propTypes = {
+PushSpinner.propTypes = {
     size: PropTypes.number,
     color: PropTypes.string,
 };
