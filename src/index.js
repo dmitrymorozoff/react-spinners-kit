@@ -6,6 +6,8 @@ import { WaveSpinner } from "./components/wave";
 import { PushSpinner } from "./components/push";
 import { FireworkSpinner } from "./components/firework";
 import { StageSpinner } from "./components/stage";
+import { HeartSpinner } from "./components/heart";
+import { CuboSpinner } from "./components/cubo";
 
 export {
     BallSpinner,
@@ -16,4 +18,6 @@ export {
     PushSpinner,
     FireworkSpinner,
     StageSpinner,
+    HeartSpinner,
+    CuboSpinner,
 };

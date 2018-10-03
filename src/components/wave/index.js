@@ -62,7 +62,7 @@ const Bar = styled.div`
 `;
 
 WaveSpinner.defaultProps = {
-    size: 40,
+    size: 30,
     color: "#fff",
 };
 

@@ -57,7 +57,7 @@ const Bar = styled.div`
 
 BarsSpinner.defaultProps = {
     size: 40,
-    color: "#fff",
+    color: "#00ff89",
 };
 
 BarsSpinner.propTypes = {

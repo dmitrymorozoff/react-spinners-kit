@@ -60,8 +60,8 @@ const Bar = styled.div`
 `;
 
 PushSpinner.defaultProps = {
-    size: 40,
-    color: "#fff",
+    size: 30,
+    color: "#686769",
 };
 
 PushSpinner.propTypes = {
