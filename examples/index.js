@@ -11,13 +11,15 @@ import {
     StageSpinner,
     HeartSpinner,
     CuboSpinner,
+    CircleSpinner,
+    SpiralSpinner,
 } from "../src";
 
 class App extends React.Component {
     render() {
         return (
             <div>
-                {/* <CuboSpinner /> */}
+                {/* <SpiralSpinner /> */}
                 {/* <div class="title">react-spinners</div> */}
                 <div className="container">
                     <div className="loader-item">
@@ -42,7 +44,13 @@ class App extends React.Component {
                         <PushSpinner />
                     </div>
                     <div className="loader-item">
+                        <CircleSpinner />
+                    </div>
+                    <div className="loader-item">
                         <HeartSpinner />
+                    </div>
+                    <div className="loader-item">
+                        <SpiralSpinner />
                     </div>
                     <div className="loader-item">
                         <StageSpinner />

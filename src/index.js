@@ -8,6 +8,8 @@ import { FireworkSpinner } from "./components/firework";
 import { StageSpinner } from "./components/stage";
 import { HeartSpinner } from "./components/heart";
 import { CuboSpinner } from "./components/cubo";
+import { CircleSpinner } from "./components/circle";
+import { SpiralSpinner } from "./components/spiral";
 
 export {
     BallSpinner,
@@ -20,4 +22,6 @@ export {
     StageSpinner,
     HeartSpinner,
     CuboSpinner,
+    CircleSpinner,
+    SpiralSpinner,
 };
