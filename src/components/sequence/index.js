@@ -4,13 +4,16 @@ import styled, { keyframes } from "styled-components";
 
 const rotate = props => keyframes`
     0% {
-        transform: rotateY(90deg);
-    }
-    50% {
+        top: ${props.size}px;
         transform: rotateY(0deg);
     }
-    100% {
+    30%{
+        top: 0;
         transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+        top: -${props.size}px;
     }
 `;
 
@@ -18,28 +21,25 @@ const getCubes = (countCubesInLine, leftColor, frontColor, size) => {
     const cubes = [];
     let keyValue = 0;
     for (let i = 0; i < countCubesInLine; i++) {
-        for (let j = 0; j < countCubesInLine; j++) {
-            cubes.push(
-                <CubeWrapper
-                    size={size}
-                    x={i * (size / 4 + size / 8)}
-                    y={j * (size / 4 + size / 8)}
-                    key={keyValue.toString()}
-                >
-                    <Cube size={size} index={keyValue}>
-                        <Side front={true} size={size} color={frontColor} />
-                        <Side left={true} size={size} color={leftColor} />
-                    </Cube>
-                </CubeWrapper>,
-            );
-            keyValue++;
-        }
+        cubes.push(
+            <CubeWrapper
+                x={i * (size / 8 + size / 11)}
+                y={0}
+                key={keyValue.toString()}
+            >
+                <Cube size={size} index={keyValue}>
+                    <Side front={true} size={size} color={frontColor} />
+                    <Side left={true} size={size} color={leftColor} />
+                </Cube>
+            </CubeWrapper>,
+        );
+        keyValue++;
     }
     return cubes;
 };
 
-export const CuboSpinner = ({ size, leftColor, frontColor }) => {
-    const countCubesInLine = 3;
+export const SequenceSpinner = ({ size, leftColor, frontColor }) => {
+    const countCubesInLine = 5;
     return (
         <Wrapper size={size}>
             {getCubes(countCubesInLine, leftColor, frontColor, size)}
@@ -53,44 +53,47 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    height: ${props => props.size / 1.75}px;
     perspective: ${props => props.size * 3}px;
+    overflow: hidden;
+    transform: rotateY(20deg);
 `;
 
 const CubeWrapper = styled.div`
     position: absolute;
     top: ${props => props.y}px;
     left: ${props => props.x}px;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: inherit;
+    height: inherit;
 `;
 
 const Cube = styled.div`
     position: relative;
-    width: ${props => props.size / 4}px;
-    height: ${props => props.size / 4}px;
+    width: ${props => props.size / 8}px;
+    height: ${props => props.size / 1.75}px;
     transform-style: preserve-3d;
-    animation: ${rotate} 1.5s cubic-bezier(0.23, 1, 0.32, 1) infinite;
-    animation-delay: ${props => props.index * 0.125}s;
+    animation: ${rotate} 1.75s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    animation-delay: ${props => props.index * 0.1}s;
 `;
 
 const Side = styled.div`
+    backface-visibility: hidden;
     display: block;
     position: absolute;
     width: inherit;
     height: inherit;
     background-color: ${props => props.color};
     transform: rotateY(${props => (props.front ? 0 : -90)}deg)
-        translateZ(${props => props.size / 8}px);
+        translateZ(${props => props.size / 16}px);
 `;
 
-CuboSpinner.defaultProps = {
+SequenceSpinner.defaultProps = {
     size: 40,
-    frontColor: "#00ff89",
-    leftColor: "#686769",
+    frontColor: "#686769",
+    leftColor: "#00ff89",
 };
 
-CuboSpinner.propTypes = {
+SequenceSpinner.propTypes = {
     size: PropTypes.number,
     frontColor: PropTypes.string,
     leftColor: PropTypes.string,

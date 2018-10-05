@@ -38,7 +38,6 @@ export const WaveSpinner = ({ size, color }) => {
 };
 
 const Wrapper = styled.div`
-    /* border: 1px solid red; */
     position: relative;
     display: flex;
     justify-content: center;

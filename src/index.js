@@ -10,6 +10,8 @@ import { HeartSpinner } from "./components/heart";
 import { CuboSpinner } from "./components/cubo";
 import { CircleSpinner } from "./components/circle";
 import { SpiralSpinner } from "./components/spiral";
+import { PulseSpinner } from "./components/pulse";
+import { SequenceSpinner } from "./components/sequence";
 
 export {
     BallSpinner,
@@ -24,4 +26,6 @@ export {
     CuboSpinner,
     CircleSpinner,
     SpiralSpinner,
+    PulseSpinner,
+    SequenceSpinner,
 };

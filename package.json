@@ -1,5 +1,5 @@
 {
-    "name": "react-loading-spinners",
+    "name": "react-spinners-kit",
     "version": "0.0.1",
     "description": "",
     "main": "index.js",
@@ -9,7 +9,11 @@
     },
     "keywords": [
         "react",
-        "react-component"
+        "react-component",
+        "react-spinners",
+        "loaders",
+        "kit",
+        "spinners"
     ],
     "scripts": {
         "start": "parcel examples/index.html",

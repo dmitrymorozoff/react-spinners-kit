@@ -25,12 +25,7 @@ const getCubes = (countCubesInLine, bottomColor, frontColor, size) => {
     let keyValue = 0;
     for (let i = 0; i < countCubesInLine; i++) {
         cubes.push(
-            <CubeWrapper
-                size={size}
-                x={i * (size / 4)}
-                y={0}
-                key={keyValue.toString()}
-            >
+            <CubeWrapper x={i * (size / 4)} y={0} key={keyValue.toString()}>
                 <Cube size={size} index={keyValue}>
                     <Side front={true} size={size} color={frontColor} />
                     <Side back={true} size={size} color={frontColor} />
@@ -67,8 +62,8 @@ const CubeWrapper = styled.div`
     position: absolute;
     top: ${props => props.y}px;
     left: ${props => props.x}px;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: inherit;
+    height: inherit;
 `;
 
 const Cube = styled.div`
@@ -76,7 +71,6 @@ const Cube = styled.div`
     width: ${props => props.size / 4}px;
     height: ${props => props.size / 4}px;
     transform-style: preserve-3d;
-    transform: rotateX(40deg);
     animation: ${rotate} 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
     animation-delay: ${props => props.index * 0.15}s;
 `;
@@ -89,10 +83,6 @@ const rotateCube = props => {
         return -90;
     }
     return 0;
-};
-
-const translate = props => {
-    return;
 };
 
 const Side = styled.div`
