@@ -21,9 +21,8 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                {/* <SequenceSpinner /> */}
                 {/* <div class="title">react-spinners</div> */}
-                <div className="container">
+                {/* <div className="container">
                     <div className="loader-item">
                         <BallSpinner />
                     </div>
@@ -66,7 +65,7 @@ class App extends React.Component {
                     <div className="loader-item">
                         <PulseSpinner />
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     }
