@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
-
     15% {
         transform: scaleY(1) translateX(10px);
     }

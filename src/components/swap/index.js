@@ -65,7 +65,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    height: ${props => props.size / 2 + props.size / 8}px;
 `;
 
 const Ball = styled.div`

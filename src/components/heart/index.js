@@ -20,7 +20,6 @@ const resize = props => keyframes`
     }
     100% {
         transform: scale(1);
-
     }
 `;
 

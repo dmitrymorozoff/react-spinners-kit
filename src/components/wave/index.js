@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
     25% {
-        transform: skewY(25deg);;
+        transform: skewY(25deg);
     }
     50% {
         height: 100%;

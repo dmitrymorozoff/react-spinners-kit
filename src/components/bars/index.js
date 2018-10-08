@@ -32,7 +32,7 @@ const getBars = (countBars, color, size) => {
 
 export const BarsSpinner = ({ size, color }) => {
     const countBars = 5;
-    return <Wrapper size={size}>{getBars(countBars, color, size)}</Wrapper>;
+    return <Wrapper size={size}> {getBars(countBars, color, size)} </Wrapper>;
 };
 
 const Wrapper = styled.div`

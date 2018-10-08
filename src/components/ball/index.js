@@ -24,7 +24,7 @@ const motion = props => keyframes`
 export const BallSpinner = ({ size, color }) => {
     return (
         <Wrapper size={size}>
-            <Ball color={color} size={size} />
+            <Ball color={color} size={size} />{" "}
         </Wrapper>
     );
 };

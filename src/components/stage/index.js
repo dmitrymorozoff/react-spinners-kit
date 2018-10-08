@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
     0% {
-        top: ${props.y}px;     
+        top: ${props.y}px;
         left: ${props.x}px;
     }
     25% {
@@ -14,7 +14,7 @@ const motion = props => keyframes`
     }
     50% {
         top: ${props.y + props.size / 2}px;
-        left: ${props.x}px;  
+        left: ${props.x}px;
         opacity: 0;
     }
     100% {

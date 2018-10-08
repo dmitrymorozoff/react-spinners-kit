@@ -12,6 +12,8 @@ import { CircleSpinner } from "./components/circle";
 import { SpiralSpinner } from "./components/spiral";
 import { PulseSpinner } from "./components/pulse";
 import { SequenceSpinner } from "./components/sequence";
+import { DominoSpinner } from "./components/domino";
+import { ImpulseSpinner } from "./components/impulse";
 
 export {
     BallSpinner,
@@ -28,4 +30,6 @@ export {
     SpiralSpinner,
     PulseSpinner,
     SequenceSpinner,
+    DominoSpinner,
+    ImpulseSpinner,
 };
