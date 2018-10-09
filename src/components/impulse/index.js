@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 
 const impulse = props => keyframes`
     0% {
-        background: ${props.bottomColor};
+        background: ${props.backColor};
         transform: scale(1);
         animation-timing-function: cubic-bezier(1,0,0.7,1);
     }
@@ -14,23 +14,23 @@ const impulse = props => keyframes`
         animation-timing-function: cubic-bezier(0.3,0,0,1);
     }
     72.5% {
-        background:${props.bottomColor};
+        background:${props.backColor};
         transform: scale(1);
         animation-timing-function: linear;
     }
     100% {
-        background: ${props.bottomColor};
+        background: ${props.backColor};
         transform: scale(1);
     }
 `;
 
-const getBalls = (countBalls, topColor, bottomColor, size) => {
+const getBalls = (countBalls, topColor, backColor, size) => {
     const balls = [];
     for (let i = 0; i < countBalls; i++) {
         balls.push(
             <Ball
                 topColor={topColor}
-                bottomColor={bottomColor}
+                backColor={backColor}
                 size={size}
                 x={i * (size / 5 + size / 5)}
                 y={0}
@@ -42,11 +42,11 @@ const getBalls = (countBalls, topColor, bottomColor, size) => {
     return balls;
 };
 
-export const ImpulseSpinner = ({ size, topColor, bottomColor }) => {
+export const ImpulseSpinner = ({ size, topColor, backColor }) => {
     const countBalls = 3;
     return (
         <Wrapper size={size}>
-            {getBalls(countBalls, topColor, bottomColor, size)}
+            {getBalls(countBalls, topColor, backColor, size)}
         </Wrapper>
     );
 };
@@ -75,11 +75,11 @@ const Ball = styled.div`
 ImpulseSpinner.defaultProps = {
     size: 40,
     topColor: "#00ff89",
-    bottomColor: "#686769",
+    backColor: "#686769",
 };
 
 ImpulseSpinner.propTypes = {
     size: PropTypes.number,
     topColor: PropTypes.string,
-    bottomColor: PropTypes.string,
+    backColor: PropTypes.string,
 };

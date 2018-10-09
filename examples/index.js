@@ -10,20 +10,21 @@ import {
     FireworkSpinner,
     StageSpinner,
     HeartSpinner,
-    CuboSpinner,
+    GuardSpinner,
     CircleSpinner,
     SpiralSpinner,
     PulseSpinner,
     SequenceSpinner,
     DominoSpinner,
     ImpulseSpinner,
+    CubeSpinner,
 } from "../src";
 
 class App extends React.Component {
     render() {
         return (
             <div>
-                {/* <RotateSpinner /> */}
+                {/* <CubeSpinner /> */}
                 {/* <div class="title">react-spinners</div> */}
                 <div className="container">
                     <div className="loader-item">
@@ -36,7 +37,7 @@ class App extends React.Component {
                         <SwapSpinner />
                     </div>
                     <div className="loader-item">
-                        <CuboSpinner />
+                        <GuardSpinner />
                     </div>
                     <div className="loader-item">
                         <WaveSpinner />
@@ -70,6 +71,9 @@ class App extends React.Component {
                     </div>
                     <div className="loader-item">
                         <PulseSpinner />
+                    </div>
+                    <div className="loader-item">
+                        <CubeSpinner />
                     </div>
                     <div className="loader-item">
                         <DominoSpinner />

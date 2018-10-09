@@ -20,7 +20,7 @@ const rotate = props => keyframes`
     }
 `;
 
-const getCubes = (countCubesInLine, bottomColor, frontColor, size) => {
+const getCubes = (countCubesInLine, backColor, frontColor, size) => {
     const cubes = [];
     let keyValue = 0;
     for (let i = 0; i < countCubesInLine; i++) {
@@ -29,8 +29,8 @@ const getCubes = (countCubesInLine, bottomColor, frontColor, size) => {
                 <Cube size={size} index={keyValue}>
                     <Side front={true} size={size} color={frontColor} />
                     <Side back={true} size={size} color={frontColor} />
-                    <Side bottom={true} size={size} color={bottomColor} />
-                    <Side top={true} size={size} color={bottomColor} />
+                    <Side bottom={true} size={size} color={backColor} />
+                    <Side top={true} size={size} color={backColor} />
                 </Cube>
             </CubeWrapper>,
         );
@@ -39,11 +39,11 @@ const getCubes = (countCubesInLine, bottomColor, frontColor, size) => {
     return cubes;
 };
 
-export const SpiralSpinner = ({ size, bottomColor, frontColor }) => {
+export const SpiralSpinner = ({ size, backColor, frontColor }) => {
     const countCubesInLine = 4;
     return (
         <Wrapper size={size}>
-            {getCubes(countCubesInLine, bottomColor, frontColor, size)}
+            {getCubes(countCubesInLine, backColor, frontColor, size)}
         </Wrapper>
     );
 };
@@ -100,11 +100,11 @@ const Side = styled.div`
 SpiralSpinner.defaultProps = {
     size: 40,
     frontColor: "#00ff89",
-    bottomColor: "#686769",
+    backColor: "#686769",
 };
 
 SpiralSpinner.propTypes = {
     size: PropTypes.number,
     frontColor: PropTypes.string,
-    bottomColor: PropTypes.string,
+    backColor: PropTypes.string,
 };

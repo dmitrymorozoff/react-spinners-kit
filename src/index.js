@@ -7,13 +7,14 @@ import { PushSpinner } from "./components/push";
 import { FireworkSpinner } from "./components/firework";
 import { StageSpinner } from "./components/stage";
 import { HeartSpinner } from "./components/heart";
-import { CuboSpinner } from "./components/cubo";
+import { GuardSpinner } from "./components/guard";
 import { CircleSpinner } from "./components/circle";
 import { SpiralSpinner } from "./components/spiral";
 import { PulseSpinner } from "./components/pulse";
 import { SequenceSpinner } from "./components/sequence";
 import { DominoSpinner } from "./components/domino";
 import { ImpulseSpinner } from "./components/impulse";
+import { CubeSpinner } from "./components/cube";
 
 export {
     BallSpinner,
@@ -25,11 +26,12 @@ export {
     FireworkSpinner,
     StageSpinner,
     HeartSpinner,
-    CuboSpinner,
+    GuardSpinner,
     CircleSpinner,
     SpiralSpinner,
     PulseSpinner,
     SequenceSpinner,
     DominoSpinner,
     ImpulseSpinner,
+    CubeSpinner,
 };

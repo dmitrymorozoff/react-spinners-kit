@@ -38,7 +38,7 @@ const getCubes = (countCubesInLine, leftColor, frontColor, size) => {
     return cubes;
 };
 
-export const CuboSpinner = ({ size, leftColor, frontColor }) => {
+export const GuardSpinner = ({ size, leftColor, frontColor }) => {
     const countCubesInLine = 3;
     return (
         <Wrapper size={size}>
@@ -84,13 +84,13 @@ const Side = styled.div`
         translateZ(${props => props.size / 8}px);
 `;
 
-CuboSpinner.defaultProps = {
+GuardSpinner.defaultProps = {
     size: 40,
     frontColor: "#00ff89",
     leftColor: "#686769",
 };
 
-CuboSpinner.propTypes = {
+GuardSpinner.propTypes = {
     size: PropTypes.number,
     frontColor: PropTypes.string,
     leftColor: PropTypes.string,
