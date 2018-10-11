@@ -2,7 +2,7 @@
 
 A collection of loading spinners built with [styled-components](https://styled-components.com).
 
-## Examples
+## Demo
 
 -   To check out live examples visit https://dmitrymorozoff.github.io/react-spinners-kit/
 
@@ -64,30 +64,34 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
-## Available Spinners, PropTypes, and Default Values
+## PropTypes and Default Props
 
-| Spinner         | Size(number) | Color(string) | FrontColor(string) | BackColor(string) | LeftColor(string) | TopColor(string) |
-| --------------- | ------------ | ------------- | ------------------ | ----------------- | ----------------- | ---------------- |
-| BallSpinner     | 40           | #00ff89       | -                  | -                 | -                 | -                |
-| BarsSpinner     | 40           | #00ff89       | -                  | -                 | -                 | -                |
-| CircleSpinner   | 30           | #fff          | -                  | -                 | -                 | -                |
-| CubeSpinner     | 25           | -             | #00ff89            | #686769           | -                 | -                |
-| DominoSpinner   | 100          | #686769       | -                  | -                 | -                 | -                |
-| FillSpinner     | 20           | #686769       | -                  | -                 | -                 | -                |
-| FireworkSpinner | 40           | #fff          | -                  | -                 | -                 | -                |
-| FlagSpinner     | 40           | #fff          | -                  | -                 | -                 | -                |
-| GridSpinner     | 40           | #fff          | -                  | -                 | -                 | -                |
-| GuardSpinner    | 40           | -             | #00ff89            | -                 | #686769           | -                |
-| HeartSpinner    | 40           | #fff          | -                  | -                 | -                 | -                |
-| ImpulseSpinner  | 40           | -             | -                  | #686769           | -                 | #00ff89          |
-| PulseSpinner    | 40           | #fff          | -                  | -                 | -                 | -                |
-| PushSpinner     | 30           | #686769       | -                  | -                 | -                 | -                |
-| SequenceSpinner | 40           | -             | #686769            | -                 | #00ff89           | -                |
-| SphereSpinner   | 30           | #fff          | -                  | -                 | -                 | -                |
-| SpiralSpinner   | 40           |               | #00ff89            | #686769           | -                 | -                |
-| StageSpinner    | 40           | #fff          | -                  | -                 | -                 | -                |
-| SwapSpinner     | 40           | #686769       | -                  | -                 | -                 | -                |
-| WaveSpinner     | 30           | #fff          | -                  | -                 | -                 | -                |
+- Each spinner accepts a `loading` prop as a boolean. 
+- The `loading` prop defaults to `true`.
+- The loader will not render anything if `loading` is `false`. 
+
+| Spinner         | Size | Color   | FrontColor | BackColor | LeftColor | TopColor |
+| --------------- | ---- | ------- | ---------- | --------- | --------- | -------- |
+| BallSpinner     | 40   | #00ff89 | -          | -         | -         | -        |
+| BarsSpinner     | 40   | #00ff89 | -          | -         | -         | -        |
+| CircleSpinner   | 30   | #fff    | -          | -         | -         | -        |
+| CubeSpinner     | 25   | -       | #00ff89    | #686769   | -         | -        |
+| DominoSpinner   | 100  | #686769 | -          | -         | -         | -        |
+| FillSpinner     | 20   | #686769 | -          | -         | -         | -        |
+| FireworkSpinner | 40   | #fff    | -          | -         | -         | -        |
+| FlagSpinner     | 40   | #fff    | -          | -         | -         | -        |
+| GridSpinner     | 40   | #fff    | -          | -         | -         | -        |
+| GuardSpinner    | 40   | -       | #00ff89    | -         | #686769   | -        |
+| HeartSpinner    | 40   | #fff    | -          | -         | -         | -        |
+| ImpulseSpinner  | 40   | -       | -          | #686769   | -         | #00ff89  |
+| PulseSpinner    | 40   | #fff    | -          | -         | -         | -        |
+| PushSpinner     | 30   | #686769 | -          | -         | -         | -        |
+| SequenceSpinner | 40   | -       | #686769    | -         | #00ff89   | -        |
+| SphereSpinner   | 30   | #fff    | -          | -         | -         | -        |
+| SpiralSpinner   | 40   |         | #00ff89    | #686769   | -         | -        |
+| StageSpinner    | 40   | #fff    | -          | -         | -         | -        |
+| SwapSpinner     | 40   | #686769 | -          | -         | -         | -        |
+| WaveSpinner     | 30   | #fff    | -          | -         | -         | -        |
 
 
 ## License
