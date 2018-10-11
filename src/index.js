@@ -15,6 +15,9 @@ import { SequenceSpinner } from "./components/sequence";
 import { DominoSpinner } from "./components/domino";
 import { ImpulseSpinner } from "./components/impulse";
 import { CubeSpinner } from "./components/cube";
+import { FillSpinner } from "./components/fill";
+import { SphereSpinner } from "./components/sphere";
+import { FlagSpinner } from "./components/flag";
 
 export {
     BallSpinner,
@@ -34,4 +37,7 @@ export {
     DominoSpinner,
     ImpulseSpinner,
     CubeSpinner,
+    FillSpinner,
+    SphereSpinner,
+    FlagSpinner,
 };

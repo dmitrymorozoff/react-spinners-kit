@@ -8,7 +8,7 @@
 }
 
 .container {
-    width: 550px;
+    width: 700px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,7 @@
 }
 
 .loader-item {
-    width: 21%;
+    width: 17%;
     height: 120px;
     margin-bottom: 30px;
     display: flex;

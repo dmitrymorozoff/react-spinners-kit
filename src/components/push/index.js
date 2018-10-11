@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
-const motion = props => keyframes`
+const motion = keyframes`
     15% {
         transform: scaleY(1) translateX(10px);
     }
@@ -14,7 +14,7 @@ const motion = props => keyframes`
     }
 `;
 
-const getBars = (countBars, color, size) => {
+const getBars = ({ countBars, color, size }) => {
     const bars = [];
     for (let i = 0; i < countBars; i++) {
         bars.push(
@@ -31,9 +31,13 @@ const getBars = (countBars, color, size) => {
     return bars;
 };
 
-export const PushSpinner = ({ size, color }) => {
+export const PushSpinner = ({ size, color, loading }) => {
     const countBars = 10;
-    return <Wrapper size={size}>{getBars(countBars, color, size)}</Wrapper>;
+    return (
+        loading && (
+            <Wrapper size={size}>{getBars({ countBars, color, size })}</Wrapper>
+        )
+    );
 };
 
 const Wrapper = styled.div`
@@ -59,11 +63,13 @@ const Bar = styled.div`
 `;
 
 PushSpinner.defaultProps = {
+    loading: true,
     size: 30,
     color: "#686769",
 };
 
 PushSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
 };

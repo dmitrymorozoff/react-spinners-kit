@@ -24,7 +24,7 @@ const motion = props => keyframes`
     }
 `;
 
-const getBalls = (countBalls, color, size) => {
+const getBalls = ({ countBalls, color, size }) => {
     const balls = [];
     let keyValue = 0;
     for (let i = 0; i < countBalls; i++) {
@@ -43,9 +43,15 @@ const getBalls = (countBalls, color, size) => {
     return balls;
 };
 
-export const StageSpinner = ({ size, color }) => {
+export const StageSpinner = ({ size, color, loading }) => {
     const countBalls = 3;
-    return <Wrapper size={size}>{getBalls(countBalls, color, size)}</Wrapper>;
+    return (
+        loading && (
+            <Wrapper size={size}>
+                {getBalls({ countBalls, color, size })}
+            </Wrapper>
+        )
+    );
 };
 
 const Wrapper = styled.div`
@@ -70,11 +76,13 @@ const Ball = styled.div`
 `;
 
 StageSpinner.defaultProps = {
+    loading: true,
     size: 40,
     color: "#fff",
 };
 
 StageSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
 };

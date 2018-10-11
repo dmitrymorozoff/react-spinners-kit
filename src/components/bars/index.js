@@ -6,7 +6,7 @@ const motion = props => keyframes`
     0% {
         width: ${props.size / 20}px
     }
-    50%{
+    50% {
         width: ${props.size / 6}px
     }
     100% {
@@ -30,9 +30,13 @@ const getBars = (countBars, color, size) => {
     return bars;
 };
 
-export const BarsSpinner = ({ size, color }) => {
+export const BarsSpinner = ({ size, color, loading }) => {
     const countBars = 5;
-    return <Wrapper size={size}> {getBars(countBars, color, size)} </Wrapper>;
+    return (
+        loading && (
+            <Wrapper size={size}> {getBars(countBars, color, size)} </Wrapper>
+        )
+    );
 };
 
 const Wrapper = styled.div`
@@ -56,11 +60,13 @@ const Bar = styled.div`
 `;
 
 BarsSpinner.defaultProps = {
+    loading: true,
     size: 40,
     color: "#00ff89",
 };
 
 BarsSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
 };

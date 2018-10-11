@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
-const motion = props => keyframes`
+const motion = keyframes`
     0% {
         opacity: 1;
     }
@@ -14,7 +14,7 @@ const motion = props => keyframes`
     }
 `;
 
-const getCubes = (countCubeInLine, color, size) => {
+const getCubes = ({ countCubeInLine, color, size }) => {
     const cubes = [];
     let keyValue = 0;
     for (let i = 0; i < countCubeInLine; i++) {
@@ -33,10 +33,14 @@ const getCubes = (countCubeInLine, color, size) => {
     return cubes;
 };
 
-export const PulseSpinner = ({ size, color }) => {
+export const PulseSpinner = ({ size, color, loading }) => {
     const countCubeInLine = 3;
     return (
-        <Wrapper size={size}>{getCubes(countCubeInLine, color, size)}</Wrapper>
+        loading && (
+            <Wrapper size={size}>
+                {getCubes({ countCubeInLine, color, size })}
+            </Wrapper>
+        )
     );
 };
 
@@ -61,11 +65,13 @@ const Cube = styled.div`
 `;
 
 PulseSpinner.defaultProps = {
+    loading: true,
     size: 40,
     color: "#fff",
 };
 
 PulseSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
 };

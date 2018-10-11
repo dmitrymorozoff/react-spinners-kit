@@ -19,7 +19,7 @@ const motion = props => keyframes`
     }
 `;
 
-const getBalls = (countBallsInLine, color, size) => {
+const getBalls = ({ countBallsInLine, color, size }) => {
     const balls = [];
     let keyValue = 0;
     for (let i = 0; i < countBallsInLine; i++) {
@@ -39,10 +39,14 @@ const getBalls = (countBallsInLine, color, size) => {
     return balls;
 };
 
-export const GridSpinner = ({ size, color }) => {
+export const GridSpinner = ({ size, color, loading }) => {
     const countBallsInLine = 3;
     return (
-        <Wrapper size={size}>{getBalls(countBallsInLine, color, size)}</Wrapper>
+        loading && (
+            <Wrapper size={size}>
+                {getBalls({ countBallsInLine, color, size })}
+            </Wrapper>
+        )
     );
 };
 
@@ -67,11 +71,13 @@ const Ball = styled.div`
 `;
 
 GridSpinner.defaultProps = {
+    loading: true,
     size: 40,
     color: "#fff",
 };
 
 GridSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
 };

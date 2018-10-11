@@ -24,7 +24,7 @@ const impulse = props => keyframes`
     }
 `;
 
-const getBalls = (countBalls, topColor, backColor, size) => {
+const getBalls = ({ countBalls, topColor, backColor, size }) => {
     const balls = [];
     for (let i = 0; i < countBalls; i++) {
         balls.push(
@@ -42,12 +42,14 @@ const getBalls = (countBalls, topColor, backColor, size) => {
     return balls;
 };
 
-export const ImpulseSpinner = ({ size, topColor, backColor }) => {
+export const ImpulseSpinner = ({ size, topColor, backColor, loading }) => {
     const countBalls = 3;
     return (
-        <Wrapper size={size}>
-            {getBalls(countBalls, topColor, backColor, size)}
-        </Wrapper>
+        loading && (
+            <Wrapper size={size}>
+                {getBalls({ countBalls, topColor, backColor, size })}
+            </Wrapper>
+        )
     );
 };
 
@@ -73,12 +75,14 @@ const Ball = styled.div`
 `;
 
 ImpulseSpinner.defaultProps = {
+    loading: true,
     size: 40,
     topColor: "#00ff89",
     backColor: "#686769",
 };
 
 ImpulseSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     topColor: PropTypes.string,
     backColor: PropTypes.string,

@@ -21,11 +21,13 @@ const motion = props => keyframes`
     }
 `;
 
-export const BallSpinner = ({ size, color }) => {
+export const BallSpinner = ({ size, color, loading }) => {
     return (
-        <Wrapper size={size}>
-            <Ball color={color} size={size} />{" "}
-        </Wrapper>
+        loading && (
+            <Wrapper size={size}>
+                <Ball color={color} size={size} />
+            </Wrapper>
+        )
     );
 };
 
@@ -47,11 +49,13 @@ const Ball = styled.div`
 `;
 
 BallSpinner.defaultProps = {
+    loading: true,
     size: 40,
     color: "#00ff89",
 };
 
 BallSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
 };

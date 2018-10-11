@@ -1,11 +1,11 @@
 {
     "name": "react-spinners-kit",
-    "version": "0.0.1",
-    "description": "",
-    "main": "index.js",
+    "version": "1.0.0",
+    "description": "A collection of loading spinners",
+    "main": "./lib/index.js",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/dmitrymorozoff/react-spinners-kit.git"
     },
     "keywords": [
         "react",
@@ -18,11 +18,14 @@
     "scripts": {
         "start": "parcel examples/index.html",
         "build": "npm run clean && webpack --mode=production",
-        "clean": "rimraf build/*",
+        "clean": "rimraf lib",
         "prettier": "prettier --config .prettierrc.json --write src/**/*.js",
         "test:watch": "jest --watch",
         "test": "jest",
-        "lint": "./node_modules/.bin/eslint --ext .js --ext .jsx ./src"
+        "lint": "./node_modules/.bin/eslint --ext .js --ext .jsx ./src",
+        "patch": "npm version patch && npm publish && npm run clean",
+        "minor": "npm version minor && npm publish && npm run clean",
+        "major": "npm version major && npm publish && npm run clean"
     },
     "pre-commit": [
         "lint"
@@ -37,6 +40,7 @@
     },
     "author": "Morozov Dmitry  <dimemorozovy@yandex.ru>",
     "license": "MIT",
+    "homepage": "https://github.com/dmitrymorozoff/react-spinners-kit",
     "devDependencies": {
         "babel-core": "^6.26.3",
         "babel-jest": "^23.6.0",

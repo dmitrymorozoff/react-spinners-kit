@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
-const rotate = props => keyframes`
+const rotate = keyframes`
     0% {
         transform: rotateX(0deg);
     }
@@ -20,7 +20,7 @@ const rotate = props => keyframes`
     }
 `;
 
-const getCubes = (countCubesInLine, backColor, frontColor, size) => {
+const getCubes = ({ countCubesInLine, backColor, frontColor, size }) => {
     const cubes = [];
     let keyValue = 0;
     for (let i = 0; i < countCubesInLine; i++) {
@@ -39,12 +39,14 @@ const getCubes = (countCubesInLine, backColor, frontColor, size) => {
     return cubes;
 };
 
-export const SpiralSpinner = ({ size, backColor, frontColor }) => {
+export const SpiralSpinner = ({ size, backColor, frontColor, loading }) => {
     const countCubesInLine = 4;
     return (
-        <Wrapper size={size}>
-            {getCubes(countCubesInLine, backColor, frontColor, size)}
-        </Wrapper>
+        loading && (
+            <Wrapper size={size}>
+                {getCubes({ countCubesInLine, backColor, frontColor, size })}
+            </Wrapper>
+        )
     );
 };
 
@@ -98,12 +100,14 @@ const Side = styled.div`
 `;
 
 SpiralSpinner.defaultProps = {
+    loading: true,
     size: 40,
     frontColor: "#00ff89",
     backColor: "#686769",
 };
 
 SpiralSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     frontColor: PropTypes.string,
     backColor: PropTypes.string,

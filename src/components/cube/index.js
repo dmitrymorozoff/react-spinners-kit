@@ -2,26 +2,27 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
-const rotate = props => keyframes`
+const rotate = keyframes`
     from { transform: rotateX(0) rotateY(0); }
     to   { transform: rotateX(360deg) rotateY(360deg); }
 `;
 
-export const CubeSpinner = ({ size, backColor, frontColor }) => {
-    const countCubesInLine = 1;
+export const CubeSpinner = ({ size, backColor, frontColor, loading }) => {
     return (
-        <Wrapper size={size}>
-            <CubeWrapper x={0} y={0}>
-                <Cube size={size}>
-                    <Side front={true} size={size} color={frontColor} />
-                    <Side back={true} size={size} color={frontColor} />
-                    <Side bottom={true} size={size} color={backColor} />
-                    <Side top={true} size={size} color={backColor} />
-                    <Side left={true} size={size} color={backColor} />
-                    <Side right={true} size={size} color={backColor} />
-                </Cube>
-            </CubeWrapper>
-        </Wrapper>
+        loading && (
+            <Wrapper size={size}>
+                <CubeWrapper x={0} y={0}>
+                    <Cube size={size}>
+                        <Side front={true} size={size} color={frontColor} />
+                        <Side back={true} size={size} color={frontColor} />
+                        <Side bottom={true} size={size} color={backColor} />
+                        <Side top={true} size={size} color={backColor} />
+                        <Side left={true} size={size} color={backColor} />
+                        <Side right={true} size={size} color={backColor} />
+                    </Cube>
+                </CubeWrapper>
+            </Wrapper>
+        )
     );
 };
 
@@ -87,12 +88,14 @@ const Side = styled.div`
 `;
 
 CubeSpinner.defaultProps = {
+    loading: true,
     size: 25,
     frontColor: "#00ff89",
     backColor: "#686769",
 };
 
 CubeSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     frontColor: PropTypes.string,
     backColor: PropTypes.string,

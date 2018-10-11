@@ -37,7 +37,7 @@ const motion = props => keyframes`
     }
 `;
 
-const getBalls = (countBalls, color, size) => {
+const getBalls = ({ countBalls, color, size }) => {
     const balls = [];
     for (let i = 0; i < countBalls; i++) {
         balls.push(
@@ -54,9 +54,15 @@ const getBalls = (countBalls, color, size) => {
     return balls;
 };
 
-export const SwapSpinner = ({ size, color }) => {
+export const SwapSpinner = ({ size, color, loading }) => {
     const countBalls = 3;
-    return <Wrapper size={size}>{getBalls(countBalls, color, size)}</Wrapper>;
+    return (
+        loading && (
+            <Wrapper size={size}>
+                {getBalls({ countBalls, color, size })}
+            </Wrapper>
+        )
+    );
 };
 
 const Wrapper = styled.div`
@@ -84,11 +90,13 @@ const Ball = styled.div`
 `;
 
 SwapSpinner.defaultProps = {
+    loading: true,
     size: 40,
     color: "#686769",
 };
 
 SwapSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
 };

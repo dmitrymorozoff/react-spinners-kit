@@ -17,7 +17,7 @@ const rotate = props => keyframes`
     }
 `;
 
-const getCubes = (countCubesInLine, leftColor, frontColor, size) => {
+const getCubes = ({ countCubesInLine, leftColor, frontColor, size }) => {
     const cubes = [];
     let keyValue = 0;
     for (let i = 0; i < countCubesInLine; i++) {
@@ -38,12 +38,14 @@ const getCubes = (countCubesInLine, leftColor, frontColor, size) => {
     return cubes;
 };
 
-export const SequenceSpinner = ({ size, leftColor, frontColor }) => {
+export const SequenceSpinner = ({ size, leftColor, frontColor, loading }) => {
     const countCubesInLine = 5;
     return (
-        <Wrapper size={size}>
-            {getCubes(countCubesInLine, leftColor, frontColor, size)}
-        </Wrapper>
+        loading && (
+            <Wrapper size={size}>
+                {getCubes({ countCubesInLine, leftColor, frontColor, size })}
+            </Wrapper>
+        )
     );
 };
 
@@ -88,12 +90,14 @@ const Side = styled.div`
 `;
 
 SequenceSpinner.defaultProps = {
+    loading: true,
     size: 40,
     frontColor: "#686769",
     leftColor: "#00ff89",
 };
 
 SequenceSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     frontColor: PropTypes.string,
     leftColor: PropTypes.string,

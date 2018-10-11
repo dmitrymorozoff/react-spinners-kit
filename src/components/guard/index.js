@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
-const rotate = props => keyframes`
+const rotate = keyframes`
     0% {
         transform: rotateY(90deg);
     }
@@ -14,7 +14,7 @@ const rotate = props => keyframes`
     }
 `;
 
-const getCubes = (countCubesInLine, leftColor, frontColor, size) => {
+const getCubes = ({ countCubesInLine, leftColor, frontColor, size }) => {
     const cubes = [];
     let keyValue = 0;
     for (let i = 0; i < countCubesInLine; i++) {
@@ -38,12 +38,14 @@ const getCubes = (countCubesInLine, leftColor, frontColor, size) => {
     return cubes;
 };
 
-export const GuardSpinner = ({ size, leftColor, frontColor }) => {
+export const GuardSpinner = ({ size, leftColor, frontColor, loading }) => {
     const countCubesInLine = 3;
     return (
-        <Wrapper size={size}>
-            {getCubes(countCubesInLine, leftColor, frontColor, size)}
-        </Wrapper>
+        loading && (
+            <Wrapper size={size}>
+                {getCubes({ countCubesInLine, leftColor, frontColor, size })}
+            </Wrapper>
+        )
     );
 };
 
@@ -85,12 +87,14 @@ const Side = styled.div`
 `;
 
 GuardSpinner.defaultProps = {
+    loading: true,
     size: 40,
     frontColor: "#00ff89",
     leftColor: "#686769",
 };
 
 GuardSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     frontColor: PropTypes.string,
     leftColor: PropTypes.string,

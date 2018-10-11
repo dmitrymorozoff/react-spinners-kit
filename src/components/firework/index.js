@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
-const fire = props => keyframes`
+const fire = keyframes`
     0% {
         opacity: 1;
         transform: scale(0.1);
     }
-    25%{
+    25% {
         opacity: 0.85;
     }
     100% {
@@ -16,8 +16,8 @@ const fire = props => keyframes`
     }
 `;
 
-export const FireworkSpinner = ({ size, color }) => {
-    return <Wrapper size={size} color={color} />;
+export const FireworkSpinner = ({ size, color, loading }) => {
+    return loading && <Wrapper size={size} color={color} />;
 };
 
 const Wrapper = styled.div`
@@ -32,11 +32,13 @@ const Wrapper = styled.div`
 `;
 
 FireworkSpinner.defaultProps = {
+    loading: true,
     size: 40,
     color: "#fff",
 };
 
 FireworkSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
 };

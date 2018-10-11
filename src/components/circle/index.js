@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
-const rotate = props => keyframes`
+const rotate = keyframes`
     0% {
         transform: rotate(0);
     }
@@ -11,8 +11,8 @@ const rotate = props => keyframes`
     }
 `;
 
-export const CircleSpinner = ({ size, color }) => {
-    return <Wrapper size={size} color={color} />;
+export const CircleSpinner = ({ size, color, loading }) => {
+    return loading && <Wrapper size={size} color={color} />;
 };
 
 const Wrapper = styled.div`
@@ -28,11 +28,13 @@ const Wrapper = styled.div`
 `;
 
 CircleSpinner.defaultProps = {
+    loading: true,
     size: 30,
     color: "#fff",
 };
 
 CircleSpinner.propTypes = {
+    loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
 };
