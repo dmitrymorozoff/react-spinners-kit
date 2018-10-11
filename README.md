@@ -4,7 +4,7 @@ A collection of loading spinners built with [styled-components](https://styled-c
 
 ## Examples
 
--   To check out live examples visit https://github.com/dmitrymorozoff/react-spinners-kit
+-   To check out live examples visit https://dmitrymorozoff.github.io/react-spinners-kit/
 
 ## Installation
 
