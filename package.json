@@ -1,6 +1,6 @@
 {
     "name": "react-spinners-kit",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "description": "A collection of loading spinners",
     "main": "./lib/index.js",
     "repository": {
