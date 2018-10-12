@@ -2,6 +2,8 @@
 
 A collection of loading spinners built with [styled-components](https://styled-components.com).
 
+![Imgur](https://i.imgur.com/If8ekpm.gif)
+
 ## Demo
 
 -   To check out live examples visit https://dmitrymorozoff.github.io/react-spinners-kit/
