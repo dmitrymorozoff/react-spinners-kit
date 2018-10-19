@@ -27,7 +27,7 @@ import {
 
 class App extends React.Component {
     render() {
-        const codeString = `npm install --save react-circle-slider`;
+        const codeString = `npm install --save react-spinners-kit`;
         return (
             <div>
                 <div className="title">react-spinners-kit</div>
