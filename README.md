@@ -1,18 +1,16 @@
-## react-spinners-kit
+# react-spinners-kit
 
 A collection of loading spinners built with [styled-components](https://styled-components.com).
 
-![Imgur](https://i.imgur.com/If8ekpm.gif)
+![Imgur](https://i.imgur.com/T4g6UZw.gif)
 
-## Demo
+## Live Demo
 
 -   To check out live examples visit https://dmitrymorozoff.github.io/react-spinners-kit/
 
 ## Installation
 
-```bash
-$ npm install --save react-spinners-kit
-```
+### `$ npm install --save react-spinners-kit`
 
 You can also test the components locally by cloning this repo and doing the following steps:
 
@@ -20,21 +18,16 @@ You can also test the components locally by cloning this repo and doing the foll
 
 Install dependencies from package.json:
 
-```bash
-$ npm install
-```
+### `npm install`
 
-Start local development server `localhost:1234`:
+Runs the app in the development mode.<br>
+Open [http://localhost:1234](http://localhost:1234) to view it in the browser.
 
-```bash
-$ npm start
-```
+### `npm start`
 
 Run linter
 
-```bash
-$ npm run lint
-```
+### `npm run lint`
 
 ## Usage
 
@@ -95,6 +88,11 @@ ReactDOM.render(<App />, document.getElementById("root"));
 | SwapSpinner     | 40   | #686769 | -          | -         | -         | -        |
 | WaveSpinner     | 30   | #fff    | -          | -         | -         | -        |
 
+## Contributing
+
+- Pull requests and ⭐ stars are always welcome
+- For bugs and feature requests, please create an issue
+- Lint and test your code
 
 ## License
 

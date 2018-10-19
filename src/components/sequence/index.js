@@ -92,7 +92,7 @@ const Side = styled.div`
 SequenceSpinner.defaultProps = {
     loading: true,
     size: 40,
-    frontColor: "#686769",
+    frontColor: "#4b4c56",
     leftColor: "#00ff89",
 };
 

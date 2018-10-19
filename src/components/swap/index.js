@@ -92,7 +92,7 @@ const Ball = styled.div`
 SwapSpinner.defaultProps = {
     loading: true,
     size: 40,
-    color: "#686769",
+    color: "#4b4c56",
 };
 
 SwapSpinner.propTypes = {

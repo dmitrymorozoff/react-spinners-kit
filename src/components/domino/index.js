@@ -116,7 +116,7 @@ const Bar = styled.div`
 DominoSpinner.defaultProps = {
     loading: true,
     size: 100,
-    color: "#686769",
+    color: "#4b4c56",
 };
 
 DominoSpinner.propTypes = {

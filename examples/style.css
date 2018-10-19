@@ -8,7 +8,7 @@
 }
 
 .container {
-    width: 700px;
+    width: 1035px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -16,11 +16,25 @@
 }
 
 .loader-item {
-    width: 17%;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2f2f2f;
+    background-color: #26282f;
+}
+
+.title {
+    width: 40%;
+    margin: 0 auto;
+    color: #abb1bf;
+    font-size: 35px;
+    font-family: monospace;
+}
+
+.code {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 1rem;
 }

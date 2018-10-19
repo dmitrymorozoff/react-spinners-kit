@@ -90,7 +90,7 @@ GuardSpinner.defaultProps = {
     loading: true,
     size: 40,
     frontColor: "#00ff89",
-    leftColor: "#686769",
+    leftColor: "#373846",
 };
 
 GuardSpinner.propTypes = {

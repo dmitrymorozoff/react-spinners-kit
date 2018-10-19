@@ -67,7 +67,7 @@ const Plane = styled.div`
 FillSpinner.defaultProps = {
     loading: true,
     size: 20,
-    color: "#686769",
+    color: "#4b4c56",
 };
 
 FillSpinner.propTypes = {
