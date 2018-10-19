@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SyntaxHighlighter from "react-syntax-highlighter/prism";
+import { atomOneDark } from "react-syntax-highlighter/styles/hljs";
 import {
     SwapSpinner,
     BarsSpinner,
@@ -25,8 +27,10 @@ import {
 
 class App extends React.Component {
     render() {
+        const codeString = `npm install --save react-circle-slider`;
         return (
             <div>
+                <div className="title">react-spinners-kit</div>
                 <div className="container">
                     <div className="loader-item">
                         <BallSpinner />
@@ -88,6 +92,11 @@ class App extends React.Component {
                     <div className="loader-item">
                         <DominoSpinner />
                     </div>
+                </div>
+                <div className="code">
+                    <SyntaxHighlighter language="bash" style={atomOneDark}>
+                        {codeString}
+                    </SyntaxHighlighter>
                 </div>
             </div>
         );

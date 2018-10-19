@@ -91,7 +91,7 @@ CubeSpinner.defaultProps = {
     loading: true,
     size: 25,
     frontColor: "#00ff89",
-    backColor: "#686769",
+    backColor: "#4b4c56",
 };
 
 CubeSpinner.propTypes = {

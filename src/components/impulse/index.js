@@ -78,7 +78,7 @@ ImpulseSpinner.defaultProps = {
     loading: true,
     size: 40,
     topColor: "#00ff89",
-    backColor: "#686769",
+    backColor: "#4b4c56",
 };
 
 ImpulseSpinner.propTypes = {

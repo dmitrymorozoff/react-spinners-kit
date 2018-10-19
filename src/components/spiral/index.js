@@ -103,7 +103,7 @@ SpiralSpinner.defaultProps = {
     loading: true,
     size: 40,
     frontColor: "#00ff89",
-    backColor: "#686769",
+    backColor: "#4b4c56",
 };
 
 SpiralSpinner.propTypes = {
