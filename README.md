@@ -10,7 +10,9 @@ A collection of loading spinners built with [styled-components](https://styled-c
 
 ## Installation
 
-### `$ npm install --save react-spinners-kit`
+Install `react-spinners-kit` using npm.
+
+### `npm install --save react-spinners-kit`
 
 You can also test the components locally by cloning this repo and doing the following steps:
 
