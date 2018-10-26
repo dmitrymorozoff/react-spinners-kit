@@ -23,6 +23,7 @@ import {
     FillSpinner,
     SphereSpinner,
     FlagSpinner,
+    ClapSpinner,
 } from "../src";
 
 class App extends React.Component {
@@ -62,6 +63,17 @@ class App extends React.Component {
                                 style={atomOneDark}
                             >
                                 {`<GridSpinner />`}
+                            </SyntaxHighlighter>
+                        </div>
+                    </div>
+                    <div className="loader-item">
+                        <ClapSpinner />
+                        <div className="subcode">
+                            <SyntaxHighlighter
+                                language="jsx"
+                                style={atomOneDark}
+                            >
+                                {`<ClapSpinner />`}
                             </SyntaxHighlighter>
                         </div>
                     </div>
