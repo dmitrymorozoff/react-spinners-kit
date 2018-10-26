@@ -89,6 +89,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 | StageSpinner    | 40   | #fff    | -          | -         | -         | -        |
 | SwapSpinner     | 40   | #686769 | -          | -         | -         | -        |
 | WaveSpinner     | 30   | #fff    | -          | -         | -         | -        |
+| ClapSpinner     | 30   | -       | -          | #686769   | -         | #00ff89  |
 
 ## Contributing
 
