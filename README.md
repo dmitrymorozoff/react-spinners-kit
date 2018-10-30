@@ -90,6 +90,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 | SwapSpinner     | 40   | #686769 | -          | -         | -         | -        |
 | WaveSpinner     | 30   | #fff    | -          | -         | -         | -        |
 | ClapSpinner     | 30   | -       | -          | #686769   | -         | #00ff89  |
+| RotateSpinner   | 45   | #00ff89 | -          | -         | -         | -        |
 
 ## Contributing
 
