@@ -18,7 +18,7 @@ You can also test the components locally by cloning this repo and doing the foll
 
 ## NPM-scripts
 
-Install dependencies from package.json:
+Install dependencies from `package.json`:
 
 ### `npm install`
 
