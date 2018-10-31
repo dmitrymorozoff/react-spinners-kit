@@ -25,11 +25,55 @@ import {
     FlagSpinner,
     ClapSpinner,
     RotateSpinner,
+    SwishSpinner,
+    GooSpinner,
+    CombSpinner,
 } from "../src";
+
+const SpinnerWrapper = ({ children }) => {
+    const loaderName = children.type.name;
+    return (
+        <div className="loader-item">
+            {children}
+            <div className="subcode">
+                <SyntaxHighlighter language="jsx" style={atomOneDark}>
+                    {`<${loaderName} />`}
+                </SyntaxHighlighter>
+            </div>
+        </div>
+    );
+};
 
 class App extends React.Component {
     render() {
         const codeString = `npm install --save react-spinners-kit`;
+        const spinners = [
+            BallSpinner,
+            SwapSpinner,
+            BarsSpinner,
+            ClapSpinner,
+            GridSpinner,
+            WaveSpinner,
+            PushSpinner,
+            FireworkSpinner,
+            StageSpinner,
+            HeartSpinner,
+            GuardSpinner,
+            CircleSpinner,
+            RotateSpinner,
+            SpiralSpinner,
+            PulseSpinner,
+            SwishSpinner,
+            SequenceSpinner,
+            ImpulseSpinner,
+            CubeSpinner,
+            FlagSpinner,
+            FillSpinner,
+            SphereSpinner,
+            DominoSpinner,
+            GooSpinner,
+            CombSpinner,
+        ].sort(() => Math.random() - 0.5);
         return (
             <div className="outer">
                 <div className="header">
@@ -45,249 +89,13 @@ class App extends React.Component {
                     </SyntaxHighlighter>
                 </div>
                 <div className="container">
-                    <div className="loader-item">
-                        <BallSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<BallSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <GridSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<GridSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-
-                    <div className="loader-item">
-                        <ClapSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<ClapSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <SwapSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<SwapSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <GuardSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<GuardSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <WaveSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<WaveSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <CircleSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<CircleSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <PushSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<PushSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <RotateSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<RotateSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <HeartSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<HeartSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <SpiralSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<SpiralSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <StageSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<StageSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <SequenceSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<SequenceSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <ImpulseSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<ImpulseSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <FireworkSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<FireworkSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <PulseSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<PulseSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <CubeSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<CubeSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <FlagSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<FlagSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <SphereSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<SphereSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <FillSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<FillSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <BarsSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<BarsSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
-                    <div className="loader-item">
-                        <DominoSpinner />
-                        <div className="subcode">
-                            <SyntaxHighlighter
-                                language="jsx"
-                                style={atomOneDark}
-                            >
-                                {`<DominoSpinner />`}
-                            </SyntaxHighlighter>
-                        </div>
-                    </div>
+                    {spinners.map((Spinner, index) => {
+                        return (
+                            <SpinnerWrapper key={index.toString()}>
+                                {<Spinner />}
+                            </SpinnerWrapper>
+                        );
+                    })}
                 </div>
             </div>
         );

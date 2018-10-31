@@ -20,6 +20,9 @@ import { SphereSpinner } from "./components/sphere";
 import { FlagSpinner } from "./components/flag";
 import { ClapSpinner } from "./components/clap";
 import { RotateSpinner } from "./components/rotate";
+import { SwishSpinner } from "./components/swish";
+import { GooSpinner } from "./components/goo";
+import { CombSpinner } from "./components/comb";
 
 export {
     BallSpinner,
@@ -44,4 +47,7 @@ export {
     FlagSpinner,
     ClapSpinner,
     RotateSpinner,
+    SwishSpinner,
+    GooSpinner,
+    CombSpinner,
 };
