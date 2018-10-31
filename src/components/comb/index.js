@@ -1,0 +1,65 @@
+import React from "react";
+import PropTypes from "prop-types";
+import styled, { keyframes } from "styled-components";
+
+const rotate = () => keyframes`
+    to {
+        transform: rotate(450deg);
+    }
+`;
+
+const getBars = ({ countBars, color, size }) => {
+    const bars = [];
+    for (let i = 0; i < countBars; i++) {
+        bars.push(
+            <Bar color={color} size={size} key={i.toString()} index={i} />,
+        );
+    }
+    return bars;
+};
+
+export const CombSpinner = ({ size, color, loading }) => {
+    const countBars = size / 9;
+    return (
+        loading && (
+            <Wrapper size={size}>
+                {getBars({
+                    countBars,
+                    color,
+                    size,
+                })}
+            </Wrapper>
+        )
+    );
+};
+
+const Wrapper = styled.div`
+    position: relative;
+    width: ${props => props.size}px;
+    height: ${props => props.size / 5}px;
+`;
+
+const Bar = styled.div`
+    position: absolute;
+    left: 0;
+    width: ${props => props.size / 60}px;
+    height: ${props => props.size / 5}px;
+    left: ${props => props.index * 9}px;
+    transform-origin: center bottom;
+    transform: rotate(-90deg);
+    background-color: ${props => props.color};
+    animation: ${rotate} 3s ease infinite;
+    animation-delay: ${props => props.index * 0.05}s;
+`;
+
+CombSpinner.defaultProps = {
+    loading: true,
+    size: 100,
+    color: "#fff",
+};
+
+CombSpinner.propTypes = {
+    loading: PropTypes.bool,
+    size: PropTypes.number,
+    color: PropTypes.string,
+};
