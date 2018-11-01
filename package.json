@@ -1,6 +1,6 @@
 {
     "name": "react-spinners-kit",
-    "version": "1.3.1",
+    "version": "1.4.0",
     "description": "A collection of loading spinners",
     "main": "./lib/index.js",
     "repository": {
@@ -18,7 +18,7 @@
     "scripts": {
         "start": "parcel examples/index.html",
         "build": "npm run lint && npm run clean && webpack --mode=production && parcel build --no-cache --public-url ./ examples/index.html",
-        "clean": "rimraf lib",
+        "clean": "rimraf lib rimraf dist",
         "prettier": "prettier --config .prettierrc.json --write src/**/*.js",
         "test:watch": "jest --watch",
         "test": "jest",

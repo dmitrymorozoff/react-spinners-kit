@@ -94,6 +94,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 | SwishSpinner    | 40   | -       | -          | -         | -         | -        | #4b4c56    | #fff        |
 | GooSpinner      | 55   | #fff    | -          | -         | -         | -        | -          | -           |
 | CombSpinner     | 100  | #fff    | -          | -         | -         | -        | -          | -           |
+| PongSpinner     | 60   | #4b4c56 | -          | -         | -         | -        | -          | -           |
 
 ## Contributing
 

@@ -28,16 +28,16 @@ import {
     SwishSpinner,
     GooSpinner,
     CombSpinner,
+    PongSpinner,
 } from "../src";
 
-const SpinnerWrapper = ({ children }) => {
-    const loaderName = children.type.name;
+const SpinnerWrapper = ({ children, name }) => {
     return (
         <div className="loader-item">
             {children}
             <div className="subcode">
                 <SyntaxHighlighter language="jsx" style={atomOneDark}>
-                    {`<${loaderName} />`}
+                    {`<${name} />`}
                 </SyntaxHighlighter>
             </div>
         </div>
@@ -47,33 +47,7 @@ const SpinnerWrapper = ({ children }) => {
 class App extends React.Component {
     render() {
         const codeString = `npm install --save react-spinners-kit`;
-        const spinners = [
-            BallSpinner,
-            SwapSpinner,
-            BarsSpinner,
-            ClapSpinner,
-            GridSpinner,
-            WaveSpinner,
-            PushSpinner,
-            FireworkSpinner,
-            StageSpinner,
-            HeartSpinner,
-            GuardSpinner,
-            CircleSpinner,
-            RotateSpinner,
-            SpiralSpinner,
-            PulseSpinner,
-            SwishSpinner,
-            SequenceSpinner,
-            ImpulseSpinner,
-            CubeSpinner,
-            FlagSpinner,
-            FillSpinner,
-            SphereSpinner,
-            DominoSpinner,
-            GooSpinner,
-            CombSpinner,
-        ].sort(() => Math.random() - 0.5);
+        const spinners = [CombSpinner].sort(() => Math.random() - 0.5);
         return (
             <div className="outer">
                 <div className="header">
@@ -89,13 +63,84 @@ class App extends React.Component {
                     </SyntaxHighlighter>
                 </div>
                 <div className="container">
-                    {spinners.map((Spinner, index) => {
-                        return (
-                            <SpinnerWrapper key={index.toString()}>
-                                {<Spinner />}
-                            </SpinnerWrapper>
-                        );
-                    })}
+                    <SpinnerWrapper name="BallSpinner">
+                        <BallSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="SwapSpinner">
+                        <SwapSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="BarsSpinner">
+                        <BarsSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="ClapSpinner">
+                        <ClapSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="GridSpinner">
+                        <GridSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="WaveSpinner">
+                        <WaveSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="PushSpinner">
+                        <PushSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="FireworkSpinner">
+                        <FireworkSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="StageSpinner">
+                        <StageSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="HeartSpinner">
+                        <HeartSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="GuardSpinner">
+                        <GuardSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="CircleSpinner">
+                        <CircleSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="RotateSpinner">
+                        <RotateSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="SpiralSpinner">
+                        <SpiralSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="PulseSpinner">
+                        <PulseSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="SwishSpinner">
+                        <SwishSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="SequenceSpinner">
+                        <SequenceSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="ImpulseSpinner">
+                        <ImpulseSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="CubeSpinner">
+                        <CubeSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="FlagSpinner">
+                        <FlagSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="FillSpinner">
+                        <FillSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="SphereSpinner">
+                        <SphereSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="DominoSpinner">
+                        <DominoSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="GooSpinner">
+                        <GooSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="CombSpinner">
+                        <CombSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="PongSpinner">
+                        <PongSpinner />
+                    </SpinnerWrapper>
                 </div>
             </div>
         );
