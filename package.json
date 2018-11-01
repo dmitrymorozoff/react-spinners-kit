@@ -18,7 +18,7 @@
     "scripts": {
         "start": "parcel examples/index.html",
         "build": "npm run lint && npm run clean && webpack --mode=production && parcel build --no-cache --public-url ./ examples/index.html",
-        "clean": "rimraf lib rimraf dist",
+        "clean": "rimraf lib",
         "prettier": "prettier --config .prettierrc.json --write src/**/*.js",
         "test:watch": "jest --watch",
         "test": "jest",
