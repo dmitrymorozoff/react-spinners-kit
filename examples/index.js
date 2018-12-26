@@ -29,6 +29,8 @@ import {
     GooSpinner,
     CombSpinner,
     PongSpinner,
+    RainbowSpinner,
+    RingSpinner,
 } from "../src";
 
 const SpinnerWrapper = ({ children, name }) => {
@@ -57,11 +59,13 @@ class App extends React.Component {
                         styled-components.
                     </div>
                 </div>
-                <div className="code">
-                    <SyntaxHighlighter language="bash" style={atomOneDark}>
-                        {codeString}
-                    </SyntaxHighlighter>
-                </div>
+                <a
+                    href="https://github.com/dmitrymorozoff/react-spinners-kit"
+                    className="button"
+                    target="_blank"
+                >
+                    github
+                </a>
                 <div className="container">
                     <SpinnerWrapper name="BallSpinner">
                         <BallSpinner />
@@ -90,6 +94,9 @@ class App extends React.Component {
                     <SpinnerWrapper name="StageSpinner">
                         <StageSpinner />
                     </SpinnerWrapper>
+                    <SpinnerWrapper name="RingSpinner">
+                        <RingSpinner />
+                    </SpinnerWrapper>
                     <SpinnerWrapper name="HeartSpinner">
                         <HeartSpinner />
                     </SpinnerWrapper>
@@ -114,6 +121,7 @@ class App extends React.Component {
                     <SpinnerWrapper name="SequenceSpinner">
                         <SequenceSpinner />
                     </SpinnerWrapper>
+
                     <SpinnerWrapper name="ImpulseSpinner">
                         <ImpulseSpinner />
                     </SpinnerWrapper>
@@ -140,6 +148,9 @@ class App extends React.Component {
                     </SpinnerWrapper>
                     <SpinnerWrapper name="PongSpinner">
                         <PongSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="RainbowSpinner">
+                        <RainbowSpinner />
                     </SpinnerWrapper>
                 </div>
             </div>

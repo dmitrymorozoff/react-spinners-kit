@@ -24,6 +24,8 @@ import { SwishSpinner } from "./components/swish";
 import { GooSpinner } from "./components/goo";
 import { CombSpinner } from "./components/comb";
 import { PongSpinner } from "./components/pong";
+import { RainbowSpinner } from "./components/rainbow";
+import { RingSpinner } from "./components/ring";
 
 export {
     BallSpinner,
@@ -52,4 +54,6 @@ export {
     GooSpinner,
     CombSpinner,
     PongSpinner,
+    RainbowSpinner,
+    RingSpinner,
 };

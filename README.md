@@ -2,7 +2,7 @@
 
 A collection of loading spinners built with [styled-components](https://styled-components.com).
 
-![Imgur](https://i.imgur.com/T4g6UZw.gif)
+![Imgur](https://i.imgur.com/CT84xm3.gif)
 
 ## Live Demo
 
@@ -95,6 +95,8 @@ ReactDOM.render(<App />, document.getElementById("root"));
 | GooSpinner      | 55   | #fff    | -          | -         | -         | -        | -          | -           |
 | CombSpinner     | 100  | #fff    | -          | -         | -         | -        | -          | -           |
 | PongSpinner     | 60   | #4b4c56 | -          | -         | -         | -        | -          | -           |
+| RainbowSpinner  | 50   | #fff    | -          | -         | -         | -        | -          | -           |
+| RingSpinner     | 30   | #00ff89 | -          | -         | -         | -        | -          | -           |
 
 ## Contributing
 
