@@ -8,8 +8,7 @@
 }
 
 .container {
-    width: 60%;
-    max-width: 1200px;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -26,10 +25,8 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    height: 200px;
-    background-color: #26282f;
-    color: rgb(171, 178, 191);
-    border-bottom: 1px solid #313238;
+    height: 300px;
+    background-color: transparent;
 }
 
 .header-title {
@@ -38,14 +35,16 @@
     letter-spacing: 1rem;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .header-subtitle {
-    color: #fff;
-    font-size: 16px;
+    color: #7a7880;
+    font-size: 36px;
     text-align: center;
-    opacity: 0.6;
+    width: 30%;
+    font-weight: 200;
+    line-height: 1.6;
 }
 
 .loader-item {
@@ -94,6 +93,28 @@
 
 .outer {
     width: 100%;
+}
+
+a.button {
+    margin: 0 auto 70px auto;
+    width: 155px;
+    border-radius: 50px;
+    height: 45px;
+    color: #fff;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(to left, #414245 0, #24272d);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+}
+
+.button:hover {
+    opacity: 0.8;
 }
 
 @keyframes scale {
