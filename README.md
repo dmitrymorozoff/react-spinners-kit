@@ -2,7 +2,7 @@
 
 A collection of loading spinners built with [styled-components](https://styled-components.com).
 
-![Imgur](https://i.imgur.com/CT84xm3.gif)
+![Imgur](https://i.imgur.com/KmSDEnL.png)
 
 ## Live Demo
 
