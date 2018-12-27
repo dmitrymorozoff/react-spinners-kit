@@ -2,7 +2,7 @@
 
 A collection of loading spinners built with [styled-components](https://styled-components.com).
 
-![Imgur](https://i.imgur.com/KmSDEnL.png)
+![Imgur](https://i.imgur.com/u71LDTs.gif)
 
 ## Live Demo
 
@@ -14,22 +14,9 @@ Install `react-spinners-kit` using npm.
 
 ### `npm install --save react-spinners-kit`
 
-You can also test the components locally by cloning this repo and doing the following steps:
+or if you prefer yarn
 
-## NPM-scripts
-
-Install dependencies from `package.json`:
-
-### `npm install`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:1234](http://localhost:1234) to view it in the browser.
-
-### `npm start`
-
-Run linter
-
-### `npm run lint`
+### `yarn add react-stacker`
 
 ## Usage
 
@@ -97,6 +84,23 @@ ReactDOM.render(<App />, document.getElementById("root"));
 | PongSpinner     | 60   | #4b4c56 | -          | -         | -         | -        | -          | -           |
 | RainbowSpinner  | 50   | #fff    | -          | -         | -         | -        | -          | -           |
 | RingSpinner     | 30   | #00ff89 | -          | -         | -         | -        | -          | -           |
+
+## Development
+
+You can also test the components locally by cloning this repo and doing the following steps:
+
+Install dependencies from `package.json`:
+
+### `npm install`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:1234](http://localhost:1234) to view it in the browser.
+
+### `npm start`
+
+Run linter
+
+### `npm run lint`
 
 ## Contributing
 
