@@ -16,7 +16,7 @@ Install `react-spinners-kit` using npm.
 
 or if you prefer yarn
 
-### `yarn add react-stacker`
+### `yarn add react-spinners-kit`
 
 ## Usage
 
