@@ -16,7 +16,7 @@ Install `react-spinners-kit` using npm.
 
 or if you prefer yarn
 
-### `yarn add react-stacker`
+### `yarn add react-spinners-kit`
 
 ## Usage
 
@@ -84,6 +84,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 | PongSpinner     | 60   | #4b4c56 | -          | -         | -         | -        | -          | -           |
 | RainbowSpinner  | 50   | #fff    | -          | -         | -         | -        | -          | -           |
 | RingSpinner     | 30   | #00ff89 | -          | -         | -         | -        | -          | -           |
+| HoopSpinner     | 45   | #4b4c56 | -          | -         | -         | -        | -          | -           |
 
 ## Development
 
