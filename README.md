@@ -84,6 +84,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 | PongSpinner     | 60   | #4b4c56 | -          | -         | -         | -        | -          | -           |
 | RainbowSpinner  | 50   | #fff    | -          | -         | -         | -        | -          | -           |
 | RingSpinner     | 30   | #00ff89 | -          | -         | -         | -        | -          | -           |
+| HoopSpinner     | 45   | #4b4c56 | -          | -         | -         | -        | -          | -           |
 
 ## Development
 
