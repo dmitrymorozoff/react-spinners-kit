@@ -32,6 +32,8 @@ import {
     RainbowSpinner,
     RingSpinner,
     HoopSpinner,
+    FlapperSpinner,
+    MagicSpinner,
 } from "../src";
 
 const SpinnerWrapper = ({ children, name }) => {
@@ -154,6 +156,12 @@ class App extends React.Component {
                     </SpinnerWrapper>
                     <SpinnerWrapper name="HoopSpinner">
                         <HoopSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="FlapperSpinner">
+                        <FlapperSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="MagicSpinner">
+                        <MagicSpinner />
                     </SpinnerWrapper>
                 </div>
             </div>
