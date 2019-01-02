@@ -130,6 +130,9 @@ class App extends React.Component {
                     <SpinnerWrapper name="CubeSpinner">
                         <CubeSpinner />
                     </SpinnerWrapper>
+                    <SpinnerWrapper name="MagicSpinner">
+                        <MagicSpinner />
+                    </SpinnerWrapper>
                     <SpinnerWrapper name="FlagSpinner">
                         <FlagSpinner />
                     </SpinnerWrapper>
@@ -159,9 +162,6 @@ class App extends React.Component {
                     </SpinnerWrapper>
                     <SpinnerWrapper name="FlapperSpinner">
                         <FlapperSpinner />
-                    </SpinnerWrapper>
-                    <SpinnerWrapper name="MagicSpinner">
-                        <MagicSpinner />
                     </SpinnerWrapper>
                 </div>
             </div>
