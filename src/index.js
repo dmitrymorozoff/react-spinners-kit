@@ -27,6 +27,8 @@ import { PongSpinner } from "./components/pong";
 import { RainbowSpinner } from "./components/rainbow";
 import { RingSpinner } from "./components/ring";
 import { HoopSpinner } from "./components/hoop";
+import { FlapperSpinner } from "./components/flapper";
+import { MagicSpinner } from "./components/magic";
 
 export {
     BallSpinner,
@@ -58,4 +60,6 @@ export {
     RainbowSpinner,
     RingSpinner,
     HoopSpinner,
+    FlapperSpinner,
+    MagicSpinner,
 };
