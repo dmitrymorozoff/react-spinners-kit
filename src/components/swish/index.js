@@ -5,19 +5,19 @@ import styled, { keyframes } from "styled-components";
 const motion = props => keyframes`
     50% {
         transform: scale(0);
-        background-color: ${props.secondColor};
+        background-color: ${props.backColor};
     }
 `;
 
-const getBalls = ({ countBallsInLine, firstColor, secondColor, size }) => {
+const getBalls = ({ countBallsInLine, frontColor, backColor, size }) => {
     const balls = [];
     let keyValue = 0;
     for (let i = 0; i < countBallsInLine; i++) {
         for (let j = 0; j < countBallsInLine; j++) {
             balls.push(
                 <Ball
-                    firstColor={firstColor}
-                    secondColor={secondColor}
+                    frontColor={frontColor}
+                    backColor={backColor}
                     size={size}
                     x={i * (size / 3 + size / 15)}
                     y={j * (size / 3 + size / 15)}
@@ -31,12 +31,12 @@ const getBalls = ({ countBallsInLine, firstColor, secondColor, size }) => {
     return balls;
 };
 
-export const SwishSpinner = ({ size, firstColor, secondColor, loading }) => {
+export const SwishSpinner = ({ size, frontColor, backColor, loading }) => {
     const countBallsInLine = 3;
     return (
         loading && (
             <Wrapper size={size}>
-                {getBalls({ countBallsInLine, firstColor, secondColor, size })}
+                {getBalls({ countBallsInLine, frontColor, backColor, size })}
             </Wrapper>
         )
     );
@@ -58,7 +58,7 @@ const Ball = styled.div`
     width: ${props => props.size / 5}px;
     height: ${props => props.size / 5}px;
     border-radius: 3px;
-    background-color: ${props => props.firstColor};
+    background-color: ${props => props.frontColor};
     animation: ${motion} 0.9s ease infinite;
     transition: all 0.3s ease;
     animation-delay: ${props => props.index * 0.1}s;
@@ -67,13 +67,13 @@ const Ball = styled.div`
 SwishSpinner.defaultProps = {
     loading: true,
     size: 40,
-    firstColor: "#4b4c56",
-    secondColor: "#fff",
+    frontColor: "#4b4c56",
+    backColor: "#fff",
 };
 
 SwishSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
-    firstColor: PropTypes.string,
-    secondColor: PropTypes.string,
+    frontColor: PropTypes.string,
+    backColor: PropTypes.string,
 };

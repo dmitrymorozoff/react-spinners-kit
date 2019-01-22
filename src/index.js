@@ -29,6 +29,8 @@ import { RingSpinner } from "./components/ring";
 import { HoopSpinner } from "./components/hoop";
 import { FlapperSpinner } from "./components/flapper";
 import { MagicSpinner } from "./components/magic";
+import { JellyfishSpinner } from "./components/jellyfish";
+import { TraceSpinner } from "./components/trace";
 
 export {
     BallSpinner,
@@ -62,4 +64,6 @@ export {
     HoopSpinner,
     FlapperSpinner,
     MagicSpinner,
+    JellyfishSpinner,
+    TraceSpinner,
 };
