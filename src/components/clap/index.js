@@ -35,7 +35,7 @@ const getBalls = ({
     countBalls,
     radius,
     angle,
-    topColor,
+    frontColor,
     backColor,
     size,
     ballSize,
@@ -47,7 +47,7 @@ const getBalls = ({
         const x = Math.cos(angle * i * (Math.PI / 180)) * radius - offset;
         balls.push(
             <Ball
-                topColor={topColor}
+                frontColor={frontColor}
                 backColor={backColor}
                 ballSize={ballSize}
                 size={size}
@@ -61,7 +61,7 @@ const getBalls = ({
     return balls;
 };
 
-export const ClapSpinner = ({ size, topColor, backColor, loading }) => {
+export const ClapSpinner = ({ size, frontColor, backColor, loading }) => {
     const radius = size / 2;
     const countBalls = 7;
     const ballSize = size / 5;
@@ -73,7 +73,7 @@ export const ClapSpinner = ({ size, topColor, backColor, loading }) => {
                     countBalls,
                     radius,
                     angle,
-                    topColor,
+                    frontColor,
                     backColor,
                     size,
                     ballSize,
@@ -100,7 +100,7 @@ const Ball = styled.div`
     width: ${props => props.ballSize}px;
     height: ${props => props.ballSize}px;
     border-radius: 50%;
-    background-color: ${props => props.topColor};
+    background-color: ${props => props.frontColor};
     transform: translateX(${props => props.x}px)
         translateY(${props => props.y}px);
     animation: ${props => move(props)} 2.5s cubic-bezier(0.075, 0.82, 0.165, 1)
@@ -111,13 +111,13 @@ const Ball = styled.div`
 ClapSpinner.defaultProps = {
     loading: true,
     size: 30,
-    topColor: "#00ff89",
+    frontColor: "#00ff89",
     backColor: "#4b4c56",
 };
 
 ClapSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
-    topColor: PropTypes.string,
+    frontColor: PropTypes.string,
     backColor: PropTypes.string,
 };

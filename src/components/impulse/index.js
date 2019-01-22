@@ -9,7 +9,7 @@ const impulse = props => keyframes`
         animation-timing-function: cubic-bezier(1,0,0.7,1);
     }
     40% {
-        background: ${props.topColor};
+        background: ${props.frontColor};
         transform: scale(1.5);
         animation-timing-function: cubic-bezier(0.3,0,0,1);
     }
@@ -24,12 +24,12 @@ const impulse = props => keyframes`
     }
 `;
 
-const getBalls = ({ countBalls, topColor, backColor, size }) => {
+const getBalls = ({ countBalls, frontColor, backColor, size }) => {
     const balls = [];
     for (let i = 0; i < countBalls; i++) {
         balls.push(
             <Ball
-                topColor={topColor}
+                frontColor={frontColor}
                 backColor={backColor}
                 size={size}
                 x={i * (size / 5 + size / 5)}
@@ -42,12 +42,12 @@ const getBalls = ({ countBalls, topColor, backColor, size }) => {
     return balls;
 };
 
-export const ImpulseSpinner = ({ size, topColor, backColor, loading }) => {
+export const ImpulseSpinner = ({ size, frontColor, backColor, loading }) => {
     const countBalls = 3;
     return (
         loading && (
             <Wrapper size={size}>
-                {getBalls({ countBalls, topColor, backColor, size })}
+                {getBalls({ countBalls, frontColor, backColor, size })}
             </Wrapper>
         )
     );
@@ -69,7 +69,7 @@ const Ball = styled.div`
     width: ${props => props.size / 5}px;
     height: ${props => props.size / 5}px;
     border-radius: 50%;
-    background-color: ${props => props.topColor};
+    background-color: ${props => props.frontColor};
     animation: ${impulse} 1.25s linear infinite;
     animation-delay: ${props => props.index * 0.125}s;
 `;
@@ -77,13 +77,13 @@ const Ball = styled.div`
 ImpulseSpinner.defaultProps = {
     loading: true,
     size: 40,
-    topColor: "#00ff89",
+    frontColor: "#00ff89",
     backColor: "#4b4c56",
 };
 
 ImpulseSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
-    topColor: PropTypes.string,
+    frontColor: PropTypes.string,
     backColor: PropTypes.string,
 };

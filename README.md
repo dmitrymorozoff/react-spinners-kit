@@ -54,39 +54,41 @@ ReactDOM.render(<App />, document.getElementById("root"));
 - The `loading` prop defaults to `true`.
 - The loader will not render anything if `loading` is `false`. 
 
-| Spinner         | Size | Color   | FrontColor | BackColor | LeftColor | TopColor | FirstColor | SecondColor |
-| --------------- | ---- | ------- | ---------- | --------- | --------- | -------- | ---------- | ----------- |
-| BallSpinner     | 40   | #00ff89 | -          | -         | -         | -        | -          | -           |
-| BarsSpinner     | 40   | #00ff89 | -          | -         | -         | -        | -          | -           |
-| CircleSpinner   | 30   | #fff    | -          | -         | -         | -        | -          | -           |
-| CubeSpinner     | 25   | -       | #00ff89    | #686769   | -         | -        | -          | -           |
-| DominoSpinner   | 100  | #686769 | -          | -         | -         | -        | -          | -           |
-| FillSpinner     | 20   | #686769 | -          | -         | -         | -        | -          | -           |
-| FireworkSpinner | 40   | #fff    | -          | -         | -         | -        | -          | -           |
-| FlagSpinner     | 40   | #fff    | -          | -         | -         | -        | -          | -           |
-| GridSpinner     | 40   | #fff    | -          | -         | -         | -        | -          | -           |
-| GuardSpinner    | 40   | -       | #00ff89    | -         | #686769   | -        | -          | -           |
-| HeartSpinner    | 40   | #fff    | -          | -         | -         | -        | -          | -           |
-| ImpulseSpinner  | 40   | -       | -          | #686769   | -         | #00ff89  | -          | -           |
-| PulseSpinner    | 40   | #fff    | -          | -         | -         | -        | -          | -           |
-| PushSpinner     | 30   | #686769 | -          | -         | -         | -        | -          | -           |
-| SequenceSpinner | 40   | -       | #686769    | -         | #00ff89   | -        | -          | -           |
-| SphereSpinner   | 30   | #fff    | -          | -         | -         | -        | -          | -           |
-| SpiralSpinner   | 40   |         | #00ff89    | #686769   | -         | -        | -          | -           |
-| StageSpinner    | 40   | #fff    | -          | -         | -         | -        | -          | -           |
-| SwapSpinner     | 40   | #686769 | -          | -         | -         | -        | -          | -           |
-| WaveSpinner     | 30   | #fff    | -          | -         | -         | -        | -          | -           |
-| ClapSpinner     | 30   | -       | -          | #686769   | -         | #00ff89  | -          | -           |
-| RotateSpinner   | 45   | #00ff89 | -          | -         | -         | -        | -          | -           |
-| SwishSpinner    | 40   | -       | -          | -         | -         | -        | #4b4c56    | #fff        |
-| GooSpinner      | 55   | #fff    | -          | -         | -         | -        | -          | -           |
-| CombSpinner     | 100  | #fff    | -          | -         | -         | -        | -          | -           |
-| PongSpinner     | 60   | #4b4c56 | -          | -         | -         | -        | -          | -           |
-| RainbowSpinner  | 50   | #fff    | -          | -         | -         | -        | -          | -           |
-| RingSpinner     | 30   | #00ff89 | -          | -         | -         | -        | -          | -           |
-| HoopSpinner     | 45   | #4b4c56 | -          | -         | -         | -        | -          | -           |
-| FlapperSpinner  | 30   | #00ff89 | -          | -         | -         | -        | -          | -           |
-| MagicSpinner    | 70   | #fff    | -          | -         | -         | -        | -          | -           |
+| Spinner          | Size | Color   | FrontColor | BackColor |
+| ---------------- | ---- | ------- | ---------- | --------- |
+| BallSpinner      | 40   | #00ff89 | -          | -         |
+| BarsSpinner      | 40   | #00ff89 | -          | -         |
+| CircleSpinner    | 30   | #fff    | -          | -         |
+| CubeSpinner      | 25   | -       | #00ff89    | #686769   |
+| DominoSpinner    | 100  | #686769 | -          | -         |
+| FillSpinner      | 20   | #686769 | -          | -         |
+| FireworkSpinner  | 40   | #fff    | -          | -         |
+| FlagSpinner      | 40   | #fff    | -          | -         |
+| GridSpinner      | 40   | #fff    | -          | -         |
+| GuardSpinner     | 40   | -       | #00ff89    | #686769   |
+| HeartSpinner     | 40   | #fff    | -          | -         |
+| ImpulseSpinner   | 40   | -       | #00ff89    | #686769   |
+| PulseSpinner     | 40   | #fff    | -          | -         |
+| PushSpinner      | 30   | #686769 | -          | -         |
+| SequenceSpinner  | 40   | -       | #00ff89    | #686769   |
+| SphereSpinner    | 30   | #fff    | -          | -         |
+| SpiralSpinner    | 40   |         | #00ff89    | #686769   |
+| StageSpinner     | 40   | #fff    | -          | -         |
+| SwapSpinner      | 40   | #686769 | -          | -         |
+| WaveSpinner      | 30   | #fff    | -          | -         |
+| ClapSpinner      | 30   | -       | #00ff89    | #686769   |
+| RotateSpinner    | 45   | #00ff89 | -          | -         |
+| SwishSpinner     | 40   | -       | #4b4c56    | #fff      |
+| GooSpinner       | 55   | #fff    | -          | -         |
+| CombSpinner      | 100  | #fff    | -          | -         |
+| PongSpinner      | 60   | #4b4c56 | -          | -         |
+| RainbowSpinner   | 50   | #fff    | -          | -         |
+| RingSpinner      | 30   | #00ff89 | -          | -         |
+| HoopSpinner      | 45   | #4b4c56 | -          | -         |
+| FlapperSpinner   | 30   | #00ff89 | -          | -         |
+| MagicSpinner     | 70   | #fff    | -          | -         |
+| JellyfishSpinner | 60   | #4b4c56 | -          | -         |
+| TraceSpinner     | 70   | -       | #00ff89    | #4b4c56   |
 
 ## Development
 
