@@ -7,18 +7,54 @@ const rotate = keyframes`
     to   { transform: rotateX(360deg) rotateY(360deg); }
 `;
 
-export const CubeSpinner = ({ size, backColor, frontColor, loading }) => {
+export const CubeSpinner = ({
+    size,
+    backColor,
+    frontColor,
+    loading,
+    sizeUnit,
+}) => {
     return (
         loading && (
-            <Wrapper size={size}>
-                <CubeWrapper x={0} y={0}>
-                    <Cube size={size}>
-                        <Side front={true} size={size} color={frontColor} />
-                        <Side back={true} size={size} color={frontColor} />
-                        <Side bottom={true} size={size} color={backColor} />
-                        <Side top={true} size={size} color={backColor} />
-                        <Side left={true} size={size} color={backColor} />
-                        <Side right={true} size={size} color={backColor} />
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                <CubeWrapper x={0} y={0} sizeUnit={sizeUnit}>
+                    <Cube size={size} sizeUnit={sizeUnit}>
+                        <Side
+                            front={true}
+                            size={size}
+                            color={frontColor}
+                            sizeUnit={sizeUnit}
+                        />
+                        <Side
+                            back={true}
+                            size={size}
+                            color={frontColor}
+                            sizeUnit={sizeUnit}
+                        />
+                        <Side
+                            bottom={true}
+                            size={size}
+                            color={backColor}
+                            sizeUnit={sizeUnit}
+                        />
+                        <Side
+                            top={true}
+                            size={size}
+                            color={backColor}
+                            sizeUnit={sizeUnit}
+                        />
+                        <Side
+                            left={true}
+                            size={size}
+                            color={backColor}
+                            sizeUnit={sizeUnit}
+                        />
+                        <Side
+                            right={true}
+                            size={size}
+                            color={backColor}
+                            sizeUnit={sizeUnit}
+                        />
                     </Cube>
                 </CubeWrapper>
             </Wrapper>
@@ -31,23 +67,23 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
-    perspective: ${props => props.size * 4}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
+    perspective: ${props => `${props.size * 4}${props.sizeUnit}`};
 `;
 
 const CubeWrapper = styled.div`
     sposition: absolute;
-    top: ${props => props.y}px;
-    left: ${props => props.x}px;
+    top: ${props => `${props.y}${props.sizeUnit}`};
+    left: ${props => `${props.x}${props.sizeUnit}`};
     width: inherit;
     height: inherit;
 `;
 
 const Cube = styled.div`
     position: relative;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
     transform-style: preserve-3d;
     animation: ${rotate} 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 `;
@@ -84,7 +120,7 @@ const Side = styled.div`
     background-color: ${props => props.color};
     transform: rotateX(${props => rotateXCube(props)}deg)
         rotateY(${props => rotateYCube(props)}deg)
-        translateZ(${props => props.size / 2}px);
+        translateZ(${props => `${props.size / 2}${props.sizeUnit}`});
 `;
 
 CubeSpinner.defaultProps = {
@@ -92,6 +128,7 @@ CubeSpinner.defaultProps = {
     size: 25,
     frontColor: "#00ff89",
     backColor: "#4b4c56",
+    sizeUnit: "px",
 };
 
 CubeSpinner.propTypes = {
@@ -99,4 +136,5 @@ CubeSpinner.propTypes = {
     size: PropTypes.number,
     frontColor: PropTypes.string,
     backColor: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

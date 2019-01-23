@@ -11,17 +11,18 @@ const rotate = keyframes`
     }
 `;
 
-export const CircleSpinner = ({ size, color, loading }) => {
-    return loading && <Wrapper size={size} color={color} />;
+export const CircleSpinner = ({ size, color, loading, sizeUnit }) => {
+    return loading && <Wrapper size={size} color={color} sizeUnit={sizeUnit} />;
 };
 
 const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
-    border: ${props => props.size / 5}px solid ${props => props.color};
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
+    border: ${props => `${props.size / 5}${props.sizeUnit}`} solid
+        ${props => props.color};
     border-right-color: transparent;
     border-radius: 50%;
     animation: ${rotate} 0.75s linear infinite;
@@ -31,10 +32,12 @@ CircleSpinner.defaultProps = {
     loading: true,
     size: 30,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 CircleSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

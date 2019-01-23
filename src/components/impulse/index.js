@@ -24,7 +24,7 @@ const impulse = props => keyframes`
     }
 `;
 
-const getBalls = ({ countBalls, frontColor, backColor, size }) => {
+const getBalls = ({ countBalls, frontColor, backColor, size, sizeUnit }) => {
     const balls = [];
     for (let i = 0; i < countBalls; i++) {
         balls.push(
@@ -36,18 +36,31 @@ const getBalls = ({ countBalls, frontColor, backColor, size }) => {
                 y={0}
                 key={i.toString()}
                 index={i}
+                sizeUnit={sizeUnit}
             />,
         );
     }
     return balls;
 };
 
-export const ImpulseSpinner = ({ size, frontColor, backColor, loading }) => {
+export const ImpulseSpinner = ({
+    size,
+    frontColor,
+    backColor,
+    loading,
+    sizeUnit,
+}) => {
     const countBalls = 3;
     return (
         loading && (
-            <Wrapper size={size}>
-                {getBalls({ countBalls, frontColor, backColor, size })}
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                {getBalls({
+                    countBalls,
+                    frontColor,
+                    backColor,
+                    size,
+                    sizeUnit,
+                })}
             </Wrapper>
         )
     );
@@ -58,16 +71,16 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size / 5}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size / 5}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => props.y}px;
-    left: ${props => props.x}px;
-    width: ${props => props.size / 5}px;
-    height: ${props => props.size / 5}px;
+    top: ${props => `${props.y}${props.sizeUnit}`};
+    left: ${props => `${props.x}${props.sizeUnit}`};
+    width: ${props => `${props.size / 5}${props.sizeUnit}`};
+    height: ${props => `${props.size / 5}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: ${props => props.frontColor};
     animation: ${impulse} 1.25s linear infinite;
@@ -79,6 +92,7 @@ ImpulseSpinner.defaultProps = {
     size: 40,
     frontColor: "#00ff89",
     backColor: "#4b4c56",
+    sizeUnit: "px",
 };
 
 ImpulseSpinner.propTypes = {
@@ -86,4 +100,5 @@ ImpulseSpinner.propTypes = {
     size: PropTypes.number,
     frontColor: PropTypes.string,
     backColor: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

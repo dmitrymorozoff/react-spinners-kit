@@ -4,27 +4,27 @@ import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
     0% {
-        top: ${props.y}px;
-        left: ${props.x}px;
+        top: ${props.y}${props.sizeUnit};
+        left: ${props.x}${props.sizeUnit};
     }
     25% {
-        top: ${props.y}px;
-        left: ${props.x}px;
+        top: ${props.y}${props.sizeUnit};
+        left: ${props.x}${props.sizeUnit};
         opacity: 0;
     }
     50% {
-        top: ${props.y + props.size / 2}px;
-        left: ${props.x}px;
+        top: ${props.y + props.size / 2}${props.sizeUnit};
+        left: ${props.x}${props.sizeUnit};
         opacity: 0;
     }
     100% {
-        top: ${props.y}px;
-        left: ${props.x}px;
+        top: ${props.y}${props.sizeUnit};
+        left: ${props.x}${props.sizeUnit};
         opacity: 1;
     }
 `;
 
-const getBalls = ({ countBalls, color, size }) => {
+const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     const balls = [];
     let keyValue = 0;
     for (let i = 0; i < countBalls; i++) {
@@ -36,6 +36,7 @@ const getBalls = ({ countBalls, color, size }) => {
                 x={i * (size / 2.5)}
                 y={size / 2 - size / 10}
                 key={keyValue.toString()}
+                sizeUnit={sizeUnit}
             />,
         );
         keyValue++;
@@ -43,12 +44,12 @@ const getBalls = ({ countBalls, color, size }) => {
     return balls;
 };
 
-export const StageSpinner = ({ size, color, loading }) => {
+export const StageSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBalls = 3;
     return (
         loading && (
-            <Wrapper size={size}>
-                {getBalls({ countBalls, color, size })}
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                {getBalls({ countBalls, color, size, sizeUnit })}
             </Wrapper>
         )
     );
@@ -59,16 +60,16 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => props.y}px;
-    left: ${props => props.x}px;
-    width: ${props => props.size / 5}px;
-    height: ${props => props.size / 5}px;
+    top: ${props => `${props.y}${props.sizeUnit}`};
+    left: ${props => `${props.x}${props.sizeUnit}`};
+    width: ${props => `${props.size / 5}${props.sizeUnit}`};
+    height: ${props => `${props.size / 5}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: ${props => props.color};
     animation: ${motion} 1s ease-in-out infinite;
@@ -79,10 +80,12 @@ StageSpinner.defaultProps = {
     loading: true,
     size: 40,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 StageSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

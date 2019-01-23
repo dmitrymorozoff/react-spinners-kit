@@ -14,7 +14,7 @@ const motion = keyframes`
     }
 `;
 
-const getCubes = ({ countCubeInLine, color, size }) => {
+const getCubes = ({ countCubeInLine, color, size, sizeUnit }) => {
     const cubes = [];
     let keyValue = 0;
     for (let i = 0; i < countCubeInLine; i++) {
@@ -26,6 +26,7 @@ const getCubes = ({ countCubeInLine, color, size }) => {
                 y={0}
                 key={keyValue.toString()}
                 index={i}
+                sizeUnit={sizeUnit}
             />,
         );
         keyValue++;
@@ -33,12 +34,12 @@ const getCubes = ({ countCubeInLine, color, size }) => {
     return cubes;
 };
 
-export const PulseSpinner = ({ size, color, loading }) => {
+export const PulseSpinner = ({ size, color, loading, sizeUnit }) => {
     const countCubeInLine = 3;
     return (
         loading && (
-            <Wrapper size={size}>
-                {getCubes({ countCubeInLine, color, size })}
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                {getCubes({ countCubeInLine, color, size, sizeUnit })}
             </Wrapper>
         )
     );
@@ -49,16 +50,16 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size / 2.5}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size / 2.5}${props.sizeUnit}`};
 `;
 
 const Cube = styled.div`
     position: absolute;
-    top: ${props => props.y}px;
-    left: ${props => props.x}px;
-    width: ${props => props.size / 5}px;
-    height: ${props => props.size / 2.5}px;
+    top: ${props => `${props.y}${props.sizeUnit}`};
+    left: ${props => `${props.x}${props.sizeUnit}`};
+    width: ${props => `${props.size / 5}${props.sizeUnit}`};
+    height: ${props => `${props.size / 2.5}${props.sizeUnit}`};
     background-color: ${props => props.color};
     animation: ${motion} 1.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) infinite;
     animation-delay: ${props => props.index * 0.15}s;
@@ -68,10 +69,12 @@ PulseSpinner.defaultProps = {
     loading: true,
     size: 40,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 PulseSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

@@ -8,7 +8,7 @@ const wave = props => keyframes`
         opacity: 1;
     }
     50% {
-        transform: translateY(${-props.size / 5}px);
+        transform: translateY(${-props.size / 5}${props.sizeUnit});
         opacity: 0.25;
     }
     100% {
@@ -17,7 +17,7 @@ const wave = props => keyframes`
     }
 `;
 
-const getPlanes = ({ countPlaneInLine, color, size }) => {
+const getPlanes = ({ countPlaneInLine, color, size, sizeUnit }) => {
     const lines = [];
     const planes = [];
     let keyValue = 0;
@@ -31,12 +31,18 @@ const getPlanes = ({ countPlaneInLine, color, size }) => {
                     y={j * (size / 6 + size / 9) + size / 10}
                     key={i + j.toString()}
                     index={keyValue}
+                    sizeUnit={sizeUnit}
                 />,
             );
             keyValue++;
         }
         lines.push(
-            <Line index={keyValue} key={keyValue.toString()} size={size}>
+            <Line
+                index={keyValue}
+                key={keyValue.toString()}
+                size={size}
+                sizeUnit={sizeUnit}
+            >
                 {[...planes]}
             </Line>,
         );
@@ -45,12 +51,12 @@ const getPlanes = ({ countPlaneInLine, color, size }) => {
     return lines;
 };
 
-export const FlagSpinner = ({ size, color, loading }) => {
+export const FlagSpinner = ({ size, color, loading, sizeUnit }) => {
     const countPlaneInLine = 4;
     return (
         loading && (
-            <Wrapper size={size}>
-                {getPlanes({ countPlaneInLine, color, size })}
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                {getPlanes({ countPlaneInLine, color, size, sizeUnit })}
             </Wrapper>
         )
     );
@@ -61,8 +67,8 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
 `;
 
 const Line = styled.div`
@@ -75,10 +81,10 @@ const Line = styled.div`
 
 const Plane = styled.div`
     position: absolute;
-    top: ${props => props.y}px;
-    left: ${props => props.x}px;
-    width: ${props => props.size / 6}px;
-    height: ${props => props.size / 6}px;
+    top: ${props => `${props.y}${props.sizeUnit}`};
+    left: ${props => `${props.x}${props.sizeUnit}`};
+    width: ${props => `${props.size / 6}${props.sizeUnit}`};
+    height: ${props => `${props.size / 6}${props.sizeUnit}`};
     background-color: ${props => props.color};
 `;
 
@@ -86,10 +92,12 @@ FlagSpinner.defaultProps = {
     loading: true,
     size: 40,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 FlagSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

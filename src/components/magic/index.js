@@ -8,7 +8,7 @@ const rotate = () => keyframes`
     }
 `;
 
-const getBalls = ({ countBalls, color, size }) => {
+const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     const balls = [];
     for (let i = 0; i < countBalls; i++) {
         balls.push(
@@ -18,21 +18,23 @@ const getBalls = ({ countBalls, color, size }) => {
                 size={size}
                 key={i.toString()}
                 index={i}
+                sizeUnit={sizeUnit}
             />,
         );
     }
     return balls;
 };
 
-export const MagicSpinner = ({ size, color, loading }) => {
+export const MagicSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBalls = size / 12;
     return (
         loading && (
-            <Wrapper size={size}>
+            <Wrapper size={size} sizeUnit={sizeUnit}>
                 {getBalls({
                     countBalls,
                     color,
                     size,
+                    sizeUnit,
                 })}
             </Wrapper>
         )
@@ -44,8 +46,8 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
     overflow: hidden;
 `;
 
@@ -54,8 +56,10 @@ const Ball = styled.div`
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    width: ${props => props.index * (props.size / props.countBalls)}px;
-    height: ${props => props.index * (props.size / props.countBalls)}px;
+    width: ${props =>
+        `${props.index * (props.size / props.countBalls)}${props.sizeUnit}`};
+    height: ${props =>
+        `${props.index * (props.size / props.countBalls)}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: transparent;
     border: 2px solid transparent;
@@ -69,10 +73,12 @@ MagicSpinner.defaultProps = {
     loading: true,
     size: 70,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 MagicSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

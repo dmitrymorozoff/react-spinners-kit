@@ -15,7 +15,7 @@ const motion = keyframes`
     }
 `;
 
-const getBars = ({ countBars, color, size }) => {
+const getBars = ({ countBars, color, size, sizeUnit }) => {
     const bars = [];
     for (let i = 0; i < countBars; i++) {
         bars.push(
@@ -26,17 +26,20 @@ const getBars = ({ countBars, color, size }) => {
                 y={0}
                 key={i.toString()}
                 index={i}
+                sizeUnit={sizeUnit}
             />,
         );
     }
     return bars;
 };
 
-export const WaveSpinner = ({ size, color, loading }) => {
+export const WaveSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBars = 10;
     return (
         loading && (
-            <Wrapper size={size}>{getBars({ countBars, color, size })}</Wrapper>
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                {getBars({ countBars, color, size, sizeUnit })}
+            </Wrapper>
         )
     );
 };
@@ -46,18 +49,18 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size * 2.5}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size * 2.5}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
     overflow: hidden;
 `;
 
 const Bar = styled.div`
     position: absolute;
-    top: ${props => props.y + props.size / 10}px;
-    left: ${props => props.x}px;
-    width: ${props => props.size / 5}px;
-    height: ${props => props.size / 10}px;
-    margin-top: ${props => props.size - props.size / 10}px;
+    top: ${props => `${props.y + props.size / 10}${props.sizeUnit}`};
+    left: ${props => `${props.x}${props.sizeUnit}`};
+    width: ${props => `${props.size / 5}${props.sizeUnit}`};
+    height: ${props => `${props.size / 10}${props.sizeUnit}`};
+    margin-top: ${props => `${props.size - props.size / 10}${props.sizeUnit}`};
     transform: skewY(0deg);
     background-color: ${props => props.color};
     animation: ${motion} 1.25s ease-in-out infinite;
@@ -68,10 +71,12 @@ WaveSpinner.defaultProps = {
     loading: true,
     size: 30,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 WaveSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

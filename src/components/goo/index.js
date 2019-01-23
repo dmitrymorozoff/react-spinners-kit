@@ -16,14 +16,14 @@ const move = props => keyframes`
         transform: translateY(0) scale(1);
     }
     50%{
-        transform: translateY(${props.translateTo}px) scale(0.8);
+        transform: translateY(${props.translateTo}${props.sizeUnit}) scale(0.8);
     }
     100%{
         transform: translateY(0) scale(1);
     }
 `;
 
-const getBalls = ({ countBalls, color, size }) => {
+const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     const balls = [];
     const center = size / 4;
     const ballsTranslatePositions = [-center, center];
@@ -37,19 +37,20 @@ const getBalls = ({ countBalls, color, size }) => {
                 key={i.toString()}
                 translateTo={ballsTranslatePositions[i]}
                 index={i}
+                sizeUnit={sizeUnit}
             />,
         );
     }
     return balls;
 };
 
-export const GooSpinner = ({ size, color, loading }) => {
+export const GooSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBalls = 2;
     return (
         loading && (
-            <Wrapper size={size}>
-                <BallsWrapper size={size}>
-                    {getBalls({ countBalls, color, size })}
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                <BallsWrapper size={size} sizeUnit={sizeUnit}>
+                    {getBalls({ countBalls, color, size, sizeUnit })}
                 </BallsWrapper>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
                     <defs>
@@ -75,24 +76,24 @@ export const GooSpinner = ({ size, color, loading }) => {
 };
 
 const Wrapper = styled.div`
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
     filter: url("#goo");
 `;
 
 const BallsWrapper = styled.div`
     position: relative;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
     animation: ${rotate} 1.7s linear infinite;
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => props.y}px;
-    left: ${props => props.x}px;
-    width: ${props => props.size / 3}px;
-    height: ${props => props.size / 3}px;
+    top: ${props => `${props.y}${props.sizeUnit}`};
+    left: ${props => `${props.x}${props.sizeUnit}`};
+    width: ${props => `${props.size / 3}${props.sizeUnit}`};
+    height: ${props => `${props.size / 3}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: ${props => props.color};
     animation: ${move} 1.5s ease-in-out infinite;
@@ -102,10 +103,12 @@ GooSpinner.defaultProps = {
     loading: true,
     size: 55,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 GooSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

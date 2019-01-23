@@ -20,17 +20,48 @@ const rotate = keyframes`
     }
 `;
 
-const getCubes = ({ countCubesInLine, backColor, frontColor, size }) => {
+const getCubes = ({
+    countCubesInLine,
+    backColor,
+    frontColor,
+    size,
+    sizeUnit,
+}) => {
     const cubes = [];
     let keyValue = 0;
     for (let i = 0; i < countCubesInLine; i++) {
         cubes.push(
-            <CubeWrapper x={i * (size / 4)} y={0} key={keyValue.toString()}>
-                <Cube size={size} index={keyValue}>
-                    <Side front={true} size={size} color={frontColor} />
-                    <Side back={true} size={size} color={frontColor} />
-                    <Side bottom={true} size={size} color={backColor} />
-                    <Side top={true} size={size} color={backColor} />
+            <CubeWrapper
+                x={i * (size / 4)}
+                y={0}
+                key={keyValue.toString()}
+                sizeUnit={sizeUnit}
+            >
+                <Cube size={size} index={keyValue} sizeUnit={sizeUnit}>
+                    <Side
+                        front={true}
+                        size={size}
+                        color={frontColor}
+                        sizeUnit={sizeUnit}
+                    />
+                    <Side
+                        back={true}
+                        size={size}
+                        color={frontColor}
+                        sizeUnit={sizeUnit}
+                    />
+                    <Side
+                        bottom={true}
+                        size={size}
+                        color={backColor}
+                        sizeUnit={sizeUnit}
+                    />
+                    <Side
+                        top={true}
+                        size={size}
+                        color={backColor}
+                        sizeUnit={sizeUnit}
+                    />
                 </Cube>
             </CubeWrapper>,
         );
@@ -39,12 +70,24 @@ const getCubes = ({ countCubesInLine, backColor, frontColor, size }) => {
     return cubes;
 };
 
-export const SpiralSpinner = ({ size, backColor, frontColor, loading }) => {
+export const SpiralSpinner = ({
+    size,
+    backColor,
+    frontColor,
+    loading,
+    sizeUnit,
+}) => {
     const countCubesInLine = 4;
     return (
         loading && (
-            <Wrapper size={size}>
-                {getCubes({ countCubesInLine, backColor, frontColor, size })}
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                {getCubes({
+                    countCubesInLine,
+                    backColor,
+                    frontColor,
+                    size,
+                    sizeUnit,
+                })}
             </Wrapper>
         )
     );
@@ -55,23 +98,23 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size / 4}px;
-    perspective: ${props => props.size * 3}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size / 4}${props.sizeUnit}`};
+    perspective: ${props => `${props.size * 3}${props.sizeUnit}`};
 `;
 
 const CubeWrapper = styled.div`
     position: absolute;
-    top: ${props => props.y}px;
-    left: ${props => props.x}px;
+    top: ${props => `${props.y}${props.sizeUnit}`};
+    left: ${props => `${props.x}${props.sizeUnit}`};
     width: inherit;
     height: inherit;
 `;
 
 const Cube = styled.div`
     position: relative;
-    width: ${props => props.size / 4}px;
-    height: ${props => props.size / 4}px;
+    width: ${props => `${props.size / 4}${props.sizeUnit}`};
+    height: ${props => `${props.size / 4}${props.sizeUnit}`};
     transform-style: preserve-3d;
     animation: ${rotate} 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
     animation-delay: ${props => props.index * 0.15}s;
@@ -96,7 +139,7 @@ const Side = styled.div`
     background-color: ${props => props.color};
     transform: rotateX(${props => rotateCube(props)}deg)
         rotateY(${props => (props.back ? 180 : 0)}deg)
-        translateZ(${props => props.size / 8}px);
+        translateZ(${props => `${props.size / 8}${props.sizeUnit}`});
 `;
 
 SpiralSpinner.defaultProps = {
@@ -104,6 +147,7 @@ SpiralSpinner.defaultProps = {
     size: 40,
     frontColor: "#00ff89",
     backColor: "#4b4c56",
+    sizeUnit: "px",
 };
 
 SpiralSpinner.propTypes = {
@@ -111,4 +155,5 @@ SpiralSpinner.propTypes = {
     size: PropTypes.number,
     frontColor: PropTypes.string,
     backColor: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

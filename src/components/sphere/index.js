@@ -10,22 +10,36 @@ const rotate = keyframes`
 
 const move = props => keyframes`
     0% {
-        transform: translateX(${props.x}px) translateY(${props.y}px) scale(1) ;
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
+    props.y
+}${props.sizeUnit}) scale(1) ;
     }
     5% {
-        transform: translateX(-${props.size / 12}px) translateY(-${props.size /
-    12}px) scale(0);
+        transform: translateX(-${props.size / 12}${
+    props.sizeUnit
+}) translateY(-${props.size / 12}${props.sizeUnit}) scale(0);
     }
     50% {
-        transform: translateX(-${props.size / 12}px) translateY(-${props.size /
-    12}px) scale(0);
+        transform: translateX(-${props.size / 12}${
+    props.sizeUnit
+}) translateY(-${props.size / 12}${props.sizeUnit}) scale(0);
     }
     55% {
-        transform: translateX(${props.x}px) translateY(${props.y}px) scale(1) ;
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
+    props.y
+}${props.sizeUnit}) scale(1) ;
     }
 `;
 
-const getBalls = ({ countBalls, radius, angle, color, size, ballSize }) => {
+const getBalls = ({
+    countBalls,
+    radius,
+    angle,
+    color,
+    size,
+    ballSize,
+    sizeUnit,
+}) => {
     const balls = [];
     const offset = ballSize / 2;
     for (let i = 0; i < countBalls; i++) {
@@ -40,21 +54,30 @@ const getBalls = ({ countBalls, radius, angle, color, size, ballSize }) => {
                 y={x}
                 key={i.toString()}
                 index={i}
+                sizeUnit={sizeUnit}
             />,
         );
     }
     return balls;
 };
 
-export const SphereSpinner = ({ size, color, loading }) => {
+export const SphereSpinner = ({ size, color, loading, sizeUnit }) => {
     const radius = size / 2;
     const countBalls = 7;
     const ballSize = size / 5;
     const angle = 360 / countBalls;
     return (
         loading && (
-            <Wrapper size={size}>
-                {getBalls({ countBalls, radius, angle, color, size, ballSize })}
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                {getBalls({
+                    countBalls,
+                    radius,
+                    angle,
+                    color,
+                    size,
+                    ballSize,
+                    sizeUnit,
+                })}
             </Wrapper>
         )
     );
@@ -65,21 +88,21 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
     animation: ${rotate} 8s linear infinite;
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => props.size / 2}px;
-    left: ${props => props.size / 2}px;
-    width: ${props => props.ballSize}px;
-    height: ${props => props.ballSize}px;
+    top: ${props => `${props.size / 2}${props.sizeUnit}`};
+    left: ${props => `${props.size / 2}${props.sizeUnit}`};
+    width: ${props => `${props.ballSize}${props.sizeUnit}`};
+    height: ${props => `${props.ballSize}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: ${props => props.color};
-    transform: translateX(${props => props.x}px)
-        translateY(${props => props.y}px);
+    transform: translateX(${props => `${props.x}${props.sizeUnit}`})
+        translateY(${props => `${props.y}${props.sizeUnit}`});
     animation: ${props => move(props)} 5s cubic-bezier(0.165, 0.84, 0.44, 1)
         infinite;
     animation-delay: ${props => props.index * 0.3}s;
@@ -89,10 +112,12 @@ SphereSpinner.defaultProps = {
     loading: true,
     size: 30,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 SphereSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };
