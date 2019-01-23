@@ -5,12 +5,20 @@ import styled, { keyframes } from "styled-components";
 const move = props => keyframes`
     100% {
         opacity: 0;
-        transform: translateX(${props.x}px)
-        translateY(${props.y}px) scale(1);
+        transform: translateX(${props.x}${props.sizeUnit})
+        translateY(${props.y}${props.sizeUnit}) scale(1);
    }
 `;
 
-const getBalls = ({ countBalls, radius, angle, color, size, ballSize }) => {
+const getBalls = ({
+    countBalls,
+    radius,
+    angle,
+    color,
+    size,
+    ballSize,
+    sizeUnit,
+}) => {
     const balls = [];
     const offset = ballSize / 2;
     for (let i = 0; i < countBalls; i++) {
@@ -25,20 +33,21 @@ const getBalls = ({ countBalls, radius, angle, color, size, ballSize }) => {
                 y={x}
                 key={i.toString()}
                 index={i}
+                sizeUnit={sizeUnit}
             />,
         );
     }
     return balls;
 };
 
-export const FlapperSpinner = ({ size, color, loading }) => {
+export const FlapperSpinner = ({ size, color, loading, sizeUnit }) => {
     const radius = size / 2;
     const countBalls = 7;
     const ballSize = size / 1.5;
     const angle = 360 / countBalls;
     return (
         loading && (
-            <Wrapper size={size}>
+            <Wrapper size={size} sizeUnit={sizeUnit}>
                 {getBalls({
                     countBalls,
                     radius,
@@ -46,6 +55,7 @@ export const FlapperSpinner = ({ size, color, loading }) => {
                     color,
                     size,
                     ballSize,
+                    sizeUnit,
                 })}
             </Wrapper>
         )
@@ -57,20 +67,20 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => props.size / 2}px;
-    left: ${props => props.size / 2}px;
-    width: ${props => props.ballSize}px;
-    height: ${props => props.ballSize}px;
+    top: ${props => `${props.size / 2}${props.sizeUnit}`};
+    left: ${props => `${props.size / 2}${props.sizeUnit}`};
+    width: ${props => `${props.ballSize}${props.sizeUnit}`};
+    height: ${props => `${props.ballSize}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: ${props => props.color};
-    transform: translateX(${props => props.x}px)
-        translateY(${props => props.y}px) scale(0);
+    transform: translateX(${props => `${props.x}${props.sizeUnit}`})
+        translateY(${props => `${props.y}${props.sizeUnit}`}) scale(0);
     animation: ${props => move(props)} 0.8s linear infinite;
     animation-delay: ${props => props.index * 0.1}s;
 `;
@@ -79,10 +89,12 @@ FlapperSpinner.defaultProps = {
     loading: true,
     size: 30,
     color: "#00ff89",
+    sizeUnit: "px",
 };
 
 FlapperSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

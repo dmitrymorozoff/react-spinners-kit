@@ -8,25 +8,32 @@ const rotate = () => keyframes`
     }
 `;
 
-const getBars = ({ countBars, color, size }) => {
+const getBars = ({ countBars, color, size, sizeUnit }) => {
     const bars = [];
     for (let i = 0; i < countBars; i++) {
         bars.push(
-            <Bar color={color} size={size} key={i.toString()} index={i} />,
+            <Bar
+                color={color}
+                size={size}
+                key={i.toString()}
+                sizeUnit={sizeUnit}
+                index={i}
+            />,
         );
     }
     return bars;
 };
 
-export const CombSpinner = ({ size, color, loading }) => {
+export const CombSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBars = size / 9;
     return (
         loading && (
-            <Wrapper size={size}>
+            <Wrapper size={size} sizeUnit={sizeUnit}>
                 {getBars({
                     countBars,
                     color,
                     size,
+                    sizeUnit,
                 })}
             </Wrapper>
         )
@@ -35,16 +42,16 @@ export const CombSpinner = ({ size, color, loading }) => {
 
 const Wrapper = styled.div`
     position: relative;
-    width: ${props => props.size}px;
-    height: ${props => props.size / 5}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size / 5}${props.sizeUnit}`};
 `;
 
 const Bar = styled.div`
     position: absolute;
     left: 0;
-    width: ${props => props.size / 60}px;
-    height: ${props => props.size / 5}px;
-    left: ${props => props.index * 9}px;
+    width: ${props => `${props.size / 60}${props.sizeUnit}`};
+    height: ${props => `${props.size / 5}${props.sizeUnit}`};
+    left: ${props => `${props.index * 9}${props.sizeUnit}`};
     transform-origin: center bottom;
     transform: rotate(-90deg);
     background-color: ${props => props.color};
@@ -56,10 +63,12 @@ CombSpinner.defaultProps = {
     loading: true,
     size: 100,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 CombSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

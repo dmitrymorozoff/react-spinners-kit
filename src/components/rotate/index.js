@@ -12,7 +12,15 @@ const rotate = keyframes`
     }
 `;
 
-const getBalls = ({ countBalls, radius, angle, color, size, ballSize }) => {
+const getBalls = ({
+    countBalls,
+    radius,
+    angle,
+    color,
+    size,
+    ballSize,
+    sizeUnit,
+}) => {
     const balls = [];
     const offset = ballSize / 2;
     for (let i = 0; i < countBalls; i++) {
@@ -27,20 +35,21 @@ const getBalls = ({ countBalls, radius, angle, color, size, ballSize }) => {
                 y={x}
                 key={i.toString()}
                 index={i}
+                sizeUnit={sizeUnit}
             />,
         );
     }
     return balls;
 };
 
-export const RotateSpinner = ({ size, color, loading }) => {
+export const RotateSpinner = ({ size, color, loading, sizeUnit }) => {
     const radius = size / 2;
     const countBalls = 8;
     const ballSize = size / 5;
     const angle = 360 / countBalls;
     return (
         loading && (
-            <Wrapper size={size}>
+            <Wrapper size={size} sizeUnit={sizeUnit}>
                 {getBalls({
                     countBalls,
                     radius,
@@ -48,6 +57,7 @@ export const RotateSpinner = ({ size, color, loading }) => {
                     color,
                     size,
                     ballSize,
+                    sizeUnit,
                 })}
             </Wrapper>
         )
@@ -59,16 +69,16 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
     left: 50%;
     top: 0%;
-    width: ${props => props.ballSize}px;
-    height: ${props => props.ballSize}px;
+    width: ${props => `${props.ballSize}${props.sizeUnit}`};
+    height: ${props => `${props.ballSize}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: ${props => props.color};
     transform: translateX(-50%) translateY(100%);
@@ -86,10 +96,12 @@ RotateSpinner.defaultProps = {
     loading: true,
     size: 45,
     color: "#00ff89",
+    sizeUnit: "px",
 };
 
 RotateSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

@@ -54,41 +54,41 @@ ReactDOM.render(<App />, document.getElementById("root"));
 - The `loading` prop defaults to `true`.
 - The loader will not render anything if `loading` is `false`. 
 
-| Spinner          | Size | Color   | FrontColor | BackColor |
-| ---------------- | ---- | ------- | ---------- | --------- |
-| BallSpinner      | 40   | #00ff89 | -          | -         |
-| BarsSpinner      | 40   | #00ff89 | -          | -         |
-| CircleSpinner    | 30   | #fff    | -          | -         |
-| CubeSpinner      | 25   | -       | #00ff89    | #686769   |
-| DominoSpinner    | 100  | #686769 | -          | -         |
-| FillSpinner      | 20   | #686769 | -          | -         |
-| FireworkSpinner  | 40   | #fff    | -          | -         |
-| FlagSpinner      | 40   | #fff    | -          | -         |
-| GridSpinner      | 40   | #fff    | -          | -         |
-| GuardSpinner     | 40   | -       | #00ff89    | #686769   |
-| HeartSpinner     | 40   | #fff    | -          | -         |
-| ImpulseSpinner   | 40   | -       | #00ff89    | #686769   |
-| PulseSpinner     | 40   | #fff    | -          | -         |
-| PushSpinner      | 30   | #686769 | -          | -         |
-| SequenceSpinner  | 40   | -       | #00ff89    | #686769   |
-| SphereSpinner    | 30   | #fff    | -          | -         |
-| SpiralSpinner    | 40   |         | #00ff89    | #686769   |
-| StageSpinner     | 40   | #fff    | -          | -         |
-| SwapSpinner      | 40   | #686769 | -          | -         |
-| WaveSpinner      | 30   | #fff    | -          | -         |
-| ClapSpinner      | 30   | -       | #00ff89    | #686769   |
-| RotateSpinner    | 45   | #00ff89 | -          | -         |
-| SwishSpinner     | 40   | -       | #4b4c56    | #fff      |
-| GooSpinner       | 55   | #fff    | -          | -         |
-| CombSpinner      | 100  | #fff    | -          | -         |
-| PongSpinner      | 60   | #4b4c56 | -          | -         |
-| RainbowSpinner   | 50   | #fff    | -          | -         |
-| RingSpinner      | 30   | #00ff89 | -          | -         |
-| HoopSpinner      | 45   | #4b4c56 | -          | -         |
-| FlapperSpinner   | 30   | #00ff89 | -          | -         |
-| MagicSpinner     | 70   | #fff    | -          | -         |
-| JellyfishSpinner | 60   | #4b4c56 | -          | -         |
-| TraceSpinner     | 70   | -       | #00ff89    | #4b4c56   |
+| Spinner          | Size: number | Color: string | FrontColor: string | BackColor: string | SizeUnit: string |
+| ---------------- | ------------ | ------------- | ------------------ | ----------------- | ---------------- |
+| BallSpinner      | 40           | #00ff89       | -                  | -                 | px               |
+| BarsSpinner      | 40           | #00ff89       | -                  | -                 | px               |
+| CircleSpinner    | 30           | #fff          | -                  | -                 | px               |
+| CubeSpinner      | 25           | -             | #00ff89            | #686769           | px               |
+| DominoSpinner    | 100          | #686769       | -                  | -                 | px               |
+| FillSpinner      | 20           | #686769       | -                  | -                 | px               |
+| FireworkSpinner  | 40           | #fff          | -                  | -                 | px               |
+| FlagSpinner      | 40           | #fff          | -                  | -                 | px               |
+| GridSpinner      | 40           | #fff          | -                  | -                 | px               |
+| GuardSpinner     | 40           | -             | #00ff89            | #686769           | px               |
+| HeartSpinner     | 40           | #fff          | -                  | -                 | px               |
+| ImpulseSpinner   | 40           | -             | #00ff89            | #686769           | px               |
+| PulseSpinner     | 40           | #fff          | -                  | -                 | px               |
+| PushSpinner      | 30           | #686769       | -                  | -                 | px               |
+| SequenceSpinner  | 40           | -             | #00ff89            | #686769           | px               |
+| SphereSpinner    | 30           | #fff          | -                  | -                 | px               |
+| SpiralSpinner    | 40           |               | #00ff89            | #686769           | px               |
+| StageSpinner     | 40           | #fff          | -                  | -                 | px               |
+| SwapSpinner      | 40           | #686769       | -                  | -                 | px               |
+| WaveSpinner      | 30           | #fff          | -                  | -                 | px               |
+| ClapSpinner      | 30           | -             | #00ff89            | #686769           | px               |
+| RotateSpinner    | 45           | #00ff89       | -                  | -                 | px               |
+| SwishSpinner     | 40           | -             | #4b4c56            | #fff              | px               |
+| GooSpinner       | 55           | #fff          | -                  | -                 | px               |
+| CombSpinner      | 100          | #fff          | -                  | -                 | px               |
+| PongSpinner      | 60           | #4b4c56       | -                  | -                 | px               |
+| RainbowSpinner   | 50           | #fff          | -                  | -                 | px               |
+| RingSpinner      | 30           | #00ff89       | -                  | -                 | px               |
+| HoopSpinner      | 45           | #4b4c56       | -                  | -                 | px               |
+| FlapperSpinner   | 30           | #00ff89       | -                  | -                 | px               |
+| MagicSpinner     | 70           | #fff          | -                  | -                 | px               |
+| JellyfishSpinner | 60           | #4b4c56       | -                  | -                 | px               |
+| TraceSpinner     | 70           | -             | #00ff89            | #4b4c56           | px               |
 
 ## Development
 

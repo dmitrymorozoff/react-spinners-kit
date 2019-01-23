@@ -38,11 +38,11 @@ const fill = keyframes`
     }
 `;
 
-export const FillSpinner = ({ size, color, loading }) => {
+export const FillSpinner = ({ size, color, loading, sizeUnit }) => {
     return (
         loading && (
-            <Wrapper size={size} color={color}>
-                <Plane color={color} size={size} />
+            <Wrapper size={size} color={color} sizeUnit={sizeUnit}>
+                <Plane color={color} size={size} sizeUnit={sizeUnit} />
             </Wrapper>
         )
     );
@@ -52,9 +52,10 @@ const Wrapper = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
-    border: ${props => props.size / 8}px solid ${props => props.color};
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
+    border: ${props => `${props.size / 8}${props.sizeUnit}`} solid
+        ${props => props.color};
     animation: ${rotate} 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 `;
 
@@ -68,10 +69,12 @@ FillSpinner.defaultProps = {
     loading: true,
     size: 20,
     color: "#4b4c56",
+    sizeUnit: "px",
 };
 
 FillSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

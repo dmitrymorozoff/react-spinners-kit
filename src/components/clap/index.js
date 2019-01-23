@@ -13,21 +13,25 @@ const rotate = keyframes`
 
 const move = props => keyframes`
     0% {
-        transform: translateX(${props.x}px) translateY(${
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
     props.y
-}px) scale(1.25) ;
+}${props.sizeUnit}) scale(1.25) ;
     }
     5% {
-        transform: translateX(${props.x}px) translateY(${
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
     props.y
-}px) scale(1.75);
+}${props.sizeUnit}) scale(1.75);
     }
     50% {
-        transform: translateX(${props.x}px) translateY(${props.y}px) scale(.25);
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
+    props.y
+}${props.sizeUnit}) scale(.25);
     }
     55% {
         background-color: ${props.backColor};
-        transform: translateX(${props.x}px) translateY(${props.y}px) scale(1) ;
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
+    props.y
+}${props.sizeUnit}) scale(1) ;
     }
 `;
 
@@ -39,6 +43,7 @@ const getBalls = ({
     backColor,
     size,
     ballSize,
+    sizeUnit,
 }) => {
     const balls = [];
     const offset = ballSize / 2;
@@ -51,6 +56,7 @@ const getBalls = ({
                 backColor={backColor}
                 ballSize={ballSize}
                 size={size}
+                sizeUnit={sizeUnit}
                 x={y}
                 y={x}
                 key={i.toString()}
@@ -61,14 +67,20 @@ const getBalls = ({
     return balls;
 };
 
-export const ClapSpinner = ({ size, frontColor, backColor, loading }) => {
+export const ClapSpinner = ({
+    size,
+    frontColor,
+    backColor,
+    loading,
+    sizeUnit,
+}) => {
     const radius = size / 2;
     const countBalls = 7;
     const ballSize = size / 5;
     const angle = 360 / countBalls;
     return (
         loading && (
-            <Wrapper size={size}>
+            <Wrapper size={size} sizeUnit={sizeUnit}>
                 {getBalls({
                     countBalls,
                     radius,
@@ -77,6 +89,7 @@ export const ClapSpinner = ({ size, frontColor, backColor, loading }) => {
                     backColor,
                     size,
                     ballSize,
+                    sizeUnit,
                 })}
             </Wrapper>
         )
@@ -88,21 +101,21 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
     animation: ${rotate} 1.5s linear infinite;
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => props.size / 2}px;
-    left: ${props => props.size / 2}px;
-    width: ${props => props.ballSize}px;
-    height: ${props => props.ballSize}px;
+    top: ${props => `${props.size / 2}${props.sizeUnit}`};
+    left: ${props => `${props.size / 2}${props.sizeUnit}`};
+    width: ${props => `${props.ballSize}${props.sizeUnit}`};
+    height: ${props => `${props.ballSize}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: ${props => props.frontColor};
-    transform: translateX(${props => props.x}px)
-        translateY(${props => props.y}px);
+    transform: translateX(${props => `${props.x}${props.sizeUnit}`})
+        translateY(${props => `${props.y}${props.sizeUnit}`});
     animation: ${props => move(props)} 2.5s cubic-bezier(0.075, 0.82, 0.165, 1)
         infinite;
     animation-delay: ${props => props.index * 0.2}s;
@@ -113,6 +126,7 @@ ClapSpinner.defaultProps = {
     size: 30,
     frontColor: "#00ff89",
     backColor: "#4b4c56",
+    sizeUnit: "px",
 };
 
 ClapSpinner.propTypes = {
@@ -120,4 +134,5 @@ ClapSpinner.propTypes = {
     size: PropTypes.number,
     frontColor: PropTypes.string,
     backColor: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

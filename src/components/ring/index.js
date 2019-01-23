@@ -4,7 +4,9 @@ import styled, { keyframes } from "styled-components";
 
 const firstPulse = props => keyframes`
     0% { 
-        box-shadow: inset 0 0 0 ${props.size / 10}px ${props.color};
+        box-shadow: inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${
+    props.color
+};
         opacity: 1;
     }
     50%, 100% {
@@ -19,24 +21,26 @@ const secondPulse = props => keyframes`
         opacity: 0;
     }
     100% { 
-        box-shadow: inset 0 0 0 ${props.size / 10}px ${props.color};
+        box-shadow: inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${
+    props.color
+};
         opacity: 1;
     }
 `;
 
-export const RingSpinner = ({ size, color, loading }) => {
+export const RingSpinner = ({ size, color, loading, sizeUnit }) => {
     return (
         loading && (
-            <Wrapper size={size}>
-                <Circle size={size} color={color} />
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                <Circle size={size} color={color} sizeUnit={sizeUnit} />
             </Wrapper>
         )
     );
 };
 
 const Wrapper = styled.div`
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
 `;
 
 const Circle = styled.div`
@@ -47,8 +51,6 @@ const Circle = styled.div`
     width: 100%;
     max-width: 100%;
     height: 100%;
-    margin-top: ${props => props.size / 2};
-    margin-bottom: ${props => props.size / 2};
     &:before,
     &:after {
         width: 100%;
@@ -62,7 +64,7 @@ const Circle = styled.div`
     }
     &:before {
         box-shadow: ${props =>
-            `inset 0 0 0 ${props.size / 10}px ${props.color}`};
+            `inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${props.color}`};
         animation-name: ${firstPulse};
     }
     &:after {
@@ -75,10 +77,12 @@ RingSpinner.defaultProps = {
     loading: true,
     size: 30,
     color: "#00ff89",
+    sizeUnit: "px",
 };
 
 RingSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

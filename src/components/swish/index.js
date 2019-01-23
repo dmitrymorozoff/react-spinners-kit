@@ -9,7 +9,13 @@ const motion = props => keyframes`
     }
 `;
 
-const getBalls = ({ countBallsInLine, frontColor, backColor, size }) => {
+const getBalls = ({
+    countBallsInLine,
+    frontColor,
+    backColor,
+    size,
+    sizeUnit,
+}) => {
     const balls = [];
     let keyValue = 0;
     for (let i = 0; i < countBallsInLine; i++) {
@@ -23,6 +29,7 @@ const getBalls = ({ countBallsInLine, frontColor, backColor, size }) => {
                     y={j * (size / 3 + size / 15)}
                     key={keyValue.toString()}
                     index={keyValue}
+                    sizeUnit={sizeUnit}
                 />,
             );
             keyValue++;
@@ -31,12 +38,24 @@ const getBalls = ({ countBallsInLine, frontColor, backColor, size }) => {
     return balls;
 };
 
-export const SwishSpinner = ({ size, frontColor, backColor, loading }) => {
+export const SwishSpinner = ({
+    size,
+    frontColor,
+    backColor,
+    loading,
+    sizeUnit,
+}) => {
     const countBallsInLine = 3;
     return (
         loading && (
-            <Wrapper size={size}>
-                {getBalls({ countBallsInLine, frontColor, backColor, size })}
+            <Wrapper size={size} sizeUnit={sizeUnit}>
+                {getBalls({
+                    countBallsInLine,
+                    frontColor,
+                    backColor,
+                    size,
+                    sizeUnit,
+                })}
             </Wrapper>
         )
     );
@@ -47,16 +66,16 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => props.y}px;
-    left: ${props => props.x}px;
-    width: ${props => props.size / 5}px;
-    height: ${props => props.size / 5}px;
+    top: ${props => `${props.y}${props.sizeUnit}`};
+    left: ${props => `${props.x}${props.sizeUnit}`};
+    width: ${props => `${props.size / 5}${props.sizeUnit}`};
+    height: ${props => `${props.size / 5}${props.sizeUnit}`};
     border-radius: 3px;
     background-color: ${props => props.frontColor};
     animation: ${motion} 0.9s ease infinite;
@@ -69,6 +88,7 @@ SwishSpinner.defaultProps = {
     size: 40,
     frontColor: "#4b4c56",
     backColor: "#fff",
+    sizeUnit: "px",
 };
 
 SwishSpinner.propTypes = {
@@ -76,4 +96,5 @@ SwishSpinner.propTypes = {
     size: PropTypes.number,
     frontColor: PropTypes.string,
     backColor: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };

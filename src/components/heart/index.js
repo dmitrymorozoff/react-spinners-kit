@@ -23,26 +23,26 @@ const resize = keyframes`
     }
 `;
 
-export const HeartSpinner = ({ size, color, loading }) => {
-    return loading && <Wrapper size={size} color={color} />;
+export const HeartSpinner = ({ size, color, loading, sizeUnit }) => {
+    return loading && <Wrapper size={size} color={color} sizeUnit={sizeUnit} />;
 };
 
 const Wrapper = styled.div`
     position: relative;
-    width: ${props => props.size}px;
-    height: ${props => props.size - props.size / 10}px;
+    width: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size - props.size / 10}${props.sizeUnit}`};
     animation: ${resize} 1s ease-in-out infinite;
     &::before,
     &::after {
         content: "";
         position: absolute;
-        top: ${props => props.size / 20}px;
-        left: ${props => props.size / 2}px;
-        width: ${props => props.size / 2}px;
-        height: ${props => props.size - props.size / 5}px;
+        top: ${props => `${props.size / 20}${props.sizeUnit}`};
+        left: ${props => `${props.size / 2}${props.sizeUnit}`};
+        width: ${props => `${props.size / 2}${props.sizeUnit}`};
+        height: ${props => `${props.size - props.size / 5}${props.sizeUnit}`};
         background-color: ${props => props.color};
-        border-radius: ${props => props.size / 2}px ${props => props.size / 2}px
-            0 0;
+        border-radius: ${props => `${props.size / 2}${props.sizeUnit}`}
+            ${props => `${props.size / 2}${props.sizeUnit}`} 0 0;
         transform: rotate(-45deg);
         transform-origin: 0 100%;
     }
@@ -57,10 +57,12 @@ HeartSpinner.defaultProps = {
     loading: true,
     size: 40,
     color: "#fff",
+    sizeUnit: "px",
 };
 
 HeartSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
+    sizeUnit: PropTypes.string,
 };
