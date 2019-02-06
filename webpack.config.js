@@ -1,5 +1,5 @@
 const path = require("path");
-// const nodeExternals = require("webpack-node-externals");
+const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
     entry: path.resolve(__dirname, "src/index.js"),
@@ -9,14 +9,7 @@ module.exports = {
         library: "",
         libraryTarget: "commonjs",
     },
-    externals: {
-        "styled-components": {
-            commonjs: "styled-components",
-            commonjs2: "styled-components",
-            amd: "styled-components",
-        },
-    },
-
+    externals: [nodeExternals(), "styled-components"],
     module: {
         rules: [
             {
