@@ -1,6 +1,6 @@
 {
     "name": "react-spinners-kit",
-    "version": "1.7.4",
+    "version": "1.7.5",
     "description": "A collection of loading spinners",
     "main": "./lib/index.js",
     "repository": {
@@ -73,15 +73,17 @@
         "rimraf": "^2.6.2",
         "webpack": "^4.19.0",
         "webpack-cli": "^3.1.0",
-        "webpack-node-externals": "^1.7.2"
+        "webpack-node-externals": "^1.7.2",
+        "react-syntax-highlighter": "^9.0.0"
     },
     "dependencies": {
         "polished": "^1.9.3",
         "prop-types": "^15.6.2",
         "react": "^16.5.2",
-        "react-dom": "^16.5.1",
-        "react-syntax-highlighter": "^9.0.0",
-        "styled-components": "^3.4.6"
+        "react-dom": "^16.5.1"
+    },
+    "peerDependencies": {
+        "styled-components": "^2.x"
     },
     "babel": {
         "plugins": [
