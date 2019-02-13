@@ -48,6 +48,7 @@ declare const FlapperSpinner: StatelessComponent<OneColorSpinnerProps>;
 declare const MagicSpinner: StatelessComponent<OneColorSpinnerProps>;
 declare const JellyfishSpinner: StatelessComponent<OneColorSpinnerProps>;
 declare const TraceSpinner: StatelessComponent<TwoColorSpinnerProps>;
+declare const ClassicSpinner: StatelessComponent<OneColorSpinnerProps>;
 
 export {
     BallSpinner,
@@ -83,4 +84,5 @@ export {
     MagicSpinner,
     JellyfishSpinner,
     TraceSpinner,
+    ClassicSpinner,
 };
