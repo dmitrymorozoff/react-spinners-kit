@@ -31,7 +31,7 @@ const getBars = (countBars, color, size, sizeUnit) => {
     return bars;
 };
 
-export const BarsSpinner = ({ size, color, loading, sizeUnit }) => {
+const BarsSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBars = 5;
     return (
         loading && (
@@ -75,3 +75,5 @@ BarsSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default BarsSpinner;

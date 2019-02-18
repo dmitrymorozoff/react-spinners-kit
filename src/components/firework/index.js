@@ -16,7 +16,7 @@ const fire = keyframes`
     }
 `;
 
-export const FireworkSpinner = ({ size, color, loading, sizeUnit }) => {
+const FireworkSpinner = ({ size, color, loading, sizeUnit }) => {
     return loading && <Wrapper size={size} color={color} sizeUnit={sizeUnit} />;
 };
 
@@ -45,3 +45,5 @@ FireworkSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default FireworkSpinner;

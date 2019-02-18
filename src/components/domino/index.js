@@ -92,7 +92,7 @@ const getBars = ({
     return bars;
 };
 
-export const DominoSpinner = ({ size, color, loading, sizeUnit }) => {
+const DominoSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBars = 7;
     const rotatesPoints = [0, 0, 0, 10, 40, 60, 70];
     const translatesPoints = getTranslatePositions(countBars, size);
@@ -149,3 +149,5 @@ DominoSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default DominoSpinner;

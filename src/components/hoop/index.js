@@ -38,7 +38,7 @@ const getBalls = ({ countBallsInLine, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const HoopSpinner = ({ size, color, loading, sizeUnit }) => {
+const HoopSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBallsInLine = 6;
     return (
         loading && (
@@ -88,3 +88,5 @@ HoopSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default HoopSpinner;

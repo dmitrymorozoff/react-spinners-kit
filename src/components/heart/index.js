@@ -23,7 +23,7 @@ const resize = keyframes`
     }
 `;
 
-export const HeartSpinner = ({ size, color, loading, sizeUnit }) => {
+const HeartSpinner = ({ size, color, loading, sizeUnit }) => {
     return loading && <Wrapper size={size} color={color} sizeUnit={sizeUnit} />;
 };
 
@@ -66,3 +66,5 @@ HeartSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default HeartSpinner;

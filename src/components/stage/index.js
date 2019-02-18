@@ -44,7 +44,7 @@ const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const StageSpinner = ({ size, color, loading, sizeUnit }) => {
+const StageSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBalls = 3;
     return (
         loading && (
@@ -89,3 +89,5 @@ StageSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default StageSpinner;

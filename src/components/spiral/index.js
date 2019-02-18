@@ -70,7 +70,7 @@ const getCubes = ({
     return cubes;
 };
 
-export const SpiralSpinner = ({
+ const SpiralSpinner = ({
     size,
     backColor,
     frontColor,
@@ -157,3 +157,5 @@ SpiralSpinner.propTypes = {
     backColor: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default SpiralSpinner;

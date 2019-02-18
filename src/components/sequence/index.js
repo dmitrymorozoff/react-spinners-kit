@@ -55,7 +55,7 @@ const getCubes = ({
     return cubes;
 };
 
-export const SequenceSpinner = ({
+const SequenceSpinner = ({
     size,
     backColor,
     frontColor,
@@ -133,3 +133,5 @@ SequenceSpinner.propTypes = {
     backColor: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default SequenceSpinner;

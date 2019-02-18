@@ -7,7 +7,7 @@ const rotate = keyframes`
     to   { transform: rotateX(360deg) rotateY(360deg); }
 `;
 
-export const CubeSpinner = ({
+const CubeSpinner = ({
     size,
     backColor,
     frontColor,
@@ -138,3 +138,5 @@ CubeSpinner.propTypes = {
     backColor: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default CubeSpinner;

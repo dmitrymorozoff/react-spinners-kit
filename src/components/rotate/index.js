@@ -42,7 +42,7 @@ const getBalls = ({
     return balls;
 };
 
-export const RotateSpinner = ({ size, color, loading, sizeUnit }) => {
+const RotateSpinner = ({ size, color, loading, sizeUnit }) => {
     const radius = size / 2;
     const countBalls = 8;
     const ballSize = size / 5;
@@ -105,3 +105,5 @@ RotateSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default RotateSpinner;

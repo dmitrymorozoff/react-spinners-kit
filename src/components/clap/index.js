@@ -67,7 +67,7 @@ const getBalls = ({
     return balls;
 };
 
-export const ClapSpinner = ({
+const ClapSpinner = ({
     size,
     frontColor,
     backColor,
@@ -136,3 +136,5 @@ ClapSpinner.propTypes = {
     backColor: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default ClapSpinner;

@@ -61,7 +61,7 @@ const getBalls = ({
     return balls;
 };
 
-export const SphereSpinner = ({ size, color, loading, sizeUnit }) => {
+const SphereSpinner = ({ size, color, loading, sizeUnit }) => {
     const radius = size / 2;
     const countBalls = 7;
     const ballSize = size / 5;
@@ -121,3 +121,5 @@ SphereSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default SphereSpinner;

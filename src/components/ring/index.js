@@ -28,7 +28,7 @@ const secondPulse = props => keyframes`
     }
 `;
 
-export const RingSpinner = ({ size, color, loading, sizeUnit }) => {
+const RingSpinner = ({ size, color, loading, sizeUnit }) => {
     return (
         loading && (
             <Wrapper size={size} sizeUnit={sizeUnit}>
@@ -86,3 +86,5 @@ RingSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default RingSpinner;

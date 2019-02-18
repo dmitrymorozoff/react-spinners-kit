@@ -55,7 +55,7 @@ const getCubes = ({
     return cubes;
 };
 
-export const GuardSpinner = ({
+const GuardSpinner = ({
     size,
     backColor,
     frontColor,
@@ -130,3 +130,5 @@ GuardSpinner.propTypes = {
     backColor: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default GuardSpinner;

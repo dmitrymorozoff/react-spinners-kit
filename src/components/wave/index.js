@@ -33,7 +33,7 @@ const getBars = ({ countBars, color, size, sizeUnit }) => {
     return bars;
 };
 
-export const WaveSpinner = ({ size, color, loading, sizeUnit }) => {
+const WaveSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBars = 10;
     return (
         loading && (
@@ -80,3 +80,5 @@ WaveSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default WaveSpinner;

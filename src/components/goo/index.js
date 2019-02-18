@@ -44,7 +44,7 @@ const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const GooSpinner = ({ size, color, loading, sizeUnit }) => {
+const GooSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBalls = 2;
     return (
         loading && (
@@ -112,3 +112,6 @@ GooSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+
+export default GooSpinner;

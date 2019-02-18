@@ -51,7 +51,7 @@ const getPlanes = ({ countPlaneInLine, color, size, sizeUnit }) => {
     return lines;
 };
 
-export const FlagSpinner = ({ size, color, loading, sizeUnit }) => {
+const FlagSpinner = ({ size, color, loading, sizeUnit }) => {
     const countPlaneInLine = 4;
     return (
         loading && (
@@ -101,3 +101,5 @@ FlagSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default FlagSpinner;

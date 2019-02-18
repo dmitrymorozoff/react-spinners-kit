@@ -39,7 +39,7 @@ const getBars = ({
     return bars;
 };
 
-export const ClassicSpinner = ({ size, color, loading, sizeUnit }) => {
+const ClassicSpinner = ({ size, color, loading, sizeUnit }) => {
     const radius = size / 2;
     const countBars = 16;
     return (
@@ -91,3 +91,5 @@ ClassicSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default ClassicSpinner;

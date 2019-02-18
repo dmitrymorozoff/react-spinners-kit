@@ -32,7 +32,7 @@ const getBars = ({ countBars, color, size, sizeUnit }) => {
     return bars;
 };
 
-export const PushSpinner = ({ size, color, loading, sizeUnit }) => {
+const PushSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBars = 10;
     return (
         loading && (
@@ -78,3 +78,5 @@ PushSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default PushSpinner;

@@ -43,7 +43,7 @@ const getBalls = ({ countBalls, frontColor, backColor, size, sizeUnit }) => {
     return balls;
 };
 
-export const ImpulseSpinner = ({
+const ImpulseSpinner = ({
     size,
     frontColor,
     backColor,
@@ -102,3 +102,5 @@ ImpulseSpinner.propTypes = {
     backColor: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default ImpulseSpinner;

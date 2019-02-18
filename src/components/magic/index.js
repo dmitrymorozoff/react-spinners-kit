@@ -25,7 +25,7 @@ const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const MagicSpinner = ({ size, color, loading, sizeUnit }) => {
+const MagicSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBalls = size / 12;
     return (
         loading && (
@@ -82,3 +82,5 @@ MagicSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default MagicSpinner;

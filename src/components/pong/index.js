@@ -37,7 +37,7 @@ const motionBall = props => keyframes`
     }
 `;
 
-export const PongSpinner = ({ size, color, loading, sizeUnit }) => {
+const PongSpinner = ({ size, color, loading, sizeUnit }) => {
     return (
         loading && (
             <Wrapper size={size} sizeUnit={sizeUnit}>
@@ -98,3 +98,5 @@ PongSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default PongSpinner;

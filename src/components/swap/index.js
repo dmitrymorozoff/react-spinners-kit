@@ -55,7 +55,7 @@ const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const SwapSpinner = ({ size, color, loading, sizeUnit }) => {
+ const SwapSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBalls = 3;
     return (
         loading && (
@@ -103,3 +103,5 @@ SwapSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default SwapSpinner;
