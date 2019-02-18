@@ -40,7 +40,7 @@ const getBalls = ({
     return balls;
 };
 
-export const FlapperSpinner = ({ size, color, loading, sizeUnit }) => {
+const FlapperSpinner = ({ size, color, loading, sizeUnit }) => {
     const radius = size / 2;
     const countBalls = 7;
     const ballSize = size / 1.5;
@@ -98,3 +98,5 @@ FlapperSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default FlapperSpinner;

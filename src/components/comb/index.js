@@ -24,7 +24,7 @@ const getBars = ({ countBars, color, size, sizeUnit }) => {
     return bars;
 };
 
-export const CombSpinner = ({ size, color, loading, sizeUnit }) => {
+const CombSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBars = size / 9;
     return (
         loading && (
@@ -72,3 +72,5 @@ CombSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default CombSpinner;

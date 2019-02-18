@@ -11,7 +11,7 @@ const rotate = keyframes`
     }
 `;
 
-export const CircleSpinner = ({ size, color, loading, sizeUnit }) => {
+const CircleSpinner = ({ size, color, loading, sizeUnit }) => {
     return loading && <Wrapper size={size} color={color} sizeUnit={sizeUnit} />;
 };
 
@@ -41,3 +41,5 @@ CircleSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default CircleSpinner;

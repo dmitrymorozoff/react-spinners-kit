@@ -21,7 +21,8 @@ const motion = props => keyframes`
     }
 `;
 
-export const BallSpinner = ({ size, color, loading, sizeUnit }) => {
+
+const BallSpinner = ({ size, color, loading, sizeUnit }) => {
     return (
         loading && (
             <Wrapper size={size}>
@@ -61,3 +62,5 @@ BallSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default BallSpinner;

@@ -38,7 +38,7 @@ const getBalls = ({
     return balls;
 };
 
-export const SwishSpinner = ({
+const SwishSpinner = ({
     size,
     frontColor,
     backColor,
@@ -98,3 +98,5 @@ SwishSpinner.propTypes = {
     backColor: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default SwishSpinner;

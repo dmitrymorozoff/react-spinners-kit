@@ -38,7 +38,7 @@ const fill = keyframes`
     }
 `;
 
-export const FillSpinner = ({ size, color, loading, sizeUnit }) => {
+const FillSpinner = ({ size, color, loading, sizeUnit }) => {
     return (
         loading && (
             <Wrapper size={size} color={color} sizeUnit={sizeUnit}>
@@ -78,3 +78,5 @@ FillSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default FillSpinner;

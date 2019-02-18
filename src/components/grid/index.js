@@ -40,7 +40,7 @@ const getBalls = ({ countBallsInLine, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const GridSpinner = ({ size, color, loading, sizeUnit }) => {
+const GridSpinner = ({ size, color, loading, sizeUnit }) => {
     const countBallsInLine = 3;
     return (
         loading && (
@@ -84,3 +84,5 @@ GridSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default GridSpinner;

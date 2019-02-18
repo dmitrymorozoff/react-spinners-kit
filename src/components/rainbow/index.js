@@ -20,7 +20,7 @@ const rotate = props => keyframes`
         border-width: 10${props.sizeUnit};
     }
 `;
-export const RainbowSpinner = ({ size, color, loading, sizeUnit }) => {
+const RainbowSpinner = ({ size, color, loading, sizeUnit }) => {
     return (
         loading && (
             <Wrapper size={size} sizeUnit={sizeUnit}>
@@ -63,3 +63,5 @@ RainbowSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default RainbowSpinner;

@@ -34,7 +34,7 @@ const getCubes = ({ countCubeInLine, color, size, sizeUnit }) => {
     return cubes;
 };
 
-export const PulseSpinner = ({ size, color, loading, sizeUnit }) => {
+const PulseSpinner = ({ size, color, loading, sizeUnit }) => {
     const countCubeInLine = 3;
     return (
         loading && (
@@ -78,3 +78,5 @@ PulseSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default PulseSpinner;

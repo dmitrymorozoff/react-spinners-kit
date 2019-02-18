@@ -62,7 +62,7 @@ const getBalls = ({ countBalls, frontColor, backColor, size, sizeUnit }) => {
     return balls;
 };
 
-export const TraceSpinner = ({
+const TraceSpinner = ({
     size,
     frontColor,
     backColor,
@@ -138,3 +138,5 @@ TraceSpinner.propTypes = {
     backColor: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default TraceSpinner;

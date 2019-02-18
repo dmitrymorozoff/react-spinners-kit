@@ -33,7 +33,7 @@ const getRings = ({ countBalls: countRings, color, size, sizeUnit }) => {
     return rings;
 };
 
-export const JellyfishSpinner = ({ size, color, loading, sizeUnit }) => {
+const JellyfishSpinner = ({ size, color, loading, sizeUnit }) => {
     const countRings = 6;
     return (
         loading && (
@@ -81,3 +81,5 @@ JellyfishSpinner.propTypes = {
     color: PropTypes.string,
     sizeUnit: PropTypes.string,
 };
+
+export default JellyfishSpinner;

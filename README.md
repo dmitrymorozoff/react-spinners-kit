@@ -11,7 +11,9 @@ A collection of loading spinners built with [styled-components](https://styled-c
 
 ## Live Demo
 
--   To check out live examples visit https://dmitrymorozoff.github.io/react-spinners-kit/
+ To check out live examples visit                       https://dmitrymorozoff.github.io/react-spinners-kit/
+
+https://bitsrc.io/dmitrymorozoff/react-spinners-kit -  Disocver, play and install spinners. 
 
 ## Installation
 
@@ -22,6 +24,7 @@ Install `react-spinners-kit` using npm.
 or if you prefer yarn
 
 ### `yarn add react-spinners-kit`
+
 
 ## Usage
 
