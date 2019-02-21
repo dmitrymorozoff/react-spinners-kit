@@ -13,6 +13,8 @@ A collection of loading spinners built with [styled-components](https://styled-c
 
 -   To check out live examples visit https://dmitrymorozoff.github.io/react-spinners-kit/
 
+-   live spinners demo and installation via bit https://bitsrc.io/dmitrymorozoff/react-spinners-kit
+
 ## Installation
 
 Install `react-spinners-kit` using npm.
