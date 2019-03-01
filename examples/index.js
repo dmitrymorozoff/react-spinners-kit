@@ -37,6 +37,8 @@ import {
     JellyfishSpinner,
     TraceSpinner,
     ClassicSpinner,
+    WhisperSpinner,
+    MetroSpinner,
 } from "../src";
 
 const SpinnerWrapper = ({ children, name }) => {
@@ -61,8 +63,7 @@ class App extends React.Component {
                 <div className="header">
                     <h1 className="header-title">react-spinners-kit</h1>
                     <div className="header-subtitle">
-                        A collection of loading spinners built with
-                        styled-components.
+                        A collection of loading spinners built with styled-components.
                     </div>
                 </div>
                 <a
@@ -174,6 +175,12 @@ class App extends React.Component {
                     </SpinnerWrapper>
                     <SpinnerWrapper name="ClassicSpinner">
                         <ClassicSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="WhisperSpinner">
+                        <WhisperSpinner />
+                    </SpinnerWrapper>
+                    <SpinnerWrapper name="MetroSpinner">
+                        <MetroSpinner />
                     </SpinnerWrapper>
                 </div>
             </div>

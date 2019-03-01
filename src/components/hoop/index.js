@@ -6,8 +6,9 @@ const motion = props => keyframes`
     0% {
         opacity: 0;
         border-color: ${props.color};
-        transform: ${`rotateX(65deg) rotateY(45deg) translateZ(-${props.size *
-            1.5}${props.sizeUnit}) scale(0.1)`};
+        transform: ${`rotateX(65deg) rotateY(45deg) translateZ(-${props.size * 1.5}${
+            props.sizeUnit
+        }) scale(0.1)`};
     }
     40% {
         opacity: 1;
@@ -15,8 +16,9 @@ const motion = props => keyframes`
     }
     100% {
         opacity: 0;
-        transform: ${`rotateX(65deg) rotateY(-45deg) translateZ(-${props.size *
-            1.5}${props.sizeUnit}) scale(0.1)`};
+        transform: ${`rotateX(65deg) rotateY(-45deg) translateZ(-${props.size * 1.5}${
+            props.sizeUnit
+        }) scale(0.1)`};
     }
 `;
 
@@ -25,13 +27,7 @@ const getBalls = ({ countBallsInLine, color, size, sizeUnit }) => {
     let keyValue = 0;
     for (let i = 0; i < countBallsInLine; i++) {
         balls.push(
-            <Ball
-                color={color}
-                size={size}
-                key={keyValue.toString()}
-                index={i}
-                sizeUnit={sizeUnit}
-            />,
+            <Ball color={color} size={size} key={keyValue.toString()} index={i} sizeUnit={sizeUnit} />,
         );
         keyValue++;
     }
@@ -64,8 +60,7 @@ const Ball = styled.div`
     position: absolute;
     width: ${props => `${props.size / 1.5}${props.sizeUnit}`};
     height: ${props => `${props.size / 1.5}${props.sizeUnit}`};
-    border: ${props => `${props.size / 5}${props.sizeUnit}`} solid
-        ${props => props.color};
+    border: ${props => `${props.size / 5}${props.sizeUnit}`} solid ${props => props.color};
     border-radius: 50%;
     background-color: transparent;
     transform-style: perserve-3d;

@@ -43,13 +43,7 @@ const getBalls = ({ countBalls, frontColor, backColor, size, sizeUnit }) => {
     return balls;
 };
 
-export const ImpulseSpinner = ({
-    size,
-    frontColor,
-    backColor,
-    loading,
-    sizeUnit,
-}) => {
+export const ImpulseSpinner = ({ size, frontColor, backColor, loading, sizeUnit }) => {
     const countBalls = 3;
     return (
         loading && (

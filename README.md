@@ -13,7 +13,7 @@ A collection of loading spinners built with [styled-components](https://styled-c
 
 -   To check out live examples visit https://dmitrymorozoff.github.io/react-spinners-kit/
 
-## Installation
+## 🚀 Installation
 
 Install `react-spinners-kit` using npm.
 
@@ -23,7 +23,7 @@ or if you prefer yarn
 
 ### `yarn add react-spinners-kit`
 
-## Usage
+## 👨🏻‍💻 Usage
 
 ```jsx
 import React from "react";
@@ -53,7 +53,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
-## PropTypes and Default Props
+## 📃 PropTypes and Default Props
 
 - Each spinner accepts a `loading` prop as a boolean. 
 - The `loading` prop defaults to `true`.
@@ -95,6 +95,8 @@ ReactDOM.render(<App />, document.getElementById("root"));
 | JellyfishSpinner | `60`         | `#4b4c56`     | -                  | -                 | `px`             |
 | TraceSpinner     | `70`         | -             | `#00ff89`          | `#4b4c56`         | `px`             |
 | ClassicSpinner   | `30`         | `#fff`        | -                  | -                 | `px`             |
+| MetroSpinner     | `40`         | `#fff`        | -                  | -                 | `px`             |
+| WhisperSpinner   | `50`         | `#fff`        | `#4b4c56`          | `#00ff89`         | `px`             |
 
 ## Development
 
@@ -113,7 +115,7 @@ Run linter
 
 ### `npm run lint`
 
-## Contributing
+## 💻 Contributing
 
 - Pull requests and ⭐ stars are always welcome
 - For bugs and feature requests, please create an issue

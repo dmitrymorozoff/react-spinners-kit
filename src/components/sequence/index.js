@@ -17,36 +17,15 @@ const rotate = props => keyframes`
     }
 `;
 
-const getCubes = ({
-    countCubesInLine,
-    backColor,
-    frontColor,
-    size,
-    sizeUnit,
-}) => {
+const getCubes = ({ countCubesInLine, backColor, frontColor, size, sizeUnit }) => {
     const cubes = [];
     let keyValue = 0;
     for (let i = 0; i < countCubesInLine; i++) {
         cubes.push(
-            <CubeWrapper
-                x={i * (size / 8 + size / 11)}
-                y={0}
-                key={keyValue.toString()}
-                sizeUnit={sizeUnit}
-            >
+            <CubeWrapper x={i * (size / 8 + size / 11)} y={0} key={keyValue.toString()} sizeUnit={sizeUnit}>
                 <Cube size={size} index={keyValue} sizeUnit={sizeUnit}>
-                    <Side
-                        front={true}
-                        size={size}
-                        color={frontColor}
-                        sizeUnit={sizeUnit}
-                    />
-                    <Side
-                        left={true}
-                        size={size}
-                        color={backColor}
-                        sizeUnit={sizeUnit}
-                    />
+                    <Side front={true} size={size} color={frontColor} sizeUnit={sizeUnit} />
+                    <Side left={true} size={size} color={backColor} sizeUnit={sizeUnit} />
                 </Cube>
             </CubeWrapper>,
         );
@@ -55,13 +34,7 @@ const getCubes = ({
     return cubes;
 };
 
-export const SequenceSpinner = ({
-    size,
-    backColor,
-    frontColor,
-    loading,
-    sizeUnit,
-}) => {
+export const SequenceSpinner = ({ size, backColor, frontColor, loading, sizeUnit }) => {
     const countCubesInLine = 5;
     return (
         loading && (

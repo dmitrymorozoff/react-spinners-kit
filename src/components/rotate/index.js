@@ -12,15 +12,7 @@ const rotate = keyframes`
     }
 `;
 
-const getBalls = ({
-    countBalls,
-    radius,
-    angle,
-    color,
-    size,
-    ballSize,
-    sizeUnit,
-}) => {
+const getBalls = ({ countBalls, radius, angle, color, size, ballSize, sizeUnit }) => {
     const balls = [];
     const offset = ballSize / 2;
     for (let i = 0; i < countBalls; i++) {
@@ -84,12 +76,7 @@ const Ball = styled.div`
     transform: translateX(-50%) translateY(100%);
     transform-origin: 0 250% 0;
     animation: ${rotate} 4s both infinite;
-    animation-timing-function: cubic-bezier(
-        0.5,
-        ${props => props.index * 0.3},
-        0.9,
-        0.9
-    );
+    animation-timing-function: cubic-bezier(0.5, ${props => props.index * 0.3}, 0.9, 0.9);
 `;
 
 RotateSpinner.defaultProps = {

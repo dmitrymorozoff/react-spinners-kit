@@ -55,12 +55,8 @@ const Wrapper = styled.div`
 
 const Ring = styled.div`
     position: absolute;
-    width: ${props =>
-        `${props.index * (props.size / props.countRings)}${props.sizeUnit}`};
-    height: ${props =>
-        `${(props.index * (props.size / props.countRings)) / 2}${
-            props.sizeUnit
-        }`};
+    width: ${props => `${props.index * (props.size / props.countRings)}${props.sizeUnit}`};
+    height: ${props => `${(props.index * (props.size / props.countRings)) / 2}${props.sizeUnit}`};
     border: 2px solid ${props => props.color};
     border-radius: 50%;
     background-color: transparent;

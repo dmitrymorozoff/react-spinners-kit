@@ -21,8 +21,7 @@ export const FireworkSpinner = ({ size, color, loading, sizeUnit }) => {
 };
 
 const Wrapper = styled.div`
-    border: ${props => `${props.size / 10}${props.sizeUnit}`} dotted
-        ${props => props.color};
+    border: ${props => `${props.size / 10}${props.sizeUnit}`} dotted ${props => props.color};
     display: flex;
     justify-content: center;
     align-items: center;

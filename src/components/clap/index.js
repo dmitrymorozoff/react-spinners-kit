@@ -13,38 +13,25 @@ const rotate = keyframes`
 
 const move = props => keyframes`
     0% {
-        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
-    props.y
-}${props.sizeUnit}) scale(1.25) ;
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${props.y}${
+    props.sizeUnit
+}) scale(1.25) ;
     }
     5% {
-        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
-    props.y
-}${props.sizeUnit}) scale(1.75);
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${props.y}${
+    props.sizeUnit
+}) scale(1.75);
     }
     50% {
-        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
-    props.y
-}${props.sizeUnit}) scale(.25);
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${props.y}${props.sizeUnit}) scale(.25);
     }
     55% {
         background-color: ${props.backColor};
-        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
-    props.y
-}${props.sizeUnit}) scale(1) ;
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${props.y}${props.sizeUnit}) scale(1) ;
     }
 `;
 
-const getBalls = ({
-    countBalls,
-    radius,
-    angle,
-    frontColor,
-    backColor,
-    size,
-    ballSize,
-    sizeUnit,
-}) => {
+const getBalls = ({ countBalls, radius, angle, frontColor, backColor, size, ballSize, sizeUnit }) => {
     const balls = [];
     const offset = ballSize / 2;
     for (let i = 0; i < countBalls; i++) {
@@ -67,13 +54,7 @@ const getBalls = ({
     return balls;
 };
 
-export const ClapSpinner = ({
-    size,
-    frontColor,
-    backColor,
-    loading,
-    sizeUnit,
-}) => {
+export const ClapSpinner = ({ size, frontColor, backColor, loading, sizeUnit }) => {
     const radius = size / 2;
     const countBalls = 7;
     const ballSize = size / 5;
@@ -116,8 +97,7 @@ const Ball = styled.div`
     background-color: ${props => props.frontColor};
     transform: translateX(${props => `${props.x}${props.sizeUnit}`})
         translateY(${props => `${props.y}${props.sizeUnit}`});
-    animation: ${props => move(props)} 2.5s cubic-bezier(0.075, 0.82, 0.165, 1)
-        infinite;
+    animation: ${props => move(props)} 2.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: ${props => props.index * 0.2}s;
 `;
 

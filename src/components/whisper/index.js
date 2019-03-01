@@ -3,9 +3,33 @@ import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
-    50% {
-        transform: scale(0);
+    0% {
+        transform: scale(1, 1);
+        opacity: 1;
         background-color: ${props.backColor};
+    }
+    100% {
+        transform: scale(0, 0);
+        opacity: 0;
+        background-color: ${props.frontColor};
+    }
+`;
+
+const spin = () => keyframes`
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 `;
 
@@ -19,8 +43,6 @@ const getBalls = ({ countBallsInLine, frontColor, backColor, size, sizeUnit }) =
                     frontColor={frontColor}
                     backColor={backColor}
                     size={size}
-                    x={i * (size / 3 + size / 15)}
-                    y={j * (size / 3 + size / 15)}
                     key={keyValue.toString()}
                     index={keyValue}
                     sizeUnit={sizeUnit}
@@ -32,7 +54,7 @@ const getBalls = ({ countBallsInLine, frontColor, backColor, size, sizeUnit }) =
     return balls;
 };
 
-export const SwishSpinner = ({ size, frontColor, backColor, loading, sizeUnit }) => {
+export const WhisperSpinner = ({ size, frontColor, backColor, loading, sizeUnit }) => {
     const countBallsInLine = 3;
     return (
         loading && (
@@ -51,35 +73,61 @@ export const SwishSpinner = ({ size, frontColor, backColor, loading, sizeUnit })
 
 const Wrapper = styled.div`
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: ${props => `${props.size}${props.sizeUnit}`};
     height: ${props => `${props.size}${props.sizeUnit}`};
+    animation: ${spin} 10s infinite;
 `;
 
 const Ball = styled.div`
-    position: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
+    float: left;
+    clear: right;
+    margin: ${props => `${props.size / 15}${props.sizeUnit}`};
     width: ${props => `${props.size / 5}${props.sizeUnit}`};
     height: ${props => `${props.size / 5}${props.sizeUnit}`};
-    border-radius: 3px;
+    border-radius: 2px;
     background-color: ${props => props.frontColor};
-    animation: ${motion} 0.9s ease infinite;
-    transition: all 0.3s ease;
-    animation-delay: ${props => props.index * 0.1}s;
+    animation-name: ${motion};
+    animation-direction: alternate;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    &:nth-child(1) {
+        animation-delay: 200ms;
+    }
+    &:nth-child(2) {
+        animation-delay: 400ms;
+    }
+    &:nth-child(3) {
+        animation-delay: 600ms;
+    }
+    &:nth-child(4) {
+        animation-delay: 400ms;
+    }
+    &:nth-child(5) {
+        animation-delay: 600ms;
+    }
+    &:nth-child(6) {
+        animation-delay: 800ms;
+    }
+    &:nth-child(7) {
+        animation-delay: 600ms;
+    }
+    &:nth-child(8) {
+        animation-delay: 800ms;
+    }
+    &:nth-child(9) {
+        animation-delay: 1s;
+    }
 `;
 
-SwishSpinner.defaultProps = {
+WhisperSpinner.defaultProps = {
     loading: true,
-    size: 40,
+    size: 50,
     frontColor: "#4b4c56",
-    backColor: "#fff",
+    backColor: "#00ff89",
     sizeUnit: "px",
 };
 
-SwishSpinner.propTypes = {
+WhisperSpinner.propTypes = {
     loading: PropTypes.bool,
     size: PropTypes.number,
     frontColor: PropTypes.string,

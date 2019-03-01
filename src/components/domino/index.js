@@ -4,57 +4,39 @@ import styled, { keyframes } from "styled-components";
 
 const fall = props => keyframes`
     0% {
-        transform: translateX(${props.translatesPoints[0]}${
-    props.sizeUnit
-}) rotate(0deg);
+        transform: translateX(${props.translatesPoints[0]}${props.sizeUnit}) rotate(0deg);
         opacity: 0;
     }
     14.28% {
-        transform: translateX(${props.translatesPoints[1]}${
-    props.sizeUnit
-}) rotate(0deg);
+        transform: translateX(${props.translatesPoints[1]}${props.sizeUnit}) rotate(0deg);
         opacity: 1;
     }
     28.56% {
-        transform: translateX(${props.translatesPoints[2]}${
-    props.sizeUnit
-}) rotate(0deg);
+        transform: translateX(${props.translatesPoints[2]}${props.sizeUnit}) rotate(0deg);
         opacity: 1;
     }
     37.12% {
-        transform: translateX(${props.translatesPoints[3]}${
-    props.sizeUnit
-}) rotate(0deg);
+        transform: translateX(${props.translatesPoints[3]}${props.sizeUnit}) rotate(0deg);
         opacity: 1;
     }
     42.84% {
-        transform: translateX(${props.translatesPoints[4]}${
-    props.sizeUnit
-}) rotate(10deg);
+        transform: translateX(${props.translatesPoints[4]}${props.sizeUnit}) rotate(10deg);
         opacity: 1;
     }
     57.12% {
-        transform: translateX(${props.translatesPoints[5]}${
-    props.sizeUnit
-}) rotate(40deg);
+        transform: translateX(${props.translatesPoints[5]}${props.sizeUnit}) rotate(40deg);
         opacity: 1;
     }
     71.4% {
-        transform: translateX(${props.translatesPoints[6]}${
-    props.sizeUnit
-}) rotate(62deg);
+        transform: translateX(${props.translatesPoints[6]}${props.sizeUnit}) rotate(62deg);
         opacity: 1;
     }
     85.68% {
-        transform: translateX(${props.translatesPoints[7]}${
-    props.sizeUnit
-}) rotate(72deg);
+        transform: translateX(${props.translatesPoints[7]}${props.sizeUnit}) rotate(72deg);
         opacity: 1;
     }
     100% {
-        transform: translateX(${props.translatesPoints[8]}${
-    props.sizeUnit
-}) rotate(74deg);
+        transform: translateX(${props.translatesPoints[8]}${props.sizeUnit}) rotate(74deg);
         opacity: 0;
     }
 `;
@@ -67,14 +49,7 @@ const getTranslatePositions = (countBars, size) => {
     return translates;
 };
 
-const getBars = ({
-    countBars,
-    rotatesPoints,
-    translatesPoints,
-    color,
-    size,
-    sizeUnit,
-}) => {
+const getBars = ({ countBars, rotatesPoints, translatesPoints, color, size, sizeUnit }) => {
     const bars = [];
     for (let i = 0; i < countBars; i++) {
         bars.push(
@@ -127,9 +102,7 @@ const Bar = styled.div`
     background-color: ${props => props.color};
     animation: ${fall} 3s linear infinite;
     animation-delay: ${props => props.index * -0.42}s;
-    transform: translateX(
-            ${props => `${props.size - props.index * 15}${props.sizeUnit}`}
-        )
+    transform: translateX(${props => `${props.size - props.index * 15}${props.sizeUnit}`})
         rotate(${props => props.rotate}deg);
     &:nth-child(1) {
         opacity: 0.22;

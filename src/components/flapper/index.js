@@ -10,15 +10,7 @@ const move = props => keyframes`
    }
 `;
 
-const getBalls = ({
-    countBalls,
-    radius,
-    angle,
-    color,
-    size,
-    ballSize,
-    sizeUnit,
-}) => {
+const getBalls = ({ countBalls, radius, angle, color, size, ballSize, sizeUnit }) => {
     const balls = [];
     const offset = ballSize / 2;
     for (let i = 0; i < countBalls; i++) {

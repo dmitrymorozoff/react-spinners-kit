@@ -41,19 +41,9 @@ export const PongSpinner = ({ size, color, loading, sizeUnit }) => {
     return (
         loading && (
             <Wrapper size={size} sizeUnit={sizeUnit}>
-                <Player
-                    left={true}
-                    color={color}
-                    size={size}
-                    sizeUnit={sizeUnit}
-                />
+                <Player left={true} color={color} size={size} sizeUnit={sizeUnit} />
                 <Ball color={color} size={size} sizeUnit={sizeUnit} />
-                <Player
-                    right={true}
-                    color={color}
-                    size={size}
-                    sizeUnit={sizeUnit}
-                />
+                <Player right={true} color={color} size={size} sizeUnit={sizeUnit} />
             </Wrapper>
         )
     );

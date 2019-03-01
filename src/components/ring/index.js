@@ -4,9 +4,7 @@ import styled, { keyframes } from "styled-components";
 
 const firstPulse = props => keyframes`
     0% { 
-        box-shadow: inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${
-    props.color
-};
+        box-shadow: inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${props.color};
         opacity: 1;
     }
     50%, 100% {
@@ -21,9 +19,7 @@ const secondPulse = props => keyframes`
         opacity: 0;
     }
     100% { 
-        box-shadow: inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${
-    props.color
-};
+        box-shadow: inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${props.color};
         opacity: 1;
     }
 `;
@@ -63,8 +59,7 @@ const Circle = styled.div`
         animation-timing-function: ease-in-out;
     }
     &:before {
-        box-shadow: ${props =>
-            `inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${props.color}`};
+        box-shadow: ${props => `inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${props.color}`};
         animation-name: ${firstPulse};
     }
     &:after {

@@ -10,36 +10,24 @@ const rotate = keyframes`
 
 const move = props => keyframes`
     0% {
-        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
-    props.y
-}${props.sizeUnit}) scale(1) ;
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${props.y}${props.sizeUnit}) scale(1) ;
     }
     5% {
-        transform: translateX(-${props.size / 12}${
+        transform: translateX(-${props.size / 12}${props.sizeUnit}) translateY(-${props.size / 12}${
     props.sizeUnit
-}) translateY(-${props.size / 12}${props.sizeUnit}) scale(0);
+}) scale(0);
     }
     50% {
-        transform: translateX(-${props.size / 12}${
+        transform: translateX(-${props.size / 12}${props.sizeUnit}) translateY(-${props.size / 12}${
     props.sizeUnit
-}) translateY(-${props.size / 12}${props.sizeUnit}) scale(0);
+}) scale(0);
     }
     55% {
-        transform: translateX(${props.x}${props.sizeUnit}) translateY(${
-    props.y
-}${props.sizeUnit}) scale(1) ;
+        transform: translateX(${props.x}${props.sizeUnit}) translateY(${props.y}${props.sizeUnit}) scale(1) ;
     }
 `;
 
-const getBalls = ({
-    countBalls,
-    radius,
-    angle,
-    color,
-    size,
-    ballSize,
-    sizeUnit,
-}) => {
+const getBalls = ({ countBalls, radius, angle, color, size, ballSize, sizeUnit }) => {
     const balls = [];
     const offset = ballSize / 2;
     for (let i = 0; i < countBalls; i++) {
@@ -103,8 +91,7 @@ const Ball = styled.div`
     background-color: ${props => props.color};
     transform: translateX(${props => `${props.x}${props.sizeUnit}`})
         translateY(${props => `${props.y}${props.sizeUnit}`});
-    animation: ${props => move(props)} 5s cubic-bezier(0.165, 0.84, 0.44, 1)
-        infinite;
+    animation: ${props => move(props)} 5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
     animation-delay: ${props => props.index * 0.3}s;
 `;
 

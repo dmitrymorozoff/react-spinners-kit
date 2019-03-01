@@ -37,12 +37,7 @@ const getPlanes = ({ countPlaneInLine, color, size, sizeUnit }) => {
             keyValue++;
         }
         lines.push(
-            <Line
-                index={keyValue}
-                key={keyValue.toString()}
-                size={size}
-                sizeUnit={sizeUnit}
-            >
+            <Line index={keyValue} key={keyValue.toString()} size={size} sizeUnit={sizeUnit}>
                 {[...planes]}
             </Line>,
         );

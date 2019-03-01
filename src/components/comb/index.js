@@ -11,15 +11,7 @@ const rotate = () => keyframes`
 const getBars = ({ countBars, color, size, sizeUnit }) => {
     const bars = [];
     for (let i = 0; i < countBars; i++) {
-        bars.push(
-            <Bar
-                color={color}
-                size={size}
-                key={i.toString()}
-                sizeUnit={sizeUnit}
-                index={i}
-            />,
-        );
+        bars.push(<Bar color={color} size={size} key={i.toString()} sizeUnit={sizeUnit} index={i} />);
     }
     return bars;
 };
