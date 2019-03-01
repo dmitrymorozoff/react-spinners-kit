@@ -32,6 +32,8 @@ import { MagicSpinner } from "./components/magic";
 import { JellyfishSpinner } from "./components/jellyfish";
 import { TraceSpinner } from "./components/trace";
 import { ClassicSpinner } from "./components/classic";
+import { WhisperSpinner } from "./components/whisper";
+import { MetroSpinner } from "./components/metro";
 
 export {
     BallSpinner,
@@ -68,4 +70,6 @@ export {
     JellyfishSpinner,
     TraceSpinner,
     ClassicSpinner,
+    WhisperSpinner,
+    MetroSpinner,
 };

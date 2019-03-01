@@ -19,19 +19,14 @@ const trace = props => keyframes`
 
 const motion = props => keyframes`
     25% {
-        transform: translate(${props.size / 2 + props.size / 10}${
-    props.sizeUnit
-}, 0);
+        transform: translate(${props.size / 2 + props.size / 10}${props.sizeUnit}, 0);
     }
     50% {
-        transform: translate(${props.size / 2 + props.size / 10}${
-    props.sizeUnit
-}, ${props.size / 2 + props.size / 10}${props.sizeUnit});
+        transform: translate(${props.size / 2 + props.size / 10}${props.sizeUnit}, ${props.size / 2 +
+    props.size / 10}${props.sizeUnit});
     }
     75% {
-        transform: translate(0, ${props.size / 2 + props.size / 10}${
-    props.sizeUnit
-});
+        transform: translate(0, ${props.size / 2 + props.size / 10}${props.sizeUnit});
     }
     100% {
         transform: translate(0, 0);
@@ -62,13 +57,7 @@ const getBalls = ({ countBalls, frontColor, backColor, size, sizeUnit }) => {
     return balls;
 };
 
-export const TraceSpinner = ({
-    size,
-    frontColor,
-    backColor,
-    loading,
-    sizeUnit,
-}) => {
+export const TraceSpinner = ({ size, frontColor, backColor, loading, sizeUnit }) => {
     const countBalls = 4;
     return (
         loading && (
@@ -80,11 +69,7 @@ export const TraceSpinner = ({
                     size,
                     sizeUnit,
                 })}
-                <MovedBall
-                    frontColor={frontColor}
-                    size={size}
-                    sizeUnit={sizeUnit}
-                />
+                <MovedBall frontColor={frontColor} size={size} sizeUnit={sizeUnit} />
             </Wrapper>
         )
     );
@@ -108,8 +93,7 @@ const Ball = styled.div`
     height: ${props => `${props.size / 5}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: transparent;
-    border: ${props => `${props.size / 10}${props.sizeUnit}`} solid
-        ${props => props.backColor};
+    border: ${props => `${props.size / 10}${props.sizeUnit}`} solid ${props => props.backColor};
     animation: ${trace} 4s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
     animation-delay: ${props => props.index * 1}s;
 `;

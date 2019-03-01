@@ -44,8 +44,7 @@ const Ball = styled.div`
     height: ${props => `${props.size / 3}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: ${props => props.color};
-    animation: ${props => motion(props)} 3s cubic-bezier(0.165, 0.84, 0.44, 1)
-        infinite;
+    animation: ${props => motion(props)} 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
 `;
 
 BallSpinner.defaultProps = {

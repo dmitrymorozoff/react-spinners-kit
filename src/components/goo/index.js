@@ -55,11 +55,7 @@ export const GooSpinner = ({ size, color, loading, sizeUnit }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
                     <defs>
                         <filter id="goo">
-                            <feGaussianBlur
-                                in="SourceGraphic"
-                                stdDeviation="6"
-                                result="blur"
-                            />
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
                             <feColorMatrix
                                 in="blur"
                                 mode="matrix"

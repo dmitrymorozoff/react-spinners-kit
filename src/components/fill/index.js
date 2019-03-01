@@ -54,8 +54,7 @@ const Wrapper = styled.div`
     justify-content: center;
     width: ${props => `${props.size}${props.sizeUnit}`};
     height: ${props => `${props.size}${props.sizeUnit}`};
-    border: ${props => `${props.size / 8}${props.sizeUnit}`} solid
-        ${props => props.color};
+    border: ${props => `${props.size / 8}${props.sizeUnit}`} solid ${props => props.color};
     animation: ${rotate} 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 `;
 

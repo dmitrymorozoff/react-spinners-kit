@@ -7,54 +7,18 @@ const rotate = keyframes`
     to   { transform: rotateX(360deg) rotateY(360deg); }
 `;
 
-export const CubeSpinner = ({
-    size,
-    backColor,
-    frontColor,
-    loading,
-    sizeUnit,
-}) => {
+export const CubeSpinner = ({ size, backColor, frontColor, loading, sizeUnit }) => {
     return (
         loading && (
             <Wrapper size={size} sizeUnit={sizeUnit}>
                 <CubeWrapper x={0} y={0} sizeUnit={sizeUnit}>
                     <Cube size={size} sizeUnit={sizeUnit}>
-                        <Side
-                            front={true}
-                            size={size}
-                            color={frontColor}
-                            sizeUnit={sizeUnit}
-                        />
-                        <Side
-                            back={true}
-                            size={size}
-                            color={frontColor}
-                            sizeUnit={sizeUnit}
-                        />
-                        <Side
-                            bottom={true}
-                            size={size}
-                            color={backColor}
-                            sizeUnit={sizeUnit}
-                        />
-                        <Side
-                            top={true}
-                            size={size}
-                            color={backColor}
-                            sizeUnit={sizeUnit}
-                        />
-                        <Side
-                            left={true}
-                            size={size}
-                            color={backColor}
-                            sizeUnit={sizeUnit}
-                        />
-                        <Side
-                            right={true}
-                            size={size}
-                            color={backColor}
-                            sizeUnit={sizeUnit}
-                        />
+                        <Side front={true} size={size} color={frontColor} sizeUnit={sizeUnit} />
+                        <Side back={true} size={size} color={frontColor} sizeUnit={sizeUnit} />
+                        <Side bottom={true} size={size} color={backColor} sizeUnit={sizeUnit} />
+                        <Side top={true} size={size} color={backColor} sizeUnit={sizeUnit} />
+                        <Side left={true} size={size} color={backColor} sizeUnit={sizeUnit} />
+                        <Side right={true} size={size} color={backColor} sizeUnit={sizeUnit} />
                     </Cube>
                 </CubeWrapper>
             </Wrapper>
@@ -118,8 +82,7 @@ const Side = styled.div`
     width: inherit;
     height: inherit;
     background-color: ${props => props.color};
-    transform: rotateX(${props => rotateXCube(props)}deg)
-        rotateY(${props => rotateYCube(props)}deg)
+    transform: rotateX(${props => rotateXCube(props)}deg) rotateY(${props => rotateYCube(props)}deg)
         translateZ(${props => `${props.size / 2}${props.sizeUnit}`});
 `;
 

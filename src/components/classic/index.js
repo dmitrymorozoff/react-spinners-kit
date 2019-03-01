@@ -11,13 +11,7 @@ const fade = keyframes`
     }
 `;
 
-const getBars = ({
-    countBars: countBars,
-    color,
-    size,
-    barSize: barSize,
-    sizeUnit,
-}) => {
+const getBars = ({ countBars: countBars, color, size, barSize: barSize, sizeUnit }) => {
     const bars = [];
     for (let i = 0; i < countBars; i++) {
         const rotate = (360 / countBars) * i;
