@@ -1,0 +1,56 @@
+.clap-spinner {
+    --size: 32px;
+    --front-color: #fff;
+    --back-color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--size);
+    height: var(--size);
+    animation: clap-spinner-rotate 1.5s linear infinite;
+}
+
+@for $i from 0 through 6 {
+    .clap-ball-#{$i} {
+        position: absolute;
+        top: calc(var(--size) / 2);
+        left: calc(var(--size) / 2);
+        width: calc(var(--size) / 5);
+        height: calc(var(--size) / 5);
+        border-radius: 50%;
+        background-color: var(--front-color);
+        transform: translateX(var(--x)) translateY(var(--y));
+        animation: clap-spinner-motion 2.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+        animation-delay: calc(#{$i} * 0.2s);
+    }
+}
+
+@keyframes clap-spinner-rotate {
+    50% {
+        transform: rotate(180deg) scale(1.125);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes clap-spinner-motion {
+    0% {
+        transform: translateX(var(--x)) translateY(var(--y)) scale(1.25);
+    }
+
+    5% {
+        transform: translateX(var(--x)) translateY(var(--y)) scale(1.75);
+    }
+
+    50% {
+        transform: translateX(var(--x)) translateY(var(--y)) scale(.25);
+    }
+
+    55% {
+        background-color: var(--back-color);
+        transform: translateX(var(--x)) translateY(var(--y)) scale(1);
+    }
+}

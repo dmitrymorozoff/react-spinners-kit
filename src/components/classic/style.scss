@@ -1,0 +1,33 @@
+.classic-spinner {
+    --size: 32px;
+    --color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--size);
+    height: var(--size);
+}
+
+@for $i from 0 through 15 {
+    .classic-bar-#{$i} {
+        position: absolute;
+        width: calc(var(--size) / 10);
+        height: calc(var(--size) / 4);
+        background-color: var(--color);
+        opacity: 0.05;
+        transform: rotate(calc((360deg / 15) * #{$i})) translate(0, calc(-1 * var(--size) / 2));
+        animation: classic-spinner-fade calc(15 * 0.06s) linear infinite;
+        animation-delay: calc(#{$i} * 0.06s);
+    }
+}
+
+@keyframes classic-spinner-fade {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

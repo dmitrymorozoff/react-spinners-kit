@@ -1,5 +1,6 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: path.resolve(__dirname, "src/index.js"),
@@ -11,8 +12,7 @@ module.exports = {
     },
     externals: [nodeExternals(), "styled-components"],
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.js$/,
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
@@ -20,10 +20,15 @@ module.exports = {
                     presets: ["env", "react"],
                 },
             },
+
             {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+            }
         ],
     },
 };

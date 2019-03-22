@@ -4,8 +4,8 @@ import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { atomOneDark } from "react-syntax-highlighter/styles/hljs";
 import {
     SwapSpinner,
-    BarsSpinner,
-    BallSpinner,
+    // BarsSpinner,
+    // BallSpinner,
     GridSpinner,
     WaveSpinner,
     PushSpinner,
@@ -13,7 +13,7 @@ import {
     StageSpinner,
     HeartSpinner,
     GuardSpinner,
-    CircleSpinner,
+    // CircleSpinner,
     SpiralSpinner,
     PulseSpinner,
     SequenceSpinner,
@@ -23,11 +23,11 @@ import {
     FillSpinner,
     SphereSpinner,
     FlagSpinner,
-    ClapSpinner,
+    // ClapSpinner,
     RotateSpinner,
     SwishSpinner,
     GooSpinner,
-    CombSpinner,
+    // CombSpinner,
     PongSpinner,
     RainbowSpinner,
     RingSpinner,
@@ -36,10 +36,17 @@ import {
     MagicSpinner,
     JellyfishSpinner,
     TraceSpinner,
-    ClassicSpinner,
+    // ClassicSpinner,
     WhisperSpinner,
     MetroSpinner,
 } from "../src";
+
+import { BallSpinner } from "./../src/components/ball/index-v2";
+import { BarsSpinner } from "./../src/components/bars/index-v2";
+import { CircleSpinner } from "./../src/components/circle/index-v2";
+import { ClapSpinner } from "./../src/components/clap/index-v2";
+import { ClassicSpinner } from "./../src/components/classic/index-v2";
+import { CombSpinner } from "./../src/components/comb/index-v2";
 
 const SpinnerWrapper = ({ children, name }) => {
     return (
