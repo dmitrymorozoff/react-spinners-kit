@@ -25,7 +25,7 @@ export const BallSpinner = ({ size, color, loading, sizeUnit }) => {
     return (
         loading && (
             <Wrapper size={size}>
-                <Ball color={color} size={size} sizeUnit={sizeUnit} />
+                <Ball color={color} size={size} sizeUnit={sizeUnit} />{" "}
             </Wrapper>
         )
     );
