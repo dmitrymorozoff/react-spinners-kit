@@ -1,6 +1,6 @@
 {
   "name": "react-spinners-kit",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "A collection of loading spinners",
   "main": "./lib/index.js",
   "repository": {
@@ -37,10 +37,12 @@
     "lint",
     "prettier"
   ],
-  "size-limit": [{
-    "limit": "9 KB",
-    "path": "./lib/index.js"
-  }],
+  "size-limit": [
+    {
+      "limit": "9 KB",
+      "path": "./lib/index.js"
+    }
+  ],
   "jest": {
     "setupFiles": [
       "./jestsetup.js"
@@ -56,7 +58,7 @@
     "autoprefixer": "^9.5.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^25.0.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-styled-components": "^1.7.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -72,10 +74,10 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "jest": "^23.6.0",
+    "jest": "^25.0.0",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
-    "parcel-bundler": "^1.9.7",
+    "parcel-bundler": "^1.12.4",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.14.2",
@@ -83,19 +85,20 @@
     "react-syntax-highlighter": "^9.0.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
-    "size-limit": "^0.21.1",
-    "webpack": "^4.19.0",
+    "size-limit": "^2.2.3",
+    "webpack": "^4.41.4",
     "webpack-cli": "^3.1.0",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "polished": "^1.9.3",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.1"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1"
   },
   "peerDependencies": {
-    "styled-components": "^2.x"
+    "styled-components": ">=2.0.0"
   },
   "babel": {
     "plugins": [

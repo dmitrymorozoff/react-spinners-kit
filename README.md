@@ -40,13 +40,7 @@ class App extends React.Component {
 
     render() {
         const { loading } = this.state;
-        return (
-            <PushSpinner
-                size={30}
-                color="#686769"
-                loading={loading}
-            />
-        );
+        return <PushSpinner size={30} color="#686769" loading={loading} />;
     }
 }
 
@@ -55,11 +49,11 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ## 📃 PropTypes and Default Props
 
-- Each spinner accepts a `loading` prop as a boolean. 
-- The `loading` prop defaults to `true`.
-- The loader will not render anything if `loading` is `false`. 
+-   Each spinner accepts a `loading` prop as a boolean.
+-   The `loading` prop defaults to `true`.
+-   The loader will not render anything if `loading` is `false`.
 
-| Spinner          | Size: number | Color: string | FrontColor: string | BackColor: string | SizeUnit: string |
+| Spinner          | size: number | color: string | frontColor: string | backColor: string | sizeUnit: string |
 | ---------------- | ------------ | ------------- | ------------------ | ----------------- | ---------------- |
 | BallSpinner      | `40`         | `#00ff89`     | -                  | -                 | `px`             |
 | BarsSpinner      | `40`         | `#00ff89`     | -                  | -                 | `px`             |
@@ -117,9 +111,9 @@ Run linter
 
 ## 💻 Contributing
 
-- Pull requests and ⭐ stars are always welcome
-- For bugs and feature requests, please create an issue
-- Lint and test your code
+-   Pull requests and ⭐ stars are always welcome
+-   For bugs and feature requests, please create an issue
+-   Lint and test your code
 
 ## License
 

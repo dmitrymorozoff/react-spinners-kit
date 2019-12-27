@@ -17,16 +17,16 @@ const rotateBall = props => keyframes`
     }
     ${(((props.size / 2 / props.countBalls + 0.0001) * (props.index - 1)) / props.size) * 100}% {
         opacity: 1;
-        transform: ${`rotateZ(${0 - (360 / props.countBalls) * (props.index - 2)}deg)`};
+        transform: ${`rotate(${0 - (360 / props.countBalls) * (props.index - 2)}deg)`};
     }
     ${(((props.size / 2 / props.countBalls) * (props.index - 0) + 2) / props.size) * 100}% {
-        transform: ${`rotateZ(${0 - (360 / props.countBalls) * (props.index - 1)}deg)`};
+        transform: ${`rotate(${0 - (360 / props.countBalls) * (props.index - 1)}deg)`};
     }
     ${((props.size / 2 + (props.size / 2 / props.countBalls) * (props.index - 0) + 2) / props.size) * 100}% {
-        transform: ${`rotateZ(${0 - (360 / props.countBalls) * (props.index - 1)}deg)`};
+        transform: ${`rotate(${0 - (360 / props.countBalls) * (props.index - 1)}deg)`};
     }
     100% {
-        transform: ${`rotateZ(${0 - (360 / props.countBalls) * (props.countBalls - 1)}deg)`};
+        transform: ${`rotate(${0 - (360 / props.countBalls) * (props.countBalls - 1)}deg)`};
         opacity: 1;
     }
 `;
@@ -91,7 +91,7 @@ const Ball = styled.div`
     width: ${props => `${props.size}${props.sizeUnit}`};
     height: ${props => `${props.size}${props.sizeUnit}`};
     animation: ${rotateBall} 2s infinite linear;
-    transform: ${props => `rotateZ(${(360 / props.countBalls) * props.index}deg)`};
+    transform: ${props => `rotate(${(360 / props.countBalls) * props.index}deg)`};
     opacity: 0;
     &:before {
         content: "";
