@@ -76,7 +76,7 @@
     "eslint-plugin-react": "^7.11.1",
     "jest": "^25.0.0",
     "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "parcel-bundler": "^1.12.4",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
