@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const resize = keyframes`
@@ -23,7 +23,7 @@ const resize = keyframes`
     }
 `;
 
-export const HeartSpinner = ({ size, color, loading, sizeUnit }) => {
+export const HeartSpinner = ({ size = 40, color = "#fff", loading = true, sizeUnit = "px" }) => {
     return loading && <Wrapper size={size} color={color} sizeUnit={sizeUnit} />;
 };
 
@@ -52,13 +52,6 @@ const Wrapper = styled.div`
         transform-origin: 100% 100%;
     }
 `;
-
-HeartSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 HeartSpinner.propTypes = {
     loading: PropTypes.bool,

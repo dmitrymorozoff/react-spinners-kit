@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const trace = props => keyframes`
@@ -57,7 +57,13 @@ const getBalls = ({ countBalls, frontColor, backColor, size, sizeUnit }) => {
     return balls;
 };
 
-export const TraceSpinner = ({ size, frontColor, backColor, loading, sizeUnit }) => {
+export const TraceSpinner = ({
+    size = 35,
+    frontColor = "#00ff89",
+    backColor = "#4b4c56",
+    loading = true,
+    sizeUnit = "px",
+}) => {
     const countBalls = 4;
     return (
         loading && (
@@ -106,14 +112,6 @@ const MovedBall = styled(Ball)`
     animation: ${motion} 4s cubic-bezier(0.75, 0, 0.5, 1) infinite;
     z-index: 10;
 `;
-
-TraceSpinner.defaultProps = {
-    loading: true,
-    size: 35,
-    frontColor: "#00ff89",
-    backColor: "#4b4c56",
-    sizeUnit: "px",
-};
 
 TraceSpinner.propTypes = {
     loading: PropTypes.bool,

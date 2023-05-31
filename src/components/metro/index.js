@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
@@ -54,7 +54,7 @@ const getBalls = ({ countBalls, radius, angle, color, size, ballSize, sizeUnit }
     return balls;
 };
 
-export const MetroSpinner = ({ size, color, loading, sizeUnit }) => {
+export const MetroSpinner = ({ size = 40, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const radius = size / 2;
     const countBalls = 9;
     const ballSize = size / 8;
@@ -105,13 +105,6 @@ const Ball = styled.div`
         border-radius: 50%;
     }
 `;
-
-MetroSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 MetroSpinner.propTypes = {
     loading: PropTypes.bool,

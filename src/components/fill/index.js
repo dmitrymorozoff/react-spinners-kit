@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
@@ -38,7 +38,7 @@ const fill = keyframes`
     }
 `;
 
-export const FillSpinner = ({ size, color, loading, sizeUnit }) => {
+export const FillSpinner = ({ size = 20, color = "#4b4c56", loading = true, sizeUnit = "px" }) => {
     return (
         loading && (
             <Wrapper size={size} color={color} sizeUnit={sizeUnit}>
@@ -63,13 +63,6 @@ const Plane = styled.div`
     background-color: ${props => props.color};
     animation: ${fill} 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
 `;
-
-FillSpinner.defaultProps = {
-    loading: true,
-    size: 20,
-    color: "#4b4c56",
-    sizeUnit: "px",
-};
 
 FillSpinner.propTypes = {
     loading: PropTypes.bool,

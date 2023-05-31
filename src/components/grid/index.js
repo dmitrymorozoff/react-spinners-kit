@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
@@ -40,7 +40,7 @@ const getBalls = ({ countBallsInLine, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const GridSpinner = ({ size, color, loading, sizeUnit }) => {
+export const GridSpinner = ({ size = 40, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const countBallsInLine = 3;
     return (
         loading && (
@@ -70,13 +70,6 @@ const Ball = styled.div`
     background-color: ${props => props.color};
     animation: ${motion} 1.5s cubic-bezier(0.23, 1, 0.32, 1) infinite;
 `;
-
-GridSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 GridSpinner.propTypes = {
     loading: PropTypes.bool,

@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = () => keyframes`
@@ -25,7 +25,7 @@ const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const MagicSpinner = ({ size, color, loading, sizeUnit }) => {
+export const MagicSpinner = ({ size = 70, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const countBalls = size / 12;
     return (
         loading && (
@@ -65,13 +65,6 @@ const Ball = styled.div`
     animation: ${rotate} 2s cubic-bezier(0.68, -0.75, 0.265, 1.75) infinite forwards;
     animation-delay: ${props => props.index * 0.05}s;
 `;
-
-MagicSpinner.defaultProps = {
-    loading: true,
-    size: 70,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 MagicSpinner.propTypes = {
     loading: PropTypes.bool,

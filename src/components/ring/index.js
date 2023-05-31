@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const firstPulse = props => keyframes`
@@ -24,7 +24,7 @@ const secondPulse = props => keyframes`
     }
 `;
 
-export const RingSpinner = ({ size, color, loading, sizeUnit }) => {
+export const RingSpinner = ({ size = 30, color = "#00ff89", loading = true, sizeUnit = "px" }) => {
     return (
         loading && (
             <Wrapper size={size} sizeUnit={sizeUnit}>
@@ -67,13 +67,6 @@ const Circle = styled.div`
         animation-name: ${secondPulse};
     }
 `;
-
-RingSpinner.defaultProps = {
-    loading: true,
-    size: 30,
-    color: "#00ff89",
-    sizeUnit: "px",
-};
 
 RingSpinner.propTypes = {
     loading: PropTypes.bool,

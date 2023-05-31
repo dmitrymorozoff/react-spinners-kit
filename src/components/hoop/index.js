@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
@@ -34,7 +34,7 @@ const getBalls = ({ countBallsInLine, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const HoopSpinner = ({ size, color, loading, sizeUnit }) => {
+export const HoopSpinner = ({ size = 45, color = "#4b4c56", loading = true, sizeUnit = "px" }) => {
     const countBallsInLine = 6;
     return (
         loading && (
@@ -69,13 +69,6 @@ const Ball = styled.div`
     animation: ${motion} 3s cubic-bezier(0.67, 0.08, 0.46, 1.5) infinite;
     animation-delay: ${props => props.index * 200}ms;
 `;
-
-HoopSpinner.defaultProps = {
-    loading: true,
-    size: 45,
-    color: "#4b4c56",
-    sizeUnit: "px",
-};
 
 HoopSpinner.propTypes = {
     loading: PropTypes.bool,

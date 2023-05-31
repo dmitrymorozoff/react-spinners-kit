@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
@@ -49,7 +49,7 @@ const getBalls = ({ countBalls, radius, angle, color, size, ballSize, sizeUnit }
     return balls;
 };
 
-export const SphereSpinner = ({ size, color, loading, sizeUnit }) => {
+export const SphereSpinner = ({ size = 30, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const radius = size / 2;
     const countBalls = 7;
     const ballSize = size / 5;
@@ -94,13 +94,6 @@ const Ball = styled.div`
     animation: ${props => move(props)} 5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
     animation-delay: ${props => props.index * 0.3}s;
 `;
-
-SphereSpinner.defaultProps = {
-    loading: true,
-    size: 30,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 SphereSpinner.propTypes = {
     loading: PropTypes.bool,

@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const fire = keyframes`
@@ -16,7 +16,7 @@ const fire = keyframes`
     }
 `;
 
-export const FireworkSpinner = ({ size, color, loading, sizeUnit }) => {
+export const FireworkSpinner = ({ size = 40, color = "#fff", loading = true, sizeUnit = "px" }) => {
     return loading && <Wrapper size={size} color={color} sizeUnit={sizeUnit} />;
 };
 
@@ -30,13 +30,6 @@ const Wrapper = styled.div`
     border-radius: 50%;
     animation: ${fire} 1.25s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
 `;
-
-FireworkSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 FireworkSpinner.propTypes = {
     loading: PropTypes.bool,

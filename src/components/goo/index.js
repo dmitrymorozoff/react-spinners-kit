@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = () => keyframes`
@@ -44,7 +44,7 @@ const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const GooSpinner = ({ size, color, loading, sizeUnit }) => {
+export const GooSpinner = ({ size = 55, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const countBalls = 2;
     return (
         loading && (
@@ -94,13 +94,6 @@ const Ball = styled.div`
     background-color: ${props => props.color};
     animation: ${move} 1.5s ease-in-out infinite;
 `;
-
-GooSpinner.defaultProps = {
-    loading: true,
-    size: 55,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 GooSpinner.propTypes = {
     loading: PropTypes.bool,

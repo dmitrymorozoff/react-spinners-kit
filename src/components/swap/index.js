@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const animationLeftPostions = props => {
@@ -55,7 +55,7 @@ const getBalls = ({ countBalls, color, size, sizeUnit }) => {
     return balls;
 };
 
-export const SwapSpinner = ({ size, color, loading, sizeUnit }) => {
+export const SwapSpinner = ({ size = 40, color = "#4b4c56", loading = true, sizeUnit = "px" }) => {
     const countBalls = 3;
     return (
         loading && (
@@ -89,13 +89,6 @@ const Ball = styled.div`
         animation-duration: 1.5s;
     }
 `;
-
-SwapSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    color: "#4b4c56",
-    sizeUnit: "px",
-};
 
 SwapSpinner.propTypes = {
     loading: PropTypes.bool,

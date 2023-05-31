@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const move = props => keyframes`
@@ -32,7 +32,7 @@ const getBalls = ({ countBalls, radius, angle, color, size, ballSize, sizeUnit }
     return balls;
 };
 
-export const FlapperSpinner = ({ size, color, loading, sizeUnit }) => {
+export const FlapperSpinner = ({ size = 30, color = "#00ff89", loading = true, sizeUnit = "px" }) => {
     const radius = size / 2;
     const countBalls = 7;
     const ballSize = size / 1.5;
@@ -76,13 +76,6 @@ const Ball = styled.div`
     animation: ${props => move(props)} 0.8s linear infinite;
     animation-delay: ${props => props.index * 0.1}s;
 `;
-
-FlapperSpinner.defaultProps = {
-    loading: true,
-    size: 30,
-    color: "#00ff89",
-    sizeUnit: "px",
-};
 
 FlapperSpinner.propTypes = {
     loading: PropTypes.bool,

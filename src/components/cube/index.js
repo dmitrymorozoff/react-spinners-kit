@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
@@ -7,7 +7,13 @@ const rotate = keyframes`
     to   { transform: rotateX(360deg) rotateY(360deg); }
 `;
 
-export const CubeSpinner = ({ size, backColor, frontColor, loading, sizeUnit }) => {
+export const CubeSpinner = ({
+    size = 25,
+    backColor = "#4b4c56",
+    frontColor = "#00ff89",
+    loading = true,
+    sizeUnit = "px",
+}) => {
     return (
         loading && (
             <Wrapper size={size} sizeUnit={sizeUnit}>
@@ -85,14 +91,6 @@ const Side = styled.div`
     transform: rotateX(${props => rotateXCube(props)}deg) rotateY(${props => rotateYCube(props)}deg)
         translateZ(${props => `${props.size / 2}${props.sizeUnit}`});
 `;
-
-CubeSpinner.defaultProps = {
-    loading: true,
-    size: 25,
-    frontColor: "#00ff89",
-    backColor: "#4b4c56",
-    sizeUnit: "px",
-};
 
 CubeSpinner.propTypes = {
     loading: PropTypes.bool,

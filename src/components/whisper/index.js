@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
@@ -54,7 +54,13 @@ const getBalls = ({ countBallsInLine, frontColor, backColor, size, sizeUnit }) =
     return balls;
 };
 
-export const WhisperSpinner = ({ size, frontColor, backColor, loading, sizeUnit }) => {
+export const WhisperSpinner = ({
+    size = 50,
+    frontColor = "#4b4c56",
+    backColor = "#00ff89",
+    loading = true,
+    sizeUnit = "px",
+}) => {
     const countBallsInLine = 3;
     return (
         loading && (
@@ -118,14 +124,6 @@ const Ball = styled.div`
         animation-delay: 1s;
     }
 `;
-
-WhisperSpinner.defaultProps = {
-    loading: true,
-    size: 50,
-    frontColor: "#4b4c56",
-    backColor: "#00ff89",
-    sizeUnit: "px",
-};
 
 WhisperSpinner.propTypes = {
     loading: PropTypes.bool,

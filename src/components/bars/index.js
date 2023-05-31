@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
@@ -31,7 +31,7 @@ const getBars = (countBars, color, size, sizeUnit) => {
     return bars;
 };
 
-export const BarsSpinner = ({ size, color, loading, sizeUnit }) => {
+export const BarsSpinner = ({ size = 40, color = "#00ff89", loading = true, sizeUnit = "px" }) => {
     const countBars = 5;
     return (
         loading && (
@@ -61,13 +61,6 @@ const Bar = styled.div`
     animation: ${motion} 1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
     animation-delay: ${props => props.index * 0.15}s;
 `;
-
-BarsSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    color: "#00ff89",
-    sizeUnit: "px",
-};
 
 BarsSpinner.propTypes = {
     loading: PropTypes.bool,
