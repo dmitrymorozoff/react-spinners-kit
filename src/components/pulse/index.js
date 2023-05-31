@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const motion = keyframes`
@@ -34,7 +34,7 @@ const getCubes = ({ countCubeInLine, color, size, sizeUnit }) => {
     return cubes;
 };
 
-export const PulseSpinner = ({ size, color, loading, sizeUnit }) => {
+export const PulseSpinner = ({ size = 40, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const countCubeInLine = 3;
     return (
         loading && (
@@ -64,13 +64,6 @@ const Cube = styled.div`
     animation: ${motion} 1.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) infinite;
     animation-delay: ${props => props.index * 0.15}s;
 `;
-
-PulseSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 PulseSpinner.propTypes = {
     loading: PropTypes.bool,

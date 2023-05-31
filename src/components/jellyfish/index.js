@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
@@ -33,7 +33,7 @@ const getRings = ({ countBalls: countRings, color, size, sizeUnit }) => {
     return rings;
 };
 
-export const JellyfishSpinner = ({ size, color, loading, sizeUnit }) => {
+export const JellyfishSpinner = ({ size = 60, color = "#4b4c56", loading = true, sizeUnit = "px" }) => {
     const countRings = 6;
     return (
         loading && (
@@ -63,13 +63,6 @@ const Ring = styled.div`
     animation: ${motion} 2.5s ease infinite;
     animation-delay: ${props => props.index * 100}ms;
 `;
-
-JellyfishSpinner.defaultProps = {
-    loading: true,
-    size: 60,
-    color: "#4b4c56",
-    sizeUnit: "px",
-};
 
 JellyfishSpinner.propTypes = {
     loading: PropTypes.bool,

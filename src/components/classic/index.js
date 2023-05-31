@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const fade = keyframes`
@@ -33,7 +33,7 @@ const getBars = ({ countBars: countBars, color, size, barSize: barSize, sizeUnit
     return bars;
 };
 
-export const ClassicSpinner = ({ size, color, loading, sizeUnit }) => {
+export const ClassicSpinner = ({ size = 30, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const radius = size / 2;
     const countBars = 16;
     return (
@@ -71,13 +71,6 @@ const Bar = styled.div`
     animation: ${fade} ${props => props.countBars * 0.06}s linear infinite;
     animation-delay: ${props => props.index * 0.06}s;
 `;
-
-ClassicSpinner.defaultProps = {
-    loading: true,
-    size: 30,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 ClassicSpinner.propTypes = {
     loading: PropTypes.bool,

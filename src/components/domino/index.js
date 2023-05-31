@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const fall = props => keyframes`
@@ -67,7 +67,7 @@ const getBars = ({ countBars, rotatesPoints, translatesPoints, color, size, size
     return bars;
 };
 
-export const DominoSpinner = ({ size, color, loading, sizeUnit }) => {
+export const DominoSpinner = ({ size = 100, color = "#4b4c56", loading = true, sizeUnit = "px" }) => {
     const countBars = 7;
     const rotatesPoints = [0, 0, 0, 10, 40, 60, 70];
     const translatesPoints = getTranslatePositions(countBars, size);
@@ -108,13 +108,6 @@ const Bar = styled.div`
         opacity: 0.22;
     }
 `;
-
-DominoSpinner.defaultProps = {
-    loading: true,
-    size: 100,
-    color: "#4b4c56",
-    sizeUnit: "px",
-};
 
 DominoSpinner.propTypes = {
     loading: PropTypes.bool,

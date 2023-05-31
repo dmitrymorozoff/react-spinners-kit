@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const impulse = props => keyframes`
@@ -43,7 +43,13 @@ const getBalls = ({ countBalls, frontColor, backColor, size, sizeUnit }) => {
     return balls;
 };
 
-export const ImpulseSpinner = ({ size, frontColor, backColor, loading, sizeUnit }) => {
+export const ImpulseSpinner = ({
+    size = 40,
+    frontColor = "#00ff89",
+    backColor = "#4b4c56",
+    loading = true,
+    sizeUnit = "px",
+}) => {
     const countBalls = 3;
     return (
         loading && (
@@ -80,14 +86,6 @@ const Ball = styled.div`
     animation: ${impulse} 1.25s linear infinite;
     animation-delay: ${props => props.index * 0.125}s;
 `;
-
-ImpulseSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    frontColor: "#00ff89",
-    backColor: "#4b4c56",
-    sizeUnit: "px",
-};
 
 ImpulseSpinner.propTypes = {
     loading: PropTypes.bool,

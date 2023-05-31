@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const motion = props => keyframes`
@@ -32,7 +32,13 @@ const getBalls = ({ countBallsInLine, frontColor, backColor, size, sizeUnit }) =
     return balls;
 };
 
-export const SwishSpinner = ({ size, frontColor, backColor, loading, sizeUnit }) => {
+export const SwishSpinner = ({
+    size = 40,
+    frontColor = "#4b4c56",
+    backColor = "#fff",
+    loading = true,
+    sizeUnit = "px",
+}) => {
     const countBallsInLine = 3;
     return (
         loading && (
@@ -70,14 +76,6 @@ const Ball = styled.div`
     transition: all 0.3s ease;
     animation-delay: ${props => props.index * 0.1}s;
 `;
-
-SwishSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    frontColor: "#4b4c56",
-    backColor: "#fff",
-    sizeUnit: "px",
-};
 
 SwishSpinner.propTypes = {
     loading: PropTypes.bool,

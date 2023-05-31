@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const wave = props => keyframes`
@@ -46,7 +46,7 @@ const getPlanes = ({ countPlaneInLine, color, size, sizeUnit }) => {
     return lines;
 };
 
-export const FlagSpinner = ({ size, color, loading, sizeUnit }) => {
+export const FlagSpinner = ({ size = 40, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const countPlaneInLine = 4;
     return (
         loading && (
@@ -82,13 +82,6 @@ const Plane = styled.div`
     height: ${props => `${props.size / 6}${props.sizeUnit}`};
     background-color: ${props => props.color};
 `;
-
-FlagSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 FlagSpinner.propTypes = {
     loading: PropTypes.bool,

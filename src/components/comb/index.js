@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = () => keyframes`
@@ -16,7 +16,7 @@ const getBars = ({ countBars, color, size, sizeUnit }) => {
     return bars;
 };
 
-export const CombSpinner = ({ size, color, loading, sizeUnit }) => {
+export const CombSpinner = ({ size = 100, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const countBars = size / 9;
     return (
         loading && (
@@ -50,13 +50,6 @@ const Bar = styled.div`
     animation: ${rotate} 3s ease infinite;
     animation-delay: ${props => props.index * 0.05}s;
 `;
-
-CombSpinner.defaultProps = {
-    loading: true,
-    size: 100,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 CombSpinner.propTypes = {
     loading: PropTypes.bool,

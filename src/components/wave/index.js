@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const motion = keyframes`
@@ -33,7 +33,7 @@ const getBars = ({ countBars, color, size, sizeUnit }) => {
     return bars;
 };
 
-export const WaveSpinner = ({ size, color, loading, sizeUnit }) => {
+export const WaveSpinner = ({ size = 30, color = "#fff", loading = true, sizeUnit = "px" }) => {
     const countBars = 10;
     return (
         loading && (
@@ -66,13 +66,6 @@ const Bar = styled.div`
     animation: ${motion} 1.25s ease-in-out infinite;
     animation-delay: ${props => props.index * 0.15}s;
 `;
-
-WaveSpinner.defaultProps = {
-    loading: true,
-    size: 30,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 WaveSpinner.propTypes = {
     loading: PropTypes.bool,

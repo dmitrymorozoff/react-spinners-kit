@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const motionPlayer = props => keyframes`
@@ -37,7 +37,7 @@ const motionBall = props => keyframes`
     }
 `;
 
-export const PongSpinner = ({ size, color, loading, sizeUnit }) => {
+export const PongSpinner = ({ size = 60, color = "#4b4c56", loading = true, sizeUnit = "px" }) => {
     return (
         loading && (
             <Wrapper size={size} sizeUnit={sizeUnit}>
@@ -74,13 +74,6 @@ const Player = styled.div`
     border-radius: 4px;
     animation: ${props => motionPlayer(props)} 2s linear infinite;
 `;
-
-PongSpinner.defaultProps = {
-    loading: true,
-    size: 60,
-    color: "#4b4c56",
-    sizeUnit: "px",
-};
 
 PongSpinner.propTypes = {
     loading: PropTypes.bool,

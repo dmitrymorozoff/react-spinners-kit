@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
@@ -34,7 +34,7 @@ const getBalls = ({ countBalls, radius, angle, color, size, ballSize, sizeUnit }
     return balls;
 };
 
-export const RotateSpinner = ({ size, color, loading, sizeUnit }) => {
+export const RotateSpinner = ({ size = 45, color = "#00ff89", loading = true, sizeUnit = "px" }) => {
     const radius = size / 2;
     const countBalls = 8;
     const ballSize = size / 5;
@@ -78,13 +78,6 @@ const Ball = styled.div`
     animation: ${rotate} 4s both infinite;
     animation-timing-function: cubic-bezier(0.5, ${props => props.index * 0.3}, 0.9, 0.9);
 `;
-
-RotateSpinner.defaultProps = {
-    loading: true,
-    size: 45,
-    color: "#00ff89",
-    sizeUnit: "px",
-};
 
 RotateSpinner.propTypes = {
     loading: PropTypes.bool,

@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = props => keyframes`
@@ -34,7 +34,13 @@ const getCubes = ({ countCubesInLine, backColor, frontColor, size, sizeUnit }) =
     return cubes;
 };
 
-export const SequenceSpinner = ({ size, backColor, frontColor, loading, sizeUnit }) => {
+export const SequenceSpinner = ({
+    size = 40,
+    backColor = "#00ff89",
+    frontColor = "#4b4c56",
+    loading = true,
+    sizeUnit = "px",
+}) => {
     const countCubesInLine = 5;
     return (
         loading && (
@@ -90,14 +96,6 @@ const Side = styled.div`
     transform: rotateY(${props => (props.front ? 0 : -90)}deg)
         translateZ(${props => `${props.size / 16}${props.sizeUnit}`});
 `;
-
-SequenceSpinner.defaultProps = {
-    loading: true,
-    size: 40,
-    frontColor: "#4b4c56",
-    backColor: "#00ff89",
-    sizeUnit: "px",
-};
 
 SequenceSpinner.propTypes = {
     loading: PropTypes.bool,

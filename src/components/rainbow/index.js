@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = props => keyframes`
@@ -20,7 +20,7 @@ const rotate = props => keyframes`
         border-width: 10${props.sizeUnit};
     }
 `;
-export const RainbowSpinner = ({ size, color, loading, sizeUnit }) => {
+export const RainbowSpinner = ({ size = 50, color = "#fff", loading = true, sizeUnit = "px" }) => {
     return (
         loading && (
             <Wrapper size={size} sizeUnit={sizeUnit}>
@@ -49,13 +49,6 @@ const Line = styled.div`
     transform: rotate(-200deg);
     animation: ${rotate} 3s ease-in-out infinite;
 `;
-
-RainbowSpinner.defaultProps = {
-    loading: true,
-    size: 50,
-    color: "#fff",
-    sizeUnit: "px",
-};
 
 RainbowSpinner.propTypes = {
     loading: PropTypes.bool,
