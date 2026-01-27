@@ -87,6 +87,7 @@
     bottom: 5px;
     left: 50%;
     opacity: 0;
+    color: #fff;
     transition: 0.2s;
     transform: translateX(-50%) translateY(50%);
 }

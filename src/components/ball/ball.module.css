@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ball {
+    border-radius: 50%;
+    animation: motion 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    --translate-x: 0px;
+}
+
+@keyframes motion {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    25% {
+        transform: translateX(var(--translate-x)) scale(0.25);
+    }
+    50% {
+        transform: translateX(0) scale(1);
+    }
+    75% {
+        transform: translateX(calc(-1 * var(--translate-x))) scale(0.25);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}

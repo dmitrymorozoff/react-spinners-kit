@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
     0% {
-        width: ${props.size / 20}${props.sizeUnit}
+        width: ${props.size / 20}${props.sizeUnit}       
     }
     50% {
         width: ${props.size / 6}${props.sizeUnit}
     }
-    100% {
+    100% {  
         width: ${props.size / 20}${props.sizeUnit}
     }
 `;
@@ -47,26 +47,26 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
 `;
 
 const Bar = styled.div`
     position: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
-    width: ${props => `${props.size / 20}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
-    background-color: ${props => props.color};
+    top: ${(props) => `${props.y}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 20}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
+    background-color: ${(props) => props.color};
     animation: ${motion} 1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-    animation-delay: ${props => props.index * 0.15}s;
+    animation-delay: ${(props) => props.index * 0.15}s;
 `;
 
 BarsSpinner.defaultProps = {
     loading: true,
     size: 40,
-    color: "#00ff89",
-    sizeUnit: "px",
+    color: '#00ff89',
+    sizeUnit: 'px',
 };
 
 BarsSpinner.propTypes = {
