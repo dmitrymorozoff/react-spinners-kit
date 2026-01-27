@@ -89,7 +89,7 @@ const Wrapper = styled.div`
 const Ball = styled.div`
     position: absolute;
     width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    height: ${props => `${props.size}${props.sizeUnit}`};    
     animation: ${rotateBall} 2s infinite linear;
     transform: ${props => `rotate(${(360 / props.countBalls) * props.index}deg)`};
     opacity: 0;
