@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
     0% {
         top: ${props.y}${props.sizeUnit};
         left: ${props.x}${props.sizeUnit};
@@ -60,27 +60,27 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
-    width: ${props => `${props.size / 5}${props.sizeUnit}`};
-    height: ${props => `${props.size / 5}${props.sizeUnit}`};
+    top: ${(props) => `${props.y}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 5}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 5}${props.sizeUnit}`};
     border-radius: 50%;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
     animation: ${motion} 1s ease-in-out infinite;
-    animation-delay: ${props => props.index * 0.2}s;
+    animation-delay: ${(props) => props.index * 0.2}s;
 `;
 
 StageSpinner.defaultProps = {
     loading: true,
     size: 40,
-    color: "#fff",
-    sizeUnit: "px",
+    color: '#fff',
+    sizeUnit: 'px',
 };
 
 StageSpinner.propTypes = {

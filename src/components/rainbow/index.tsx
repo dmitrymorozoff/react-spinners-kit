@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const rotate = props => keyframes`
+const rotate = (props) => keyframes`
     0% {
         border-width: 10${props.sizeUnit}; 
     }
@@ -31,18 +31,18 @@ export const RainbowSpinner = ({ size, color, loading, sizeUnit }) => {
 };
 
 const Wrapper = styled.div`
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size / 2}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 2}${props.sizeUnit}`};
     overflow: hidden;
 `;
 
 const Line = styled.div`
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     border-radius: 50%;
     border-style: solid;
-    border-top-color: ${props => props.color};
-    border-right-color: ${props => props.color};
+    border-top-color: ${(props) => props.color};
+    border-right-color: ${(props) => props.color};
     border-left-color: transparent;
     border-bottom-color: transparent;
     box-sizing: border-box;
@@ -53,8 +53,8 @@ const Line = styled.div`
 RainbowSpinner.defaultProps = {
     loading: true,
     size: 50,
-    color: "#fff",
-    sizeUnit: "px",
+    color: '#fff',
+    sizeUnit: 'px',
 };
 
 RainbowSpinner.propTypes = {

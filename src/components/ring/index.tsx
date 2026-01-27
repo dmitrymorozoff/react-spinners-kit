@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const firstPulse = props => keyframes`
+const firstPulse = (props) => keyframes`
     0% { 
         box-shadow: inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${props.color};
         opacity: 1;
@@ -13,7 +13,7 @@ const firstPulse = props => keyframes`
     }
 `;
 
-const secondPulse = props => keyframes`
+const secondPulse = (props) => keyframes`
     0%, 50% { 
         box-shadow: inset 0 0 0 0 ${props.color};
         opacity: 0;
@@ -35,8 +35,8 @@ export const RingSpinner = ({ size, color, loading, sizeUnit }) => {
 };
 
 const Wrapper = styled.div`
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
 `;
 
 const Circle = styled.div`
@@ -51,7 +51,7 @@ const Circle = styled.div`
     &:after {
         width: 100%;
         height: 100%;
-        content: "";
+        content: '';
         position: absolute;
         border-radius: 50%;
         animation-duration: 2s;
@@ -59,11 +59,11 @@ const Circle = styled.div`
         animation-timing-function: ease-in-out;
     }
     &:before {
-        box-shadow: ${props => `inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${props.color}`};
+        box-shadow: ${(props) => `inset 0 0 0 ${props.size / 10}${props.sizeUnit} ${props.color}`};
         animation-name: ${firstPulse};
     }
     &:after {
-        box-shadow: 0 0 0 0 ${props => props.color};
+        box-shadow: 0 0 0 0 ${(props) => props.color};
         animation-name: ${secondPulse};
     }
 `;
@@ -71,8 +71,8 @@ const Circle = styled.div`
 RingSpinner.defaultProps = {
     loading: true,
     size: 30,
-    color: "#00ff89",
-    sizeUnit: "px",
+    color: '#00ff89',
+    sizeUnit: 'px',
 };
 
 RingSpinner.propTypes = {

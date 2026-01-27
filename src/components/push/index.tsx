@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
     15% {
         transform: scaleY(1) translateX(10${props.sizeUnit});
     }
@@ -48,28 +48,28 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size * 2.5}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size * 2.5}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     overflow: hidden;
 `;
 
 const Bar = styled.div`
     position: absolute;
     top: 0;
-    left: ${props => `${props.x}${props.sizeUnit}`};
-    width: ${props => `${props.size / 5}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 5}${props.sizeUnit}`};
     height: 100%;
     transform: scaleY(0.05) translateX(-5px);
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
     animation: ${motion} 1.25s ease-in-out infinite;
-    animation-delay: ${props => props.index * 0.15}s;
+    animation-delay: ${(props) => props.index * 0.15}s;
 `;
 
 PushSpinner.defaultProps = {
     loading: true,
     size: 30,
-    color: "#4b4c56",
-    sizeUnit: "px",
+    color: '#4b4c56',
+    sizeUnit: 'px',
 };
 
 PushSpinner.propTypes = {

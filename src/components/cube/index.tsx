@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
     from { transform: rotateX(0) rotateY(0); }
@@ -31,28 +31,28 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
-    perspective: ${props => `${props.size * 4}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
+    perspective: ${(props) => `${props.size * 4}${props.sizeUnit}`};
 `;
 
 const CubeWrapper = styled.div`
     sposition: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
+    top: ${(props) => `${props.y}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
     width: inherit;
     height: inherit;
 `;
 
 const Cube = styled.div`
     position: relative;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     transform-style: preserve-3d;
     animation: ${rotate} 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 `;
 
-const rotateXCube = props => {
+const rotateXCube = (props) => {
     if (props.top) {
         return 90;
     }
@@ -62,7 +62,7 @@ const rotateXCube = props => {
     return 0;
 };
 
-const rotateYCube = props => {
+const rotateYCube = (props) => {
     if (props.left) {
         return 90;
     }
@@ -81,17 +81,17 @@ const Side = styled.div`
     position: absolute;
     width: inherit;
     height: inherit;
-    background-color: ${props => props.color};
-    transform: rotateX(${props => rotateXCube(props)}deg) rotateY(${props => rotateYCube(props)}deg)
-        translateZ(${props => `${props.size / 2}${props.sizeUnit}`});
+    background-color: ${(props) => props.color};
+    transform: rotateX(${(props) => rotateXCube(props)}deg) rotateY(${(props) => rotateYCube(props)}deg)
+        translateZ(${(props) => `${props.size / 2}${props.sizeUnit}`});
 `;
 
 CubeSpinner.defaultProps = {
     loading: true,
     size: 25,
-    frontColor: "#00ff89",
-    backColor: "#4b4c56",
-    sizeUnit: "px",
+    frontColor: '#00ff89',
+    backColor: '#4b4c56',
+    sizeUnit: 'px',
 };
 
 CubeSpinner.propTypes = {

@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
     50% {
         transform: scale(0);
         background-color: ${props.backColor};
@@ -54,29 +54,29 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
-    width: ${props => `${props.size / 5}${props.sizeUnit}`};
-    height: ${props => `${props.size / 5}${props.sizeUnit}`};
+    top: ${(props) => `${props.y}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 5}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 5}${props.sizeUnit}`};
     border-radius: 3px;
-    background-color: ${props => props.frontColor};
+    background-color: ${(props) => props.frontColor};
     animation: ${motion} 0.9s ease infinite;
     transition: all 0.3s ease;
-    animation-delay: ${props => props.index * 0.1}s;
+    animation-delay: ${(props) => props.index * 0.1}s;
 `;
 
 SwishSpinner.defaultProps = {
     loading: true,
     size: 40,
-    frontColor: "#4b4c56",
-    backColor: "#fff",
-    sizeUnit: "px",
+    frontColor: '#4b4c56',
+    backColor: '#fff',
+    sizeUnit: 'px',
 };
 
 SwishSpinner.propTypes = {

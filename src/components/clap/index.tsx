@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
     50% {
@@ -11,16 +11,16 @@ const rotate = keyframes`
     }
 `;
 
-const move = props => keyframes`
+const move = (props) => keyframes`
     0% {
         transform: translateX(${props.x}${props.sizeUnit}) translateY(${props.y}${
-    props.sizeUnit
-}) scale(1.25) ;
+            props.sizeUnit
+        }) scale(1.25) ;
     }
     5% {
         transform: translateX(${props.x}${props.sizeUnit}) translateY(${props.y}${
-    props.sizeUnit
-}) scale(1.75);
+            props.sizeUnit
+        }) scale(1.75);
     }
     50% {
         transform: translateX(${props.x}${props.sizeUnit}) translateY(${props.y}${props.sizeUnit}) scale(.25);
@@ -82,31 +82,31 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     animation: ${rotate} 1.5s linear infinite;
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => `${props.size / 2}${props.sizeUnit}`};
-    left: ${props => `${props.size / 2}${props.sizeUnit}`};
-    width: ${props => `${props.ballSize}${props.sizeUnit}`};
-    height: ${props => `${props.ballSize}${props.sizeUnit}`};
+    top: ${(props) => `${props.size / 2}${props.sizeUnit}`};
+    left: ${(props) => `${props.size / 2}${props.sizeUnit}`};
+    width: ${(props) => `${props.ballSize}${props.sizeUnit}`};
+    height: ${(props) => `${props.ballSize}${props.sizeUnit}`};
     border-radius: 50%;
-    background-color: ${props => props.frontColor};
-    transform: translateX(${props => `${props.x}${props.sizeUnit}`})
-        translateY(${props => `${props.y}${props.sizeUnit}`});
-    animation: ${props => move(props)} 2.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-    animation-delay: ${props => props.index * 0.2}s;
+    background-color: ${(props) => props.frontColor};
+    transform: translateX(${(props) => `${props.x}${props.sizeUnit}`})
+        translateY(${(props) => `${props.y}${props.sizeUnit}`});
+    animation: ${(props) => move(props)} 2.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation-delay: ${(props) => props.index * 0.2}s;
 `;
 
 ClapSpinner.defaultProps = {
     loading: true,
     size: 30,
-    frontColor: "#00ff89",
-    backColor: "#4b4c56",
-    sizeUnit: "px",
+    frontColor: '#00ff89',
+    backColor: '#4b4c56',
+    sizeUnit: 'px',
 };
 
 ClapSpinner.propTypes = {

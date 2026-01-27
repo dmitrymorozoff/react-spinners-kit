@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
     0% {
@@ -61,29 +61,29 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
     left: 50%;
     top: 0%;
-    width: ${props => `${props.ballSize}${props.sizeUnit}`};
-    height: ${props => `${props.ballSize}${props.sizeUnit}`};
+    width: ${(props) => `${props.ballSize}${props.sizeUnit}`};
+    height: ${(props) => `${props.ballSize}${props.sizeUnit}`};
     border-radius: 50%;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
     transform: translateX(-50%) translateY(100%);
     transform-origin: 0 250% 0;
     animation: ${rotate} 4s both infinite;
-    animation-timing-function: cubic-bezier(0.5, ${props => props.index * 0.3}, 0.9, 0.9);
+    animation-timing-function: cubic-bezier(0.5, ${(props) => props.index * 0.3}, 0.9, 0.9);
 `;
 
 RotateSpinner.defaultProps = {
     loading: true,
     size: 45,
-    color: "#00ff89",
-    sizeUnit: "px",
+    color: '#00ff89',
+    sizeUnit: 'px',
 };
 
 RotateSpinner.propTypes = {

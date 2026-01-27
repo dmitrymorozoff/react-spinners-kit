@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
     0% {
@@ -52,23 +52,23 @@ const Wrapper = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
-    border: ${props => `${props.size / 8}${props.sizeUnit}`} solid ${props => props.color};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
+    border: ${(props) => `${props.size / 8}${props.sizeUnit}`} solid ${(props) => props.color};
     animation: ${rotate} 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 `;
 
 const Plane = styled.div`
     width: 100%;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
     animation: ${fill} 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
 `;
 
 FillSpinner.defaultProps = {
     loading: true,
     size: 20,
-    color: "#4b4c56",
-    sizeUnit: "px",
+    color: '#4b4c56',
+    sizeUnit: 'px',
 };
 
 FillSpinner.propTypes = {

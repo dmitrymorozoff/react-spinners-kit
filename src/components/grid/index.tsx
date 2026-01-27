@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
     0% {
         top: ${props.y}${props.sizeUnit};
         left: ${props.x}${props.sizeUnit};
@@ -56,26 +56,26 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
-    width: ${props => `${props.size / 6}${props.sizeUnit}`};
-    height: ${props => `${props.size / 6}${props.sizeUnit}`};
+    top: ${(props) => `${props.y}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 6}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 6}${props.sizeUnit}`};
     border-radius: 50%;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
     animation: ${motion} 1.5s cubic-bezier(0.23, 1, 0.32, 1) infinite;
 `;
 
 GridSpinner.defaultProps = {
     loading: true,
     size: 40,
-    color: "#fff",
-    sizeUnit: "px",
+    color: '#fff',
+    sizeUnit: 'px',
 };
 
 GridSpinner.propTypes = {

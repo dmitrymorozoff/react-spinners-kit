@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const fall = props => keyframes`
+const fall = (props) => keyframes`
     0% {
         transform: translateX(${props.translatesPoints[0]}${props.sizeUnit}) rotate(0deg);
         opacity: 0;
@@ -89,21 +89,21 @@ export const DominoSpinner = ({ size, color, loading, sizeUnit }) => {
 
 const Wrapper = styled.div`
     position: relative;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size / 5}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 5}${props.sizeUnit}`};
 `;
 
 const Bar = styled.div`
     position: absolute;
     right: 0;
-    width: ${props => `${props.size / 30}${props.sizeUnit}`};
-    height: ${props => `${props.size / 5}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 30}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 5}${props.sizeUnit}`};
     transform-origin: 50% 100%;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
     animation: ${fall} 3s linear infinite;
-    animation-delay: ${props => props.index * -0.42}s;
-    transform: translateX(${props => `${props.size - props.index * 15}${props.sizeUnit}`})
-        rotate(${props => props.rotate}deg);
+    animation-delay: ${(props) => props.index * -0.42}s;
+    transform: translateX(${(props) => `${props.size - props.index * 15}${props.sizeUnit}`})
+        rotate(${(props) => props.rotate}deg);
     &:nth-child(1) {
         opacity: 0.22;
     }
@@ -112,8 +112,8 @@ const Bar = styled.div`
 DominoSpinner.defaultProps = {
     loading: true,
     size: 100,
-    color: "#4b4c56",
-    sizeUnit: "px",
+    color: '#4b4c56',
+    sizeUnit: 'px',
 };
 
 DominoSpinner.propTypes = {

@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const trace = props => keyframes`
+const trace = (props) => keyframes`
     0% {
         border: ${props.size / 10}${props.sizeUnit} solid ${props.backColor};
     }
@@ -17,13 +17,14 @@ const trace = props => keyframes`
     }
 `;
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
     25% {
         transform: translate(${props.size / 2 + props.size / 10}${props.sizeUnit}, 0);
     }
     50% {
-        transform: translate(${props.size / 2 + props.size / 10}${props.sizeUnit}, ${props.size / 2 +
-    props.size / 10}${props.sizeUnit});
+        transform: translate(${props.size / 2 + props.size / 10}${props.sizeUnit}, ${
+            props.size / 2 + props.size / 10
+        }${props.sizeUnit});
     }
     75% {
         transform: translate(0, ${props.size / 2 + props.size / 10}${props.sizeUnit});
@@ -80,29 +81,29 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     transform: rotate(45deg);
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
-    width: ${props => `${props.size / 5}${props.sizeUnit}`};
-    height: ${props => `${props.size / 5}${props.sizeUnit}`};
+    top: ${(props) => `${props.y}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 5}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 5}${props.sizeUnit}`};
     border-radius: 50%;
     background-color: transparent;
-    border: ${props => `${props.size / 10}${props.sizeUnit}`} solid ${props => props.backColor};
+    border: ${(props) => `${props.size / 10}${props.sizeUnit}`} solid ${(props) => props.backColor};
     animation: ${trace} 4s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
-    animation-delay: ${props => props.index * 1}s;
+    animation-delay: ${(props) => props.index * 1}s;
 `;
 
 const MovedBall = styled(Ball)`
     top: 0;
     left: 0;
-    border-color: ${props => props.frontColor};
-    background-color: ${props => props.frontColor};
+    border-color: ${(props) => props.frontColor};
+    background-color: ${(props) => props.frontColor};
     animation: ${motion} 4s cubic-bezier(0.75, 0, 0.5, 1) infinite;
     z-index: 10;
 `;
@@ -110,9 +111,9 @@ const MovedBall = styled(Ball)`
 TraceSpinner.defaultProps = {
     loading: true,
     size: 35,
-    frontColor: "#00ff89",
-    backColor: "#4b4c56",
-    sizeUnit: "px",
+    frontColor: '#00ff89',
+    backColor: '#4b4c56',
+    sizeUnit: 'px',
 };
 
 TraceSpinner.propTypes = {

@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = () => keyframes`
     0% {
@@ -11,7 +11,7 @@ const rotate = () => keyframes`
     }
 `;
 
-const move = props => keyframes`
+const move = (props) => keyframes`
     0%{
         transform: translateY(0) scale(1);
     }
@@ -72,34 +72,34 @@ export const GooSpinner = ({ size, color, loading, sizeUnit }) => {
 };
 
 const Wrapper = styled.div`
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
-    filter: url("#goo");
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
+    filter: url('#goo');
 `;
 
 const BallsWrapper = styled.div`
     position: relative;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     animation: ${rotate} 1.7s linear infinite;
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
-    width: ${props => `${props.size / 3}${props.sizeUnit}`};
-    height: ${props => `${props.size / 3}${props.sizeUnit}`};
+    top: ${(props) => `${props.y}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 3}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 3}${props.sizeUnit}`};
     border-radius: 50%;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
     animation: ${move} 1.5s ease-in-out infinite;
 `;
 
 GooSpinner.defaultProps = {
     loading: true,
     size: 55,
-    color: "#fff",
-    sizeUnit: "px",
+    color: '#fff',
+    sizeUnit: 'px',
 };
 
 GooSpinner.propTypes = {

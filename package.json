@@ -26,7 +26,7 @@
         "build:lib": "webpack --mode=production",
         "build": "yarn prettier && yarn lint && yarn clean && yarn build:lib && yarn build:demo",
         "clean": "rimraf lib dist",
-        "prettier": "prettier --config .prettierrc.json --write src/**/*.js",
+        "prettier": "prettier --config .prettierrc.json --write src/**/*.tsx",
         "lint": "eslint --ext .js --ext .jsx ./src",
         "patch": "yarn version --patch && yarn publish && yarn run clean",
         "minor": "yarn version --minor && yarn publish && yarn run clean",

@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const move = props => keyframes`
+const move = (props) => keyframes`
     100% {
         opacity: 0;
         transform: translateX(${props.x}${props.sizeUnit})
@@ -59,29 +59,29 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => `${props.size / 2}${props.sizeUnit}`};
-    left: ${props => `${props.size / 2}${props.sizeUnit}`};
-    width: ${props => `${props.ballSize}${props.sizeUnit}`};
-    height: ${props => `${props.ballSize}${props.sizeUnit}`};
+    top: ${(props) => `${props.size / 2}${props.sizeUnit}`};
+    left: ${(props) => `${props.size / 2}${props.sizeUnit}`};
+    width: ${(props) => `${props.ballSize}${props.sizeUnit}`};
+    height: ${(props) => `${props.ballSize}${props.sizeUnit}`};
     border-radius: 50%;
-    background-color: ${props => props.color};
-    transform: translateX(${props => `${props.x}${props.sizeUnit}`})
-        translateY(${props => `${props.y}${props.sizeUnit}`}) scale(0);
-    animation: ${props => move(props)} 0.8s linear infinite;
-    animation-delay: ${props => props.index * 0.1}s;
+    background-color: ${(props) => props.color};
+    transform: translateX(${(props) => `${props.x}${props.sizeUnit}`})
+        translateY(${(props) => `${props.y}${props.sizeUnit}`}) scale(0);
+    animation: ${(props) => move(props)} 0.8s linear infinite;
+    animation-delay: ${(props) => props.index * 0.1}s;
 `;
 
 FlapperSpinner.defaultProps = {
     loading: true,
     size: 30,
-    color: "#00ff89",
-    sizeUnit: "px",
+    color: '#00ff89',
+    sizeUnit: 'px',
 };
 
 FlapperSpinner.propTypes = {

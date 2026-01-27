@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
 const resize = keyframes`
     0% {
@@ -29,20 +29,20 @@ export const HeartSpinner = ({ size, color, loading, sizeUnit }) => {
 
 const Wrapper = styled.div`
     position: relative;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size - props.size / 10}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size - props.size / 10}${props.sizeUnit}`};
     animation: ${resize} 1s ease-in-out infinite;
     &::before,
     &::after {
-        content: "";
+        content: '';
         position: absolute;
-        top: ${props => `${props.size / 20}${props.sizeUnit}`};
-        left: ${props => `${props.size / 2}${props.sizeUnit}`};
-        width: ${props => `${props.size / 2}${props.sizeUnit}`};
-        height: ${props => `${props.size - props.size / 5}${props.sizeUnit}`};
-        background-color: ${props => props.color};
-        border-radius: ${props => `${props.size / 2}${props.sizeUnit}`}
-            ${props => `${props.size / 2}${props.sizeUnit}`} 0 0;
+        top: ${(props) => `${props.size / 20}${props.sizeUnit}`};
+        left: ${(props) => `${props.size / 2}${props.sizeUnit}`};
+        width: ${(props) => `${props.size / 2}${props.sizeUnit}`};
+        height: ${(props) => `${props.size - props.size / 5}${props.sizeUnit}`};
+        background-color: ${(props) => props.color};
+        border-radius: ${(props) => `${props.size / 2}${props.sizeUnit}`}
+            ${(props) => `${props.size / 2}${props.sizeUnit}`} 0 0;
         transform: rotate(-45deg);
         transform-origin: 0 100%;
     }
@@ -56,8 +56,8 @@ const Wrapper = styled.div`
 HeartSpinner.defaultProps = {
     loading: true,
     size: 40,
-    color: "#fff",
-    sizeUnit: "px",
+    color: '#fff',
+    sizeUnit: 'px',
 };
 
 HeartSpinner.propTypes = {

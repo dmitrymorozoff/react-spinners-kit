@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
     0% {
         opacity: 0;
         border-color: ${props.color};
@@ -50,31 +50,31 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     perspective: 600px;
     transform-style: perserve-3d;
 `;
 
 const Ball = styled.div`
     position: absolute;
-    width: ${props => `${props.size / 1.5}${props.sizeUnit}`};
-    height: ${props => `${props.size / 1.5}${props.sizeUnit}`};
-    border: ${props => `${props.size / 5}${props.sizeUnit}`} solid ${props => props.color};
+    width: ${(props) => `${props.size / 1.5}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 1.5}${props.sizeUnit}`};
+    border: ${(props) => `${props.size / 5}${props.sizeUnit}`} solid ${(props) => props.color};
     border-radius: 50%;
     background-color: transparent;
     transform-style: perserve-3d;
     transform: scale(0) rotateX(60deg);
-    opacity: ${props => 1 - props.index * 0.2};
+    opacity: ${(props) => 1 - props.index * 0.2};
     animation: ${motion} 3s cubic-bezier(0.67, 0.08, 0.46, 1.5) infinite;
-    animation-delay: ${props => props.index * 200}ms;
+    animation-delay: ${(props) => props.index * 200}ms;
 `;
 
 HoopSpinner.defaultProps = {
     loading: true,
     size: 45,
-    color: "#4b4c56",
-    sizeUnit: "px",
+    color: '#4b4c56',
+    sizeUnit: 'px',
 };
 
 HoopSpinner.propTypes = {

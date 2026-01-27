@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const animationLeftPostions = props => {
+const animationLeftPostions = (props) => {
     switch (props.index) {
         case 0:
             return {
@@ -22,7 +22,7 @@ const animationLeftPostions = props => {
     }
 };
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
     0% {
         top: ${props.y}px;
         left: ${props.x}px;
@@ -71,18 +71,18 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size / 2 + props.size / 8}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 2 + props.size / 8}${props.sizeUnit}`};
 `;
 
 const Ball = styled.div`
     position: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
-    width: ${props => `${props.size / 4}${props.sizeUnit}`};
-    height: ${props => `${props.size / 4}${props.sizeUnit}`};
+    top: ${(props) => `${props.y}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 4}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 4}${props.sizeUnit}`};
     border-radius: 50%;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
     animation: ${motion} 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
     &:nth-child(2) {
         animation-timing-function: cubic-bezier(1, 0, 0, 1);
@@ -93,8 +93,8 @@ const Ball = styled.div`
 SwapSpinner.defaultProps = {
     loading: true,
     size: 40,
-    color: "#4b4c56",
-    sizeUnit: "px",
+    color: '#4b4c56',
+    sizeUnit: 'px',
 };
 
 SwapSpinner.propTypes = {

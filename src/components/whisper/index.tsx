@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
     0% {
         transform: scale(1, 1);
         opacity: 1;
@@ -73,19 +73,19 @@ export const WhisperSpinner = ({ size, frontColor, backColor, loading, sizeUnit 
 
 const Wrapper = styled.div`
     position: relative;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     animation: ${spin} 10s infinite;
 `;
 
 const Ball = styled.div`
     float: left;
     clear: right;
-    margin: ${props => `${props.size / 15}${props.sizeUnit}`};
-    width: ${props => `${props.size / 5}${props.sizeUnit}`};
-    height: ${props => `${props.size / 5}${props.sizeUnit}`};
+    margin: ${(props) => `${props.size / 15}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 5}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 5}${props.sizeUnit}`};
     border-radius: 2px;
-    background-color: ${props => props.frontColor};
+    background-color: ${(props) => props.frontColor};
     animation-name: ${motion};
     animation-direction: alternate;
     animation-duration: 800ms;
@@ -122,9 +122,9 @@ const Ball = styled.div`
 WhisperSpinner.defaultProps = {
     loading: true,
     size: 50,
-    frontColor: "#4b4c56",
-    backColor: "#00ff89",
-    sizeUnit: "px",
+    frontColor: '#4b4c56',
+    backColor: '#00ff89',
+    sizeUnit: 'px',
 };
 
 WhisperSpinner.propTypes = {

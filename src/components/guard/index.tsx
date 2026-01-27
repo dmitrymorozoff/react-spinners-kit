@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
     0% {
@@ -61,26 +61,26 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
-    perspective: ${props => `${props.size * 3}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
+    perspective: ${(props) => `${props.size * 3}${props.sizeUnit}`};
 `;
 
 const CubeWrapper = styled.div`
     position: absolute;
-    top: ${props => `${props.y}${props.sizeUnit}`};
-    left: ${props => `${props.x}${props.sizeUnit}`};
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    top: ${(props) => `${props.y}${props.sizeUnit}`};
+    left: ${(props) => `${props.x}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
 `;
 
 const Cube = styled.div`
     position: relative;
-    width: ${props => `${props.size / 4}${props.sizeUnit}`};
-    height: ${props => `${props.size / 4}${props.sizeUnit}`};
+    width: ${(props) => `${props.size / 4}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 4}${props.sizeUnit}`};
     transform-style: preserve-3d;
     animation: ${rotate} 1.5s cubic-bezier(0.23, 1, 0.32, 1) infinite;
-    animation-delay: ${props => props.index * 0.125}s;
+    animation-delay: ${(props) => props.index * 0.125}s;
 `;
 
 const Side = styled.div`
@@ -88,17 +88,17 @@ const Side = styled.div`
     position: absolute;
     width: inherit;
     height: inherit;
-    background-color: ${props => props.color};
-    transform: rotateY(${props => (props.front ? 0 : -90)}deg)
-        translateZ(${props => `${props.size / 8}${props.sizeUnit}`});
+    background-color: ${(props) => props.color};
+    transform: rotateY(${(props) => (props.front ? 0 : -90)}deg)
+        translateZ(${(props) => `${props.size / 8}${props.sizeUnit}`});
 `;
 
 GuardSpinner.defaultProps = {
     loading: true,
     size: 40,
-    frontColor: "#00ff89",
-    backColor: "#373846",
-    sizeUnit: "px",
+    frontColor: '#00ff89',
+    backColor: '#373846',
+    sizeUnit: 'px',
 };
 
 GuardSpinner.propTypes = {

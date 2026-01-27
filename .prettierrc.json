@@ -9,6 +9,7 @@
     "quoteProps": "as-needed",
     "bracketSpacing": true,
     "bracketSameLine": false,
+    "endOfLine": "crlf",
     "htmlWhitespaceSensitivity": "css",
     "embeddedLanguageFormatting": "auto"
 }

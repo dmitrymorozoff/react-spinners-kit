@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
     0% {
@@ -11,7 +11,7 @@ const rotate = keyframes`
     }
 `;
 
-const rotateBall = props => keyframes`
+const rotateBall = (props) => keyframes`
     ${(((props.size / 2 / props.countBalls) * (props.index - 1)) / props.size) * 100}% {
         opacity: 0;
     }
@@ -81,26 +81,26 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     animation: ${rotate} 3s infinite ease-in;
 `;
 
 const Ball = styled.div`
     position: absolute;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};    
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
     animation: ${rotateBall} 2s infinite linear;
-    transform: ${props => `rotate(${(360 / props.countBalls) * props.index}deg)`};
+    transform: ${(props) => `rotate(${(360 / props.countBalls) * props.index}deg)`};
     opacity: 0;
     &:before {
-        content: "";
+        content: '';
         position: absolute;
         left: 50%;
         top: 0%;
-        width: ${props => `${props.ballSize}${props.sizeUnit}`};
-        height: ${props => `${props.ballSize}${props.sizeUnit}`};
-        background-color: ${props => `${props.color}`};
+        width: ${(props) => `${props.ballSize}${props.sizeUnit}`};
+        height: ${(props) => `${props.ballSize}${props.sizeUnit}`};
+        background-color: ${(props) => `${props.color}`};
         transform: translateX(-50%);
         border-radius: 50%;
     }
@@ -109,8 +109,8 @@ const Ball = styled.div`
 MetroSpinner.defaultProps = {
     loading: true,
     size: 40,
-    color: "#fff",
-    sizeUnit: "px",
+    color: '#fff',
+    sizeUnit: 'px',
 };
 
 MetroSpinner.propTypes = {

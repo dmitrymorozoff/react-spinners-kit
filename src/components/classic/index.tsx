@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { keyframes } from 'styled-components';
 
 const fade = keyframes`
     0% {
@@ -56,27 +56,27 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${props => `${props.size}${props.sizeUnit}`};
-    height: ${props => `${props.size}${props.sizeUnit}`};
+    width: ${(props) => `${props.size}${props.sizeUnit}`};
+    height: ${(props) => `${props.size}${props.sizeUnit}`};
 `;
 
 const Bar = styled.div`
     position: absolute;
-    width: ${props => `${props.size / 10}${props.sizeUnit}`};
-    height: ${props => `${props.size / 4}${props.sizeUnit}`};
-    background-color: ${props => props.color};
+    width: ${(props) => `${props.size / 10}${props.sizeUnit}`};
+    height: ${(props) => `${props.size / 4}${props.sizeUnit}`};
+    background-color: ${(props) => props.color};
     opacity: 0.05;
-    transform: ${props => `rotate(${props.rotate}deg)`}
-        ${props => `translate(0, ${props.translate}${props.sizeUnit})`};
-    animation: ${fade} ${props => props.countBars * 0.06}s linear infinite;
-    animation-delay: ${props => props.index * 0.06}s;
+    transform: ${(props) => `rotate(${props.rotate}deg)`}
+        ${(props) => `translate(0, ${props.translate}${props.sizeUnit})`};
+    animation: ${fade} ${(props) => props.countBars * 0.06}s linear infinite;
+    animation-delay: ${(props) => props.index * 0.06}s;
 `;
 
 ClassicSpinner.defaultProps = {
     loading: true,
     size: 30,
-    color: "#fff",
-    sizeUnit: "px",
+    color: '#fff',
+    sizeUnit: 'px',
 };
 
 ClassicSpinner.propTypes = {
