@@ -1,71 +1,71 @@
 {
-  "name": "react-spinners-kit",
-  "version": "1.9.1",
-  "description": "A collection of loading spinners",
-  "main": "./lib/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dmitrymorozoff/react-spinners-kit.git"
-  },
-  "typings": "./typings/index.d.ts",
-  "files": [
-    "lib",
-    "typings/index.d.ts"
-  ],
-  "keywords": [
-    "react",
-    "react-component",
-    "react-spinners",
-    "loaders",
-    "kit",
-    "spinners"
-  ],
-  "scripts": {
-    "start": "yarn vite",
-    "build:examples": "yarn vite build",
-    "build:lib": "webpack --mode=production",
-    "build": "yarn prettier && yarn lint && yarn clean && yarn build:lib && yarn build:examples",
-    "clean": "rimraf lib dist",
-    "prettier": "prettier --config .prettierrc.json --write src/**/*.js",
-    "lint": "eslint --ext .js --ext .jsx ./src",
-    "patch": "yarn version --patch && yarn publish && yarn run clean",
-    "minor": "yarn version --minor && yarn publish && yarn run clean",
-    "major": "yarn version --major && yarn publish && yarn run clean",
-    "size": "size-limit"
-  },
-  "pre-commit": [
-    "lint",
-    "prettier"
-  ],
-  "size-limit": [
-    {
-      "limit": "9 KB",
-      "path": "./lib/index.js"
+    "name": "react-spinners-kit",
+    "version": "1.9.1",
+    "description": "A collection of loading spinners",
+    "main": "./lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dmitrymorozoff/react-spinners-kit.git"
+    },
+    "typings": "./typings/index.d.ts",
+    "files": [
+        "lib",
+        "typings/index.d.ts"
+    ],
+    "keywords": [
+        "react",
+        "react-component",
+        "react-spinners",
+        "loaders",
+        "kit",
+        "spinners"
+    ],
+    "scripts": {
+        "start": "yarn vite",
+        "build:demo": "yarn vite build",
+        "build:lib": "webpack --mode=production",
+        "build": "yarn prettier && yarn lint && yarn clean && yarn build:lib && yarn build:demo",
+        "clean": "rimraf lib dist",
+        "prettier": "prettier --config .prettierrc.json --write src/**/*.js",
+        "lint": "eslint --ext .js --ext .jsx ./src",
+        "patch": "yarn version --patch && yarn publish && yarn run clean",
+        "minor": "yarn version --minor && yarn publish && yarn run clean",
+        "major": "yarn version --major && yarn publish && yarn run clean",
+        "size": "size-limit"
+    },
+    "pre-commit": [
+        "lint",
+        "prettier"
+    ],
+    "size-limit": [
+        {
+            "limit": "9 KB",
+            "path": "./lib/index.js"
+        }
+    ],
+    "author": "Morozov Dmitry  <dimemorozovy@yandex.ru>",
+    "license": "MIT",
+    "homepage": "https://github.com/dmitrymorozoff/react-spinners-kit",
+    "devDependencies": {
+        "@types/react": "^19.2.9",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^5.1.2",
+        "eslint": "^5.6.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.1",
+        "eslint-plugin-react": "^7.11.1",
+        "prettier": "^3.8.1",
+        "rimraf": "^6.1.2",
+        "typescript": "^5.9.3",
+        "vite": "^7.3.1 "
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-syntax-highlighter": "^16.1.0",
+        "styled-components": "^6.1.0"
+    },
+    "peerDependencies": {
+        "styled-components": "^6.1.0"
     }
-  ],
-  "author": "Morozov Dmitry  <dimemorozovy@yandex.ru>",
-  "license": "MIT",
-  "homepage": "https://github.com/dmitrymorozoff/react-spinners-kit",
-  "devDependencies": {
-    "@types/react": "^19.2.9",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "eslint": "^5.6.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "prettier": "^3.8.1",
-    "rimraf": "^6.1.2",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.1 "
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-syntax-highlighter": "^16.1.0",
-    "styled-components": "^6.1.0"
-  },
-  "peerDependencies": {
-    "styled-components": "^6.1.0"
-  }
 }
